@@ -51,6 +51,7 @@ add_action('wp_enqueue_scripts', 'my_script_init');
 //記事表示時の整形無効
 remove_filter('the_content', 'wpautop');
 remove_filter('the_excerpt', 'wpautop');
+
 // ビジュアルエディタ(TinyMCE)の整形無効
 add_filter(
   'tiny_mce_before_init',

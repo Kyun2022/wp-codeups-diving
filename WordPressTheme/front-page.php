@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-aaaaa
 <main>
   <!-- mv -->
   <section class="mv">
