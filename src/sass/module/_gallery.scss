@@ -1,0 +1,133 @@
+@use "global" as *;
+
+.gallery {
+  position: relative;
+}
+
+.gallery__decoration {
+  position: absolute;
+  z-index: 3;
+  top: rem(49);
+  right: rem(15);
+
+  width: rem(120);
+  height: rem(55);
+  @include mq(md) {
+    top: rem(-77);
+    right: calc(50% - min(47.9166vw, 40rem));
+    width: rem(301);
+    height: rem(138);
+  }
+}
+
+.gallery__decoration--md-none {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+.gallery__inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: rem(600);
+  @include mq(md) {
+    max-width: initial;
+  }
+}
+
+.gallery__container {
+  margin-top: rem(38);
+  display: grid;
+  grid-auto-flow: dense;
+  gap: rem(8);
+  grid-template-columns: repeat(1, 1fr);
+
+  @include mq(md) {
+    grid-template-columns: repeat(11, 1fr);
+    margin-top: rem(82);
+  }
+}
+.gallery__image:nth-child(6n + 1) {
+  grid-row: span 1;
+  grid-column: span 1;
+  @include mq(md) {
+    grid-row: span 2;
+    grid-column: span 5;
+  }
+}
+.gallery__image:nth-child(6n + 2),
+.gallery__image:nth-child(6n + 3) {
+  grid-row: span 1;
+  grid-column: span 1;
+  @include mq(md) {
+    grid-column: span 6;
+  }
+}
+.gallery__image:nth-child(6n + 4) {
+  grid-row: span 1;
+  grid-column: span 1;
+
+  @include mq(md) {
+    grid-column: span 6;
+  }
+}
+.gallery__image:nth-child(6n + 5) {
+  grid-row: span 1;
+  grid-column: span 1;
+  @include mq(md) {
+    grid-row: span 2;
+    grid-column: span 5;
+  }
+}
+.gallery__image:nth-child(6n + 6) {
+  grid-row: span 1;
+  grid-column: span 1;
+  @include mq(md) {
+    grid-column: span 6;
+  }
+}
+
+.gallery__image {
+  position: relative;
+}
+.gallery__image:nth-child(6n + 2)::before,
+.gallery__image:nth-child(6n + 3)::before,
+.gallery__image:nth-child(6n + 4)::before,
+.gallery__image:nth-child(6n + 6)::before {
+  content: "";
+  display: block;
+  padding-top: calc((369 / 580) * 100%);
+}
+
+.gallery__image:nth-child(6n + 1)::before,
+.gallery__image:nth-child(6n + 5)::before {
+  content: "";
+  display: block;
+  padding-top: calc((746 / 492) * 100%);
+}
+
+.gallery__image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/*//////////////////////////////////////
+micro-modal
+/////////////////////////////////////*/
+
+.gallery__image {
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  @include mq(md) {
+    pointer-events: initial;
+  }
+}
+.gallery__image:hover {
+  opacity: 0.8;
+}

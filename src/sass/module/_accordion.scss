@@ -1,0 +1,86 @@
+@use "global" as *;
+
+.accordion__items {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion__item:not(:first-child) {
+  margin-top: rem(40);
+}
+
+.accordion__title {
+  position: relative;
+
+  color: $white;
+  background-color: $green;
+  font-family: $jp-font-family1;
+  font-weight: $normal;
+  font-size: rem(16);
+  padding: rem(16);
+  @include mq(md) {
+    font-size: rem(20);
+    padding: rem(25) rem(40);
+  }
+}
+
+/* 縦線 */
+.accordion__title::before {
+  background: $white;
+  content: "";
+  width: rem(28);
+  height: rem(1);
+  position: absolute;
+  top: 50%;
+  right: rem(16);
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+  @include mq(md) {
+    width: rem(32);
+    right: rem(40);
+  }
+}
+/* 横線 */
+.accordion__title::after {
+  background: $white;
+  content: "";
+  width: rem(28);
+  height: rem(1);
+  position: absolute;
+  right: rem(16);
+  top: 50%;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  @include mq(md) {
+    width: rem(32);
+    right: rem(40);
+  }
+}
+/* 縦線(クリック後) */
+.accordion__title.open::before {
+  transform: rotate(90deg);
+}
+/* 横線(クリック後) */
+.accordion__title.open::after {
+  opacity: 1;
+}
+
+.accordion__content {
+  padding: rem(22) rem(16);
+  border: 1px solid $green;
+  background-color: $white;
+  @include mq(md) {
+    margin-top: rem(16);
+    padding: rem(39);
+  }
+}
+.accordion__content-text {
+  color: $dark-green;
+  font-family: $jp-font-family1;
+  font-size: rem(16);
+  font-weight: $normal;
+  line-height: 1.45;
+}
+.accordion__content--all-none {
+  display: none;
+}

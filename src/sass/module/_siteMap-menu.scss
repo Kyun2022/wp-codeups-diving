@@ -1,0 +1,138 @@
+@use "global" as *;
+
+.siteMap-menu {
+  margin-top: rem(37);
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  @include mq(md) {
+    margin-top: rem(24);
+    max-width: initial;
+    margin-right: initial;
+    margin-left: initial;
+  }
+}
+
+.siteMap-menu__container-left {
+  width: 100%;
+  max-width: calc((208 / 375) * 100%);
+  padding-left: rem(23);
+  @include mq(md) {
+    display: flex;
+    width: 100%;
+    max-width: calc((540 / 1080) * 100%);
+  }
+}
+.siteMap-menu__container-right {
+  width: 100%;
+  max-width: calc((165 / 375) * 100%);
+  padding-left: rem(23);
+  margin-left: rem(2);
+  @include mq(md) {
+    margin-left: rem(64);
+    display: flex;
+    width: 100%;
+    max-width: calc((476 / 1080) * 100%);
+  }
+}
+.siteMap-menu__sub-container--left1 {
+  @include mq(md) {
+    width: 100%;
+    max-width: calc((325 / 540) * 100%);
+  }
+}
+.siteMap-menu__sub-container--right1 {
+  @include mq(md) {
+    width: 100%;
+    max-width: calc((215 / 540) * 100%);
+  }
+}
+.siteMap-menu__sub-container--left2 {
+  @include mq(md) {
+    width: 100%;
+    max-width: calc((308 / 476) * 100%);
+  }
+}
+.siteMap-menu__sub-container--right2 {
+  @include mq(md) {
+    width: 100%;
+    max-width: calc((168 / 476) * 100%);
+  }
+}
+
+.siteMap-menu__contents:not(:first-child) {
+  margin-top: rem(38);
+  @include mq(md) {
+    margin-top: rem(39);
+  }
+}
+
+.siteMap-menu__list-name {
+  font-size: rem(16);
+  font-family: $jp-font-family1;
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+  color: $dark-green;
+  position: relative;
+}
+.siteMap-menu__list-name::before {
+  content: "";
+  display: inline-block;
+  width: rem(18);
+  height: rem(18);
+  background-image: url(/assets/images/common/starfish--black.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: rem(-24);
+}
+
+.siteMap-menu__list-name a {
+  display: block;
+  width: 100%;
+}
+.siteMap-menu__list-name a:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.siteMap-menu__list-name--space {
+  margin-top: rem(38);
+  @include mq(md) {
+    margin-top: initial;
+  }
+}
+
+.siteMap-menu__items {
+  margin-top: rem(26);
+  @include mq(md) {
+    margin-top: rem(24);
+  }
+}
+
+.siteMap-menu__item {
+  margin-top: rem(23);
+  font-size: rem(16);
+  font-family: $jp-font-family1;
+  font-weight: $regular;
+  color: $dark-green;
+  line-height: calc(18 / 16);
+  width: 100%;
+  @include mq(md) {
+    margin-top: rem(24);
+  }
+}
+.siteMap-menu__item a {
+  display: block;
+}
+.siteMap-menu__item a:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.siteMap-menu__space {
+  padding-right: rem(22);
+  @include mq(md) {
+    padding-right: initial;
+  }
+}

@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.sub-information {
+  position: relative;
+}
+.sub-information_inner {
+  max-width: rem(600);
+  width: 100%;
+  position: relative;
+}
+.sub-information__decoration {
+  position: absolute;
+  top: rem(-25);
+  left: rem(15);
+  width: rem(120);
+  height: rem(55);
+  z-index: -1;
+  @include mq(md) {
+    top: rem(-71);
+    width: rem(301);
+    height: rem(138);
+    left: calc(50% - min(47.9166vw, 38.75rem));
+  }
+}
+.sub-information__tab {
+  display: flex;
+  justify-content: center;
+  gap: rem(19);
+  @include mq(md) {
+    justify-content: initial;
+    gap: calc((90 / 1100) * 100%);
+  }
+}
+
+.sub-information__items {
+  margin-top: rem(14);
+  @include mq(md) {
+    margin-top: rem(24);
+  }
+}

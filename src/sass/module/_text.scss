@@ -1,0 +1,9 @@
+@use 'global' as *;
+
+.text{
+  font-size: rem(16);
+  font-family: $jp-font-family1;
+  font-weight: $regular;
+  line-height: calc(24 / 16);
+  color: $dark-green;
+}

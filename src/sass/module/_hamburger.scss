@@ -1,0 +1,48 @@
+@use "global" as *;
+
+.hamburger {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: rem(15);
+  width: rem(32);
+  height: rem(24);
+  display: inline-block;
+  z-index: 9999;
+}
+.hamburger--md-show {
+  display: block;
+  @include mq(md) {
+    display: none;
+  }
+}
+.hamburger span {
+  position: absolute;
+  height: rem(1);
+  width: 100%;
+  background-color: $white;
+  transition: all 0.5s;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0%;
+}
+.hamburger span:nth-child(2) {
+  top: 50%;
+}
+.hamburger span:nth-child(3) {
+  top: 100%;
+}
+.hamburger.is-open span:nth-child(1) {
+  width: rem(40);
+  transform-origin: top left;
+  transform: rotate(36.87deg);
+}
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open span:nth-child(3) {
+  width: rem(40);
+  transform-origin: bottom left;
+  transform: rotate(-36.87deg);
+}

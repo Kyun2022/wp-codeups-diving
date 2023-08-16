@@ -1,0 +1,135 @@
+@use "global" as *;
+
+.detail {
+}
+.detail__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include mq(md) {
+    width: calc((720 / 1100) * 100%);
+  }
+}
+.detail__body {
+  border-bottom: 1px solid $green;
+}
+
+.detail__date {
+  color: $dark-green;
+  font-family: $en-font-family1;
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: calc(18 / 14);
+}
+
+.detail__title {
+  color: $dark-green;
+  font-family: $jp-font-family1;
+  margin-top: rem(9);
+  font-size: rem(24);
+  font-weight: $medium;
+  @include mq(md) {
+    margin-top: initial;
+    font-size: rem(32);
+  }
+}
+
+.detail__items {
+  margin-top: rem(27);
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+.detail__item:not(:first-child) {
+  margin-top: rem(23);
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+.detail__meta {
+  margin-top: rem(23);
+  @include mq(md) {
+    margin-top: rem(38);
+  }
+}
+.detail__list-items {
+  margin-top: rem(27);
+  display: flex;
+  flex-direction: column;
+  gap: rem(3);
+  @include mq(md) {
+    gap: rem(7);
+    margin-top: rem(40);
+  }
+}
+
+.detail__list-item {
+  color: $dark-green;
+  font-family: $jp-font-family1;
+  font-size: rem(16);
+  font-weight: $normal;
+  line-height: calc(24 / 16);
+  position: relative;
+  padding-left: rem(26);
+}
+.detail__list-item::before {
+  content: "";
+  display: inline-block;
+  background-image: url(/assets/images/common/starfish--green.png);
+  background-repeat: no-repeat;
+  background-size: center;
+  background-position: center;
+  width: rem(18);
+  height: rem(18);
+  position: absolute;
+  top: rem(3);
+  left: 0;
+}
+.detail__image {
+  position: relative;
+}
+
+.detail__image::before {
+  content: "";
+  display: block;
+  padding-top: calc((468 / 700) * 100%);
+}
+.detail__image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail__pageNation {
+  margin-top: rem(40);
+  display: flex;
+  justify-content: center;
+  gap: rem(80);
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}
+
+.detail__pageNation-item {
+  padding: rem(6) rem(14);
+  border: 1px solid $green;
+  background-color: $white;
+  color: $green;
+}
+.detail__pageNation-item a {
+  display: block;
+  font-family: $en-font-family2;
+  font-size: rem(16);
+  font-weight: $bold;
+}
+
+.detail__pageNation-item:hover {
+  background-color: $green;
+  color: $white;
+}

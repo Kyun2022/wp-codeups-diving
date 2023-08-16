@@ -1,0 +1,120 @@
+@use "global" as *;
+
+.sub-aboutUs {
+  position: relative;
+}
+.sub-aboutUs__inner {
+  max-width: rem(600);
+  width: 100%;
+  position: relative;
+}
+.sub-aboutUs__decoration {
+  position: absolute;
+  top: rem(-25);
+  left: rem(15);
+  width: rem(120);
+  height: rem(55);
+  z-index: -1;
+  @include mq(md) {
+    top: rem(-71);
+    width: rem(301);
+    height: rem(138);
+    left: calc(50% - min(47.9166vw, 38.75rem));
+  }
+}
+
+.sub-aboutUs__image-sky {
+  position: relative;
+  z-index: 2;
+  width: calc((132 / 345) * 100%);
+  @include mq(md) {
+    width: calc((399 / 1080) * 100%);
+  }
+}
+.sub-aboutUs__image-sky img {
+  aspect-ratio: 399 / 606;
+  object-fit: cover;
+  width: 100%;
+  max-width: rem(399);
+}
+
+.sub-aboutUs__image-sky--md-none {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.sub-aboutUs__image-sea {
+  position: relative;
+  width: 100%;
+  @include mq(md) {
+    margin-left: auto;
+    margin-top: -49%;
+    z-index: -1;
+    width: calc((880 / 1080) * 100%);
+  }
+}
+.sub-aboutUs__image-sea img {
+  aspect-ratio: 880 /581;
+  object-fit: cover;
+  width: 100%;
+  max-width: rem(880);
+}
+.sub-aboutUs__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(40);
+  position: relative;
+
+  @include mq(md) {
+    margin-top: initial;
+    flex-direction: row;
+    position: absolute;
+    top: calc((200 / 661) * 100%);
+    right: calc((63 / 1080) * 100%);
+    max-width: rem(840);
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+.sub-aboutUs__title-block {
+  position: absolute;
+  top: rem(-245);
+  left: rem(24);
+  @include mq(md) {
+    position: initial;
+    top: initial;
+    left: initial;
+    max-width: calc((400 / 840) * 100%);
+    width: 100%;
+  }
+}
+
+.sub-aboutUs__sub-title {
+  font-size: rem(40);
+  font-family: $en-font-family1;
+  font-weight: $regular;
+  line-height: calc(40 / 40);
+  color: $white;
+  @include mq(md) {
+    font-size: rem(80);
+    line-height: calc(100 / 80);
+  }
+}
+
+.sub-aboutUs__meta {
+  @include mq(md) {
+    margin-top: rem(48);
+    max-width: calc((400 / 840) * 100%);
+    width: 100%;
+    margin-left: rem(40);
+  }
+}
+
+.sub-aboutUs__text {
+  @include mq(md) {
+    color: $white;
+  }
+}

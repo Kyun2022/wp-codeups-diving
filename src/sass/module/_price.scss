@@ -1,0 +1,122 @@
+@use "global" as *;
+
+.price__inner {
+  height: 100%;
+  max-width: rem(600);
+  width: 100%;
+}
+
+.price__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(28);
+  @include mq(md) {
+    margin-top: rem(40);
+    flex-direction: row-reverse;
+  }
+}
+
+.price__images {
+  position: relative;
+  @include mq(md) {
+    margin-left: rem(93);
+    width: 100%;
+    max-width: calc((492 / 987) * 100%);
+  }
+}
+.price__images::before {
+  content: "";
+  display: block;
+  padding-top: calc((227 / 345) * 100%);
+  @include mq(md) {
+    padding-top: calc((746 / 492) * 100%);
+  }
+}
+.price__images img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.price__menu {
+  margin-top: rem(40);
+  @include mq(md) {
+    margin-top: initial;
+    width: 100%;
+    max-width: calc((492 / 987) * 100%);
+  }
+}
+
+.price__items:not(:first-child) {
+  margin-top: rem(40);
+}
+
+.price__header {
+  font-size: rem(16);
+  font-family: $jp-font-family1;
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+  padding-bottom: rem(3);
+  border-bottom: rem(1) solid $green;
+}
+
+.price__item {
+  display: flex;
+  margin-top: rem(8);
+}
+
+.price__label {
+  font-size: rem(14);
+  font-weight: $regular;
+  font-family: $jp-font-family1;
+  line-height: calc(24 / 14);
+  width: calc((280 / 345) * 100%);
+  @include mq(md) {
+    font-size: rem(16);
+    line-height: calc(24 / 16);
+  }
+}
+
+.price__text {
+  font-size: rem(14);
+  font-weight: $regular;
+  font-family: $jp-font-family1;
+  line-height: calc(24 / 14);
+  width: calc((80 / 345) * 100%);
+  text-align: right;
+  @include mq(md) {
+    font-size: rem(16);
+    line-height: calc(24 / 16);
+  }
+}
+
+.price__button {
+  margin-top: rem(40);
+  text-align: center;
+  @include mq(md) {
+    margin-top: rem(78);
+  }
+}
+
+.price__decoration {
+  position: absolute;
+ left: calc(50% - min(47.9166vw, 38.75rem));
+  bottom: rem(60);
+  width: rem(437);
+  height: rem(201);
+}
+.price__decoration--md-none {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+.price__decoration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

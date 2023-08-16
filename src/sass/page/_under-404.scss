@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.under-404 {
+  padding-top: rem(80);
+  @include mq(md) {
+    padding-top: rem(90);
+  }
+}

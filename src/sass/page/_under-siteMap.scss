@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.under-siteMap {
+  margin-top: rem(16);
+  @include mq(md) {
+    margin-top: rem(126);
+  }
+}

@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.sub-voice {
+  position: relative;
+}
+
+.sub-voice__decoration {
+  position: absolute;
+  top: rem(-25);
+  left: rem(15);
+  width: rem(120);
+  height: rem(55);
+  z-index: -1;
+  @include mq(md) {
+    top: rem(-71);
+    width: rem(301);
+    height: rem(138);
+    left: calc(50% - min(47.9166vw, 38.75rem));
+  }
+}
+
+.sub-voice__container {
+  margin-top: rem(40);
+}
+.sub-voice__pageNation {
+  margin-top: rem(72);
+}

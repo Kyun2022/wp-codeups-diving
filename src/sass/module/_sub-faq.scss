@@ -1,0 +1,25 @@
+@use "global" as *;
+
+.sub-faq {
+  position: relative;
+}
+
+.sub-faq__decoration {
+  position: absolute;
+  top: rem(-25);
+  left: rem(15);
+  width: rem(120);
+  height: rem(55);
+  z-index: -1;
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.sub-faq__inner.inner {
+  width: 100%;
+  max-width: rem(500);
+  @include mq(md) {
+    max-width: rem(700);
+  }
+}

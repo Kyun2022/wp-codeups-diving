@@ -1,0 +1,28 @@
+@use "global" as *;
+
+/*//////////////////////////////////////
+背景色のアニメーション後に画像を表示する
+/////////////////////////////////////*/
+
+.js-slideColor,
+.js-slideColor2,
+.js-slideColor3,
+.js-slideColor4 {
+  overflow: hidden;
+}
+.js-slideColor .is-view,
+.js-slideColor2 .is-view2,
+.js-slideColor3 .is-view3,
+.js-slideColor4 .is-view4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: $green;
+}
+
+/*//////////////////////////////////////
+終了
+/////////////////////////////////////*/

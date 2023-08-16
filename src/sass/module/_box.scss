@@ -1,0 +1,123 @@
+@use "global" as *;
+
+.box__container {
+  display: flex;
+}
+.box__container.box__container--sub {
+  flex-direction: column-reverse;
+}
+.box__wrapper {
+  display: flex;
+  flex-direction: column;
+  @include mq(md) {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+  }
+}
+.box__header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: calc((149 / 313) * 100%);
+  border-bottom: rem(1) solid $green;
+  padding-bottom: rem(1);
+  @include mq(md) {
+    margin-top: rem(28);
+    width: 100%;
+    max-width: calc((276 / 472) * 100%);
+  }
+}
+.box__header.box__header--sub {
+  margin-top: rem(14);
+  border-bottom: initial;
+  padding-bottom: initial;
+  max-width: initial;
+  @include mq(md) {
+    margin-top: rem(16);
+  }
+}
+.box__gender {
+  font-family: $jp-font-family1;
+  font-size: rem(12);
+  font-weight: $regular;
+  line-height: calc(18 / 12);
+}
+
+.box__label {
+  padding: rem(2) rem(11);
+  border: rem(1) solid $green;
+  font-family: $jp-font-family1;
+  font-weight: $regular;
+  font-size: rem(12);
+  line-height: calc(22 / 12);
+  color: $green;
+  width: 100%;
+  width: fit-content;
+  margin-left: initial;
+  @include mq(md) {
+    padding: rem(5) rem(15);
+    margin-left: auto;
+  }
+}
+
+.box__title {
+  margin-top: rem(4);
+  font-family: $jp-font-family1;
+  font-size: rem(16);
+  font-weight: $medium;
+  @include mq(md) {
+    margin-top: rem(8);
+    font-size: rem(24);
+  }
+}
+
+.box__title--sub {
+  margin-top: rem(8);
+  font-size: rem(24);
+}
+
+.box__image {
+  position: relative;
+  margin-left: rem(12);
+  width: 100%;
+  max-width: calc((151 / 313) * 100%);
+  @include mq(md) {
+    margin-left: rem(16);
+    max-width: calc((180 / 472) * 100%);
+  }
+}
+.box__image::before {
+  content: "";
+  display: block;
+  padding-top: calc((117 / 151) * 100%);
+  @include mq(md) {
+    padding-top: calc((140 / 180) * 100%);
+  }
+}
+
+.box__image.box__image--sub {
+  max-width: initial;
+  margin-left: initial;
+}
+.box__image--sub::before {
+  padding-top: calc((218 / 294) * 100%);
+  @include mq(md) {
+    padding-top: calc((216 / 294) * 100%);
+  }
+}
+.box__image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.box__meta {
+  margin-top: rem(15);
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}

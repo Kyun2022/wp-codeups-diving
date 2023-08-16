@@ -1,0 +1,62 @@
+@use "global" as *;
+
+.blog__bgImage {
+  width: 100%;
+  height: calc((500 / 831) * 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.blog__bgImage--md-none {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.blog__bgImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog__decoration {
+  width: rem(437);
+  height: rem(201);
+  position: absolute;
+  top: rem(24);
+  left: calc(50% - min(47.9166vw, 38.75rem));
+  z-index: 10;
+}
+.blog__decoration--md-none {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.blog__decoration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.blog__inner {
+  max-width: rem(600);
+  width: 100%;
+}
+
+.blog__container {
+  margin-top: rem(28);
+  @include mq(md) {
+    margin-top: rem(81);
+  }
+}
+
+.blog__button {
+  margin-top: rem(40);
+  text-align: center;
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}

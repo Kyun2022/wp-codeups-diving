@@ -1,0 +1,49 @@
+@use "global" as *;
+
+.termsOfService__title {
+  color: $dark-green;
+  font-family: $jp-font-family1;
+  font-size: rem(24);
+  font-weight: $medium;
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
+.termsOfService__main-container {
+  margin-top: rem(37);
+  @include mq(md) {
+    margin-top: rem(37);
+  }
+}
+
+.termsOfService__sub-title,
+.termsOfService__items,
+.termsOfService__item,
+.termsOfService__text {
+  color: $dark-green;
+  font-family: $jp-font-family1;
+  font-size: rem(16);
+  font-weight: $normal;
+  line-height: calc(32 / 16);
+}
+
+.termsOfService__container {
+  margin-top: rem(32);
+}
+
+.termsOfService__items {
+  margin-top: rem(31);
+}
+ol.termsOfService__items {
+  list-style-type: decimal;
+  padding-left: rem(23);
+  margin-top: initial;
+}
+.termsOfService__text {
+  margin-top: rem(31);
+}
+.termsOfService__container--marginTop,
+.termsOfService__text--marginTop {
+  margin-top: initial;
+}

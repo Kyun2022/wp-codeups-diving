@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.sub-campaign {
+  position: relative;
+}
+
+.sub-campaign__decoration {
+  position: absolute;
+  top: rem(-25);
+  left: rem(15);
+  width: rem(120);
+  height: rem(55);
+  z-index: -1;
+  @include mq(md) {
+    top: rem(-71);
+    width: rem(301);
+    height: rem(138);
+    left: calc(50% - min(47.9166vw, 38.75rem));
+  }
+}
+
+.sub-campaign__menu {
+  margin-top: rem(40);
+  padding-right: rem(32);
+  padding-left: rem(32);
+  @include mq(md) {
+    padding-right: initial;
+    padding-left: initial;
+  }
+}
+
+.sub-campaign__items {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: rem(40);
+  @include mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(80);
+  }
+}
+
+.sub-campaign__pageNation {
+  margin-top: rem(79);
+  @include mq(md) {
+    margin-top: rem(82);
+  }
+}

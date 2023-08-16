@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.pageNation__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageNation__item {
+  padding: rem(6) rem(14);
+  border: 1px solid $green;
+}
+
+.pageNation__item:not(:first-child) {
+  margin-left: rem(12);
+}
+.pageNation__item:nth-child(2),
+.pageNation__item:last-child {
+  margin-left: rem(36);
+}
+.pageNation__item a {
+  color: $green;
+  font-family: $en-font-family2;
+  font-size: rem(16);
+  font-weight: $bold;
+}
+.pageNation__item--current {
+  background-color: $green;
+}
+.pageNation__item--current a {
+  color: $white;
+}
+.pageNation__item--md-none {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}

@@ -1,0 +1,319 @@
+@use "global" as *;
+
+.slider {
+}
+
+.slider__items {
+  display: grid;
+  grid-auto-flow: column;
+}
+.slider__item {
+  box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+}
+
+.slider__item--sub:not(:first-child) {
+  margin-top: rem(40);
+}
+.slider__item a {
+  display: inherit;
+  flex-direction: inherit;
+  flex-grow: 1;
+}
+.slider__item a:hover {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.slider__image {
+  position: relative;
+}
+.slider__image::before {
+  content: "";
+  display: block;
+  padding-top: calc((188 / 280) * 100%);
+  @include mq(md) {
+    padding-top: calc((223 / 333) * 100%);
+  }
+}
+
+.slider__image.slider__image--sub::before {
+  padding-top: calc((188 / 294) * 100%);
+}
+
+.slider__image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: rem(17) rem(16) rem(22);
+  background-color: $white;
+  @include mq(md) {
+    padding: rem(23) rem(16) rem(40);
+  }
+}
+.slider__body.slider__body--layout {
+  margin-top: initial;
+  padding: rem(17) rem(16) rem(21);
+  @include mq(md) {
+    padding: rem(24) rem(24) rem(42);
+  }
+}
+.slider__body.slider__body--sub {
+  margin-top: initial;
+  padding: rem(17) rem(16) rem(21);
+  @include mq(md) {
+    padding: rem(16) rem(24) rem(23);
+  }
+}
+
+.slider__label {
+  display: inline-block;
+  width: fit-content;
+  padding: rem(3) rem(10);
+  border: rem(1) solid $green;
+  font-family: $jp-font-family1;
+  font-weight: $regular;
+  font-size: rem(12);
+  line-height: calc(22 / 12);
+  color: $green;
+  @include mq(md) {
+    padding: rem(5) rem(14);
+  }
+}
+
+.slider__title {
+  flex-grow: 1;
+  margin-top: rem(4);
+  font-size: rem(16);
+  font-family: $jp-font-family1;
+  font-weight: $medium;
+  line-height: calc(24 / 16);
+  padding-bottom: rem(7);
+  border-bottom: rem(1) solid $green;
+}
+.slider__title--sub {
+  margin-top: initial;
+  text-align: center;
+}
+.slider__title.slider__title--layout {
+  @include mq(md) {
+    font-size: rem(24);
+    padding-bottom: rem(1);
+  }
+}
+.slider__meta {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(8);
+  padding: 0 rem(19);
+  text-align: center;
+  @include mq(md) {
+    margin-top: rem(16);
+  }
+}
+.slider__meta.slider__meta--sub {
+  margin-top: rem(8);
+}
+.slider__meta.slider__meta--layout {
+  @include mq(md) {
+    margin-top: rem(24);
+  }
+}
+.slider__sub-title {
+  font-family: $jp-font-family1;
+  font-weight: $regular;
+  font-size: rem(14);
+  line-height: calc(24 / 14);
+  color: $dark-green;
+  @include mq(md) {
+    font-size: rem(16);
+    line-height: calc(24 / 16);
+  }
+}
+
+.slider__price-unit {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: center;
+  margin-top: rem(7);
+  gap: rem(16);
+  @include mq(md) {
+    margin-top: rem(10);
+    gap: rem(25);
+  }
+}
+
+.slider__price-unit.slider__price-unit--sub {
+  margin-top: rem(7);
+  @include mq(md) {
+    gap: rem(19);
+  }
+}
+.slider__price-unit.slider__price-unit--layout {
+  @include mq(md) {
+    margin-top: rem(7);
+    gap: rem(41);
+  }
+}
+.slider__old-price {
+  font-family: $en-font-family2;
+  font-size: rem(20);
+  font-weight: $bold;
+  color: $dark-green;
+  position: relative;
+  margin-top: rem(4);
+  @include mq(md) {
+    font-size: rem(24);
+    margin-top: initial;
+  }
+}
+.slider__old-price.slider__old-price--sub {
+  @include mq(md) {
+    font-size: rem(20);
+    margin-top: rem(5);
+  }
+}
+.slider__old-price.slider__old-price--layout {
+  @include mq(md) {
+    margin-top: rem(8);
+  }
+}
+.slider__old-price::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  background-color: $red;
+  width: 100%;
+  height: rem(3);
+}
+.slider__new-price {
+  font-family: $en-font-family2;
+  font-size: rem(32);
+  font-weight: $bold;
+  line-height: calc(32 / 32);
+  color: $green;
+  @include mq(md) {
+    font-size: rem(40);
+  }
+}
+.slider__new-price.slider__new-price--sub {
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
+.slider__button {
+  display: flex;
+  position: absolute;
+  top: rem(3);
+  right: rem(25);
+}
+/* 前へ次への矢印カスタマイズ */
+.slider__prevButton,
+.slider__nextButton {
+  height: rem(80);
+  width: rem(80);
+  border: rem(1) solid $green;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.slider__prevButton--md-none,
+.slider__nextButton--md-none {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.slider__prevButton {
+  margin-left: rem(80);
+}
+/* 前への矢印カスタマイズ */
+.slider__nextButton:after {
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  content: "";
+  display: inline-block;
+  width: rem(40);
+  height: rem(6);
+  transform: skew(-45deg);
+  border-bottom: rem(1) solid $green;
+  border-left: rem(1) solid $green;
+}
+/* 次への矢印カスタマイズ */
+.slider__prevButton:after {
+  position: absolute;
+  top: 45%;
+  right: 10%;
+  content: "";
+  display: inline-block;
+  width: rem(40);
+  height: rem(6);
+  transform: skew(45deg);
+  border-bottom: rem(1) solid $green;
+  border-right: rem(1) solid $green;
+}
+
+/*//////////////////////////////////////
+下層Campaign追加
+/////////////////////////////////////*/
+.slider__detail {
+  height: inherit;
+  @include mq(md) {
+    margin-top: rem(22);
+  }
+}
+
+.slider__detail--md-none {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.slider__box {
+  margin-top: rem(32);
+  text-align: center;
+}
+
+.slider__date {
+  color: $green;
+  font-family: $en-font-family2;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(18 / 16);
+}
+
+.slider__sub-text {
+  margin-top: rem(7);
+  color: $green;
+  font-family: $jp-font-family1;
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: calc(18 / 14);
+}
+.slider__button-block {
+  margin-top: rem(15);
+}
+.slider__button-block button::first-letter {
+  text-transform: capitalize;
+}
+/*//////////////////////////////////////
+終了
+/////////////////////////////////////*/

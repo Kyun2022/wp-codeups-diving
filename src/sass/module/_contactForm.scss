@@ -1,0 +1,257 @@
+@use "global" as *;
+
+.contactForm__container dl {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: rem(24);
+  gap: rem(14);
+  border-bottom: 1px dashed $green;
+  @include mq(md) {
+    gap: initial;
+    flex-direction: row;
+    padding-bottom: rem(38);
+  }
+}
+
+.contactForm__container:not(:first-child) dl {
+  padding-top: rem(24);
+  @include mq(md) {
+    padding-top: rem(41);
+  }
+}
+.contactForm__title {
+  width: 100%;
+  max-width: 100%;
+  color: $dark-green;
+  font-family: $jp-font-family1;
+  font-size: rem(16);
+  font-weight: $bold;
+
+  @include mq(md) {
+    max-width: calc((203 / 700) * 100%);
+  }
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+  color: $green2;
+}
+.contactForm__title::after {
+  content: "必須";
+  display: inline-block;
+  background-color: $red;
+  color: $white;
+  font-family: $jp-font-family1;
+  font-size: rem(12);
+  font-weight: $normal;
+  text-indent: 0.48em;
+  letter-spacing: 0.48em;
+  padding: rem(2) rem(10) rem(2);
+  margin-left: rem(5);
+}
+
+.contactForm__title--layout::after {
+  display: none;
+}
+.contactForm__body {
+  width: 100%;
+  max-width: 100%;
+  @include mq(md) {
+    max-width: calc((497 / 700) * 100%);
+  }
+}
+/*//////////////////////////////////////
+checkbox
+/////////////////////////////////////*/
+.contactForm__checkbox span {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: $dark-green;
+  font-family: $jp-font-family1;
+  font-size: rem(16);
+  font-weight: $normal;
+  user-select: none; /* テキストの選択を防ぐ */
+  cursor: pointer;
+  transition: 0.3s ease;
+  line-height: 1;
+  margin-top: rem(5);
+}
+.contactForm__checkbox:not(:first-child) span {
+  margin-top: rem(11);
+}
+.contactForm__checkbox span::before {
+  content: "";
+  display: inline-block;
+  width: rem(14);
+  height: rem(14);
+  border: 1px solid $green;
+  margin-right: rem(8);
+}
+[type="checkbox"] span::after {
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+[type="checkbox"]:checked + span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  opacity: 1;
+  /*チェックマークじゃない場合は以下を変更する*/
+  transform: translateY(-50%) rotate(-45deg);
+  width: calc(rem(10) * 0.9);
+  height: calc(rem(10) * 0.5);
+  margin-top: -0.05em;
+  margin-left: 0.16em;
+  border-left: rem(2) solid $red;
+  border-bottom: rem(2) solid $red;
+}
+
+/*//////////////////////////////////////
+終了
+/////////////////////////////////////*/
+.contactForm__body select {
+  width: 100%;
+  max-width: 100%;
+}
+.contactForm__body--select {
+  position: relative;
+  color: $dark-green;
+  font-family: $jp-font-family1;
+  font-size: rem(12);
+  font-weight: $normal;
+  padding: rem(12) rem(8);
+  border: 1px solid $green;
+  @include mq(md) {
+    padding: rem(5) rem(8);
+  }
+}
+
+.contactForm__body--select::before {
+  position: absolute;
+  top: 50%;
+  right: rem(8);
+  transform: translateY(-50%);
+  width: rem(12);
+  height: rem(12);
+  content: "";
+  z-index: -1;
+  background-image: url(/assets/images/common/triangle.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+.contactForm__body input,
+.contactForm__body textarea {
+  width: 100%;
+  color: $dark-green;
+  font-family: $jp-font-family1;
+  font-size: rem(16);
+  font-weight: $normal;
+  padding: rem(7) rem(16);
+  border: 1px solid $green;
+}
+.contactForm__body textarea {
+  height: rem(200);
+  resize: none;
+}
+
+.contactForm__triangle {
+  position: relative;
+}
+select option::after {
+  position: absolute;
+  right: 0;
+  content: "";
+  display: block;
+  width: rem(12);
+  height: rem(12);
+  background-image: url(/assets/images/common/triangle.png);
+}
+.contactForm__footer {
+  padding: rem(38) rem(30) rem(145);
+  @include mq(md) {
+    padding: rem(75) 0 rem(160);
+  }
+}
+.contactForm__footer-container {
+  display: flex;
+  justify-content: center;
+  gap: rem(16);
+}
+
+/*//////////////////////////////////////
+checkbox
+/////////////////////////////////////*/
+
+.contactForm__text span {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: $dark-green;
+  font-family: $jp-font-family1;
+  font-size: rem(14);
+  font-weight: $normal;
+  user-select: none; /* テキストの選択を防ぐ */
+  cursor: pointer;
+  transition: 0.3s ease;
+  line-height: calc(22 / 16);
+}
+
+.contactForm__text span::before {
+  content: "";
+  display: inline-block;
+  min-width: rem(22);
+  height: rem(22);
+  border: 1px solid $green;
+  margin-right: rem(10);
+  margin-top: rem(-20);
+  @include mq(md) {
+    margin-right: rem(16);
+    margin-top: initial;
+  }
+}
+
+.contactForm__text [type="checkbox"] span::after {
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.contactForm__text [type="checkbox"]:checked + span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  opacity: 1;
+  /*チェックマークじゃない場合は以下を変更する*/
+  transform: translateY(-50%) rotate(-45deg);
+  width: calc(rem(20) * 0.9);
+  height: calc(rem(20) * 0.5);
+  margin-top: -0.1em;
+  margin-left: 0.1em;
+  border-left: rem(3) solid $red;
+  border-bottom: rem(3) solid $red;
+}
+/*//////////////////////////////////////
+終了
+/////////////////////////////////////*/
+.contactForm__button {
+  margin-top: rem(26);
+  text-align: center;
+  @include mq(md) {
+    margin-top: rem(39);
+  }
+}
+
+// input[required],
+// textarea[required] {
+//   background-color: rgba(201, 72, 0, 0.2);
+//   border: 1px solid $red;
+//   color: $white;
+// }

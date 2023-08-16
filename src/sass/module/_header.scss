@@ -1,0 +1,132 @@
+@use "global" as *;
+
+.header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: rem(80);
+  background: rgba(13, 41, 54, 0.68);
+  @include mq(md) {
+    height: rem(90);
+  }
+}
+.header__inner {
+  padding-right: rem(15);
+  padding-left: rem(15);
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mq(md) {
+    padding-right: rem(10);
+    padding-left: rem(20);
+  }
+  @include mq(lg) {
+    padding-right: rem(20);
+    padding-left: rem(40);
+  }
+}
+.header__logo {
+  z-index: 9999;
+}
+.header__logo a {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo img {
+  width: rem(102);
+  height: rem(38);
+  @include mq(md) {
+    width: rem(133);
+    height: rem(50);
+  }
+}
+.header__nav {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+.header__nav--md-none {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.header__items {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.header__item {
+  height: inherit;
+  text-transform: capitalize;
+  font-size: rem(18);
+  font-weight: $regular;
+  font-family: $en-font-family1;
+  line-height: 1;
+  color: $white;
+}
+
+/*//////////////////////////////////////
+ホバー時に中央から両端に下線が伸びる
+/////////////////////////////////////*/
+.header__item a {
+  display: inline-block;
+  position: relative;
+}
+.header__item a::after {
+  content: "";
+  position: absolute;
+  bottom: rem(20);
+  left: 0;
+  background-color: $white;
+  height: rem(1);
+  transform: scale(0, 1);
+  transform-origin: center top;
+  transition: transform 0.3s;
+  width: 100%;
+}
+.header__item a:hover::after {
+  transform: scale(1, 1);
+}
+/*//////////////////////////////////////
+終了
+/////////////////////////////////////*/
+
+.header__item a {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include mq(md) {
+    padding: 0 rem(13);
+  }
+  @include mq(lg) {
+    padding: 0 rem(19);
+  }
+}
+.header__item span {
+  display: block;
+  text-align: center;
+  font-size: rem(10);
+  font-weight: $regular;
+  font-family: $jp-font-family1;
+  line-height: calc(15 / 10);
+  color: $white;
+}
+
+.header__item--big {
+  text-transform: uppercase;
+}
+
+/* スクロールしたらヘッダーメニューのフォントカラー変更 */
+.header.drawer-menu.headerColorScroll {
+  background-color: #ff6347;
+  transition: color 0.4s ease-out;
+}

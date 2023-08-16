@@ -1,0 +1,83 @@
+@use "global" as *;
+
+.sub-404 {
+  position: relative;
+  background-color: $green;
+}
+
+.sub-404__inner {
+  position: relative;
+}
+.sub-404__image {
+  position: absolute;
+  width: rem(329);
+  height: rem(329);
+  top: rem(-77);
+  left: calc((23 / 375) * 100%);
+  z-index: 5;
+  @include mq(md) {
+    width: rem(698);
+    height: rem(698);
+    top: rem(-122);
+    left: calc((24 / 1080) * 100%);
+  }
+}
+
+.sub-404__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 329 / 329;
+
+  @include mq(md) {
+    aspect-ratio: 698 / 698;
+  }
+}
+
+.sub-404__container {
+  position: relative;
+  margin-top: rem(52);
+  padding-bottom: rem(45);
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  @include mq(md) {
+    margin-top: rem(94);
+    max-width: rem(700);
+    padding-bottom: rem(150);
+  }
+}
+
+.sub-404__box {
+  position: relative;
+  z-index: 10;
+}
+.sub-404__title {
+  color: $white;
+  font-family: $en-font-family2;
+  font-size: rem(80);
+  font-weight: $normal;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  line-height: 1.15;
+
+  @include mq(md) {
+    font-size: rem(160);
+    line-height: 1.5;
+  }
+}
+
+.sub-404__text {
+  color: $white;
+  font-family: $en-font-family2;
+  text-align: center;
+  font-size: rem(16);
+  font-weight: $normal;
+  line-height: calc(24 / 16);
+}
+.sub-404__button {
+  margin-top: rem(40);
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}

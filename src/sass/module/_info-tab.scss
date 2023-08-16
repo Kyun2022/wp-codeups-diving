@@ -1,0 +1,87 @@
+@use "global" as *;
+
+.info-tab__text {
+  width: rem(102);
+  padding: rem(10) rem(16);
+  color: $green;
+  background-color: $green2;
+  font-family: $jp-font-family1;
+  font-size: rem(14);
+  font-weight: $normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  @include mq(md) {
+    text-align: initial;
+    width: rem(300);
+    padding: rem(13) rem(15);
+    font-size: min(calc((24 / 1440) * 100vw), rem(24));
+  }
+}
+
+.info-tab__text--md-show {
+  display: block;
+  @include mq(md) {
+    display: none;
+  }
+}
+.info-tab__text.is-active {
+  color: $white;
+  background-color: $green;
+  box-shadow: rem(4) rem(4) rem(8) rem(0) rgba(0, 0, 0, 0.25);
+}
+
+.info-tab__text::before {
+  content: "";
+  display: inline-block;
+  width: rem(64);
+  height: rem(64);
+  margin-right: rem(9);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.info-tab__text:nth-child(1)::before {
+  display: none;
+  @include mq(md) {
+    display: block;
+    background-image: url(/assets/images/common/whale-green--right.png);
+  }
+}
+.info-tab__text:nth-child(2)::before {
+  display: none;
+  @include mq(md) {
+    display: block;
+    background-image: url(/assets/images/common/whale-green--left.png);
+  }
+}
+.info-tab__text:nth-child(3)::before {
+  display: none;
+  @include mq(md) {
+    display: block;
+    background-image: url(/assets/images/common/fish-green--left.png);
+  }
+}
+.info-tab__text.is-active:nth-child(1)::before {
+  display: none;
+  @include mq(md) {
+    display: block;
+    background-image: url(/assets/images/common/whale-white--right.png);
+  }
+}
+.info-tab__text.is-active:nth-child(2)::before {
+  display: none;
+  @include mq(md) {
+    display: block;
+    background-image: url(/assets/images/common/whale-white--left.png);
+  }
+}
+.info-tab__text.is-active:nth-child(3)::before {
+  display: none;
+  @include mq(md) {
+    display: block;
+    background-image: url(/assets/images/common/fish-white--left.png);
+  }
+}

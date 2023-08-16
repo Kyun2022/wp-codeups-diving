@@ -1,0 +1,66 @@
+@use "global" as *;
+
+.archive__container {
+  margin-top: rem(24);
+}
+
+.archive__items {
+  color: $green;
+  font-family: $jp-font-family1;
+  font-size: rem(24);
+  font-weight: $normal;
+}
+
+.archive__item {
+  color: $green;
+  font-family: $jp-font-family1;
+  font-size: rem(24);
+  font-weight: $normal;
+}
+
+.archive__sub-items {
+  color: $green;
+  font-family: $jp-font-family1;
+  font-size: rem(24);
+  font-weight: $normal;
+  display: none;
+}
+.archive__sub-items.open {
+  display: block;
+}
+.archive__sub-item {
+  color: $green;
+  font-family: $jp-font-family1;
+  font-size: rem(24);
+  font-weight: $normal;
+}
+
+.archive__item--newLayout,
+.archive__item--oldLayout,
+.archive__sub-item--layout {
+  cursor: pointer;
+}
+.archive__item--newLayout::before,
+.archive__item--oldLayout::before,
+.archive__sub-item--layout::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: rem(10) 0 rem(10) rem(17.3);
+  border-color: transparent transparent transparent $green;
+  margin-right: rem(10);
+}
+.archive__item--newLayout.open::before {
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+}
+.archive__item--oldLayout.open::before {
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+}
+
+.archive__item--close-layout {
+  margin-left: rem(28);
+}

@@ -1,0 +1,11 @@
+@use 'global' as *;
+
+.top-information {
+  margin-top: rem(85);
+  padding: rem(80) 0 rem(83);
+  background-color: $green2;
+  @include mq(md) {
+    margin-top: rem(142);
+    padding: rem(99) 0;
+  }
+}
