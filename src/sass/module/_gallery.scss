@@ -14,7 +14,7 @@
   height: my-rem(55);
   @include mq(md) {
     top: my-rem(-77);
-    right: calc(50% - min(47.9166vw, 40my-rem));
+    right: calc(50% - min(47.9166vw, 40rem));
     width: my-rem(301);
     height: my-rem(138);
   }

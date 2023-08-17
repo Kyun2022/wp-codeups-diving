@@ -47,41 +47,41 @@
   display: none;
   @include mq(md) {
     display: block;
-    background-image: url(/wp-content/themes/assets/images/common/whale-green--right.png);
+    background-image: url(../images/common/whale-green--right.png);
   }
 }
 .info-tab__text:nth-child(2)::before {
   display: none;
   @include mq(md) {
     display: block;
-    background-image: url(/wp-content/themes/assets/images/common/whale-green--left.png);
+    background-image: url(../images/common/whale-green--left.png);
   }
 }
 .info-tab__text:nth-child(3)::before {
   display: none;
   @include mq(md) {
     display: block;
-    background-image: url(/wp-content/themes/assets/images/common/fish-green--left.png);
+    background-image: url(../images/common/fish-green--left.png);
   }
 }
 .info-tab__text.is-active:nth-child(1)::before {
   display: none;
   @include mq(md) {
     display: block;
-    background-image: url(/assets/images/common/whale-white--right.png);
+    background-image: url(../images/common/whale-white--right.png);
   }
 }
 .info-tab__text.is-active:nth-child(2)::before {
   display: none;
   @include mq(md) {
     display: block;
-    background-image: url(/assets/images/common/whale-white--left.png);
+    background-image: url(../images/common/whale-white--left.png);
   }
 }
 .info-tab__text.is-active:nth-child(3)::before {
   display: none;
   @include mq(md) {
     display: block;
-    background-image: url(/assets/images/common/fish-white--left.png);
+    background-image: url(../images/common/fish-white--left.png);
   }
 }
