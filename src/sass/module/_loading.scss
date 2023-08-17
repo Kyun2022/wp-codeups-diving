@@ -29,20 +29,20 @@
 
 .loading__title-text {
   color: $green;
-  font-size: rem(40);
+  font-size: my-rem(40);
   font-family: $en-font-family2;
   font-weight: $regular;
   letter-spacing: 0.54em;
   text-indent: 0.54em;
   line-height: calc((48 / 40) * 100%);
   @include mq(md) {
-    font-size: rem(80);
+    font-size: my-rem(80);
     line-height: calc(100 / 80);
   }
 }
 .loading__title-subtext {
   color: $green;
-  font-size: rem(20);
+  font-size: my-rem(20);
   font-family: $en-font-family1;
   font-weight: $regular;
   line-height: calc((33 / 20) * 100%);

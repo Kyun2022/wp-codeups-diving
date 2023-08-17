@@ -6,7 +6,7 @@
 }
 
 .accordion__item:not(:first-child) {
-  margin-top: rem(40);
+  margin-top: my-rem(40);
 }
 
 .accordion__title {
@@ -16,11 +16,11 @@
   background-color: $green;
   font-family: $jp-font-family1;
   font-weight: $normal;
-  font-size: rem(16);
-  padding: rem(16);
+  font-size: my-rem(16);
+  padding: my-rem(16);
   @include mq(md) {
-    font-size: rem(20);
-    padding: rem(25) rem(40);
+    font-size: my-rem(20);
+    padding: my-rem(25) my-rem(40);
   }
 }
 
@@ -28,32 +28,32 @@
 .accordion__title::before {
   background: $white;
   content: "";
-  width: rem(28);
-  height: rem(1);
+  width: my-rem(28);
+  height: my-rem(1);
   position: absolute;
   top: 50%;
-  right: rem(16);
+  right: my-rem(16);
   transform: rotate(0deg);
   transition: transform 0.3s ease-in-out;
   @include mq(md) {
-    width: rem(32);
-    right: rem(40);
+    width: my-rem(32);
+    right: my-rem(40);
   }
 }
 /* 横線 */
 .accordion__title::after {
   background: $white;
   content: "";
-  width: rem(28);
-  height: rem(1);
+  width: my-rem(28);
+  height: my-rem(1);
   position: absolute;
-  right: rem(16);
+  right: my-rem(16);
   top: 50%;
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
   @include mq(md) {
-    width: rem(32);
-    right: rem(40);
+    width: my-rem(32);
+    right: my-rem(40);
   }
 }
 /* 縦線(クリック後) */
@@ -66,18 +66,18 @@
 }
 
 .accordion__content {
-  padding: rem(22) rem(16);
+  padding: my-rem(22) my-rem(16);
   border: 1px solid $green;
   background-color: $white;
   @include mq(md) {
-    margin-top: rem(16);
-    padding: rem(39);
+    margin-top: my-rem(16);
+    padding: my-rem(39);
   }
 }
 .accordion__content-text {
   color: $dark-green;
   font-family: $jp-font-family1;
-  font-size: rem(16);
+  font-size: my-rem(16);
   font-weight: $normal;
   line-height: 1.45;
 }

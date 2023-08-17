@@ -4,23 +4,23 @@
   width: fit-content;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: rem(17);
+  gap: my-rem(17);
   width: 100%;
-  max-width: rem(345);
+  max-width: my-rem(345);
   margin-right: auto;
   margin-left: auto;
   @include mq(md) {
     grid-template-columns: repeat(4, 1fr);
-    max-width: rem(744);
-    gap: rem(30);
+    max-width: my-rem(744);
+    gap: my-rem(30);
     margin-right: initial;
     margin-left: initial;
   }
 }
 .tab__text {
   text-align: center;
-  padding: rem(3) rem(10);
-  width: rem(162);
+  padding: my-rem(3) my-rem(10);
+  width: my-rem(162);
   border: 1px solid $green;
   background-color: $white;
   color: $green;
@@ -35,7 +35,7 @@
 .tab__text a {
   display: inline-block;
   font-family: $jp-font-family1;
-  font-size: rem(14);
+  font-size: my-rem(14);
   font-weight: $normal;
 }
 

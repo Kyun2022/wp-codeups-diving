@@ -6,23 +6,23 @@
 
 .sub-contact__decoration {
   position: absolute;
-  top: rem(-25);
-  left: rem(15);
-  width: rem(120);
-  height: rem(55);
+  top: my-rem(-25);
+  left: my-rem(15);
+  width: my-rem(120);
+  height: my-rem(55);
   z-index: -1;
   @include mq(md) {
-    top: rem(-71);
-    width: rem(301);
-    height: rem(138);
-    left: calc(50% - min(47.9166vw, 38.75rem));
+    top: my-rem(-71);
+    width: my-rem(301);
+    height: my-rem(138);
+    left: calc(50% - min(47.9166vw, 38.75my-rem));
   }
 }
 .sub-contact__inner.inner {
   width: 100%;
-  max-width: rem(500);
+  max-width: my-rem(500);
   @include mq(md) {
-    max-width: rem(750);
+    max-width: my-rem(750);
   }
 }
 
@@ -36,16 +36,16 @@
 }
 .sub-contact__content-errorText {
   font-family: $jp-font-family1;
-  font-size: rem(14);
+  font-size: my-rem(14);
   font-weight: $normal;
   position: relative;
 }
 .sub-contact__content-errorText::before {
   position: absolute;
-  left: rem(-13);
+  left: my-rem(-13);
   content: "※";
   display: inline-block;
-  width: rem(16);
+  width: my-rem(16);
 }
 .sub-contact__content-errorText--md-show {
   display: block;
@@ -55,5 +55,5 @@
   }
 }
 .sub-contact__form {
-  margin-top: rem(38);
+  margin-top: my-rem(38);
 }

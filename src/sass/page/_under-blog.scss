@@ -1,8 +1,8 @@
 @use "global" as *;
 
 .under-blog {
-  margin-top: rem(50);
+  margin-top: my-rem(50);
   @include mq(md) {
-    margin-top: rem(148);
+    margin-top: my-rem(148);
   }
 }

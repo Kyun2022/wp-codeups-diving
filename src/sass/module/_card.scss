@@ -3,13 +3,13 @@
 .card {
   display: flex;
   flex-direction: column;
-  padding: rem(18) rem(21) rem(24);
+  padding: my-rem(18) my-rem(21) my-rem(24);
   background-color: $white;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
   margin-right: auto;
   margin-left: auto;
   @include mq(md) {
-    padding: rem(18) rem(16) rem(24);
+    padding: my-rem(18) my-rem(16) my-rem(24);
   }
 }
 
@@ -53,12 +53,12 @@
   object-fit: cover;
 }
 .card__body {
-  margin-top: rem(16);
+  margin-top: my-rem(16);
   background-color: $white;
 }
 .card__body.card__body--sub {
-  margin-top: rem(-5);
-  margin-left: rem(20);
+  margin-top: my-rem(-5);
+  margin-left: my-rem(20);
   width: calc((125 / 246) * 100%);
   justify-content: flex-start;
   @include mq(md) {
@@ -67,28 +67,28 @@
 }
 .card__header {
   height: 100%;
-  padding-bottom: rem(2);
-  border-bottom: rem(1) solid $green;
+  padding-bottom: my-rem(2);
+  border-bottom: my-rem(1) solid $green;
   @include mq(md) {
-    padding-bottom: rem(4);
+    padding-bottom: my-rem(4);
   }
 }
 
 .card__date {
   font-family: $en-font-family1;
   font-weight: $regular;
-  font-size: rem(12);
+  font-size: my-rem(12);
   line-height: calc(18 / 12);
   color: $dark-green;
 }
 
 .card__title {
-  font-size: rem(16);
+  font-size: my-rem(16);
   font-family: $jp-font-family1;
   font-weight: $medium;
   line-height: calc(24 / 16);
 }
 
 .card__meta {
-  margin-top: rem(16);
+  margin-top: my-rem(16);
 }

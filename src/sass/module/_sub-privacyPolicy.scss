@@ -6,23 +6,23 @@
 
 .sub-privacyPolicy__decoration {
   position: absolute;
-  top: rem(-25);
-  left: rem(15);
-  width: rem(120);
-  height: rem(55);
+  top: my-rem(-25);
+  left: my-rem(15);
+  width: my-rem(120);
+  height: my-rem(55);
   z-index: -1;
   @include mq(md) {
-    top: rem(-71);
-    width: rem(301);
-    height: rem(138);
-    left: calc(50% - min(47.9166vw, 38.75rem));
+    top: my-rem(-71);
+    width: my-rem(301);
+    height: my-rem(138);
+    left: calc(50% - min(47.9166vw, 38.75my-rem));
   }
 }
 
 .sub-privacyPolicy__inner.inner {
   width: 100%;
-  max-width: rem(500);
+  max-width: my-rem(500);
   @include mq(md) {
-    max-width: rem(800);
+    max-width: my-rem(800);
   }
 }

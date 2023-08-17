@@ -3,13 +3,13 @@
 .button {
   display: inline-block;
   font-family: $en-font-family1;
-  font-size: rem(14);
+  font-size: my-rem(14);
   font-weight: $regular;
   background-color: $green;
   color: $white;
-  padding: rem(20) rem(19) rem(18);
-  width: rem(202);
-  border: rem(1) solid $green;
+  padding: my-rem(20) my-rem(19) my-rem(18);
+  width: my-rem(202);
+  border: my-rem(1) solid $green;
   line-height: 1;
   cursor: pointer;
   transition: color 0.2s;
@@ -19,7 +19,7 @@
 .button.button--colorChange {
   background-color: $white;
   color: $green;
-  border: rem(1) solid $white;
+  border: my-rem(1) solid $white;
 }
 .button::before {
   position: absolute;
@@ -28,12 +28,12 @@
   right: 0;
   bottom: 0;
   content: "";
-  transform: translate(rem(4), rem(4));
-  border: rem(1) solid $green;
+  transform: translate(my-rem(4), my-rem(4));
+  border: my-rem(1) solid $green;
   z-index: -2;
 }
 .button.button--colorChange::before {
-  border: rem(1) solid $white;
+  border: my-rem(1) solid $white;
 }
 .button::after {
   background-color: $white;
@@ -54,25 +54,25 @@
 .button__arrow {
   display: inline-block;
   content: "";
-  width: rem(40);
-  height: rem(8);
+  width: my-rem(40);
+  height: my-rem(8);
   transform: skew(45deg);
-  border-bottom: rem(1) solid $white;
-  border-right: rem(1) solid $white;
-  margin-left: rem(8);
-  margin-bottom: rem(3);
+  border-bottom: my-rem(1) solid $white;
+  border-right: my-rem(1) solid $white;
+  margin-left: my-rem(8);
+  margin-bottom: my-rem(3);
   z-index: -1;
 }
 .button__arrow--colorChange {
   display: inline-block;
   content: "";
-  width: rem(40);
-  height: rem(8);
+  width: my-rem(40);
+  height: my-rem(8);
   transform: skew(45deg);
-  border-bottom: rem(1) solid $green;
-  border-right: rem(1) solid $green;
-  margin-left: rem(8);
-  margin-bottom: rem(3);
+  border-bottom: my-rem(1) solid $green;
+  border-right: my-rem(1) solid $green;
+  margin-left: my-rem(8);
+  margin-bottom: my-rem(3);
   z-index: -1;
 }
 /*//////////////////////////////////////
@@ -90,8 +90,8 @@
 }
 
 .button:hover .button__arrow {
-  border-bottom: rem(1) solid $green;
-  border-right: rem(1) solid $green;
+  border-bottom: my-rem(1) solid $green;
+  border-right: my-rem(1) solid $green;
 }
 .button.button--colorChange:hover {
   color: $white;
@@ -99,8 +99,8 @@
 }
 
 .button.button--colorChange:hover .button__arrow--colorChange {
-  border-bottom: rem(1) solid $white;
-  border-right: rem(1) solid $white;
+  border-bottom: my-rem(1) solid $white;
+  border-right: my-rem(1) solid $white;
 }
 /*//////////////////////////////////////
 終了

@@ -4,12 +4,12 @@
   display: block;
 }
 .title__text {
-  font-size: rem(32);
+  font-size: my-rem(32);
   font-weight: $regular;
   font-family: $en-font-family1;
   line-height: calc(40 / 32);
   @include mq(md) {
-    font-size: rem(40);
+    font-size: my-rem(40);
     line-height: 1;
   }
 }
@@ -23,10 +23,10 @@
 }
 
 .title__text--big {
-  font-size: rem(80);
+  font-size: my-rem(80);
   line-height: 1;
   @include mq(md) {
-    font-size: rem(80);
+    font-size: my-rem(80);
   }
 }
 .title__text--white {
@@ -50,12 +50,12 @@
 .title__sub-text {
   font-family: $jp-font-family1;
   font-weight: $regular;
-  font-size: rem(12);
+  font-size: my-rem(12);
   line-height: calc(18 / 12);
   color: $green;
-  margin-top: rem(4);
+  margin-top: my-rem(4);
   @include mq(md) {
-    margin-top: rem(7);
+    margin-top: my-rem(7);
   }
 }
 .title__sub-text--white {
@@ -65,9 +65,9 @@
 }
 
 .title__sub-text--layout {
-  margin-top: rem(-7);
+  margin-top: my-rem(-7);
   @include mq(md) {
-    margin-top: rem(-7);
+    margin-top: my-rem(-7);
   }
 }
 
@@ -75,18 +75,18 @@
 Contactの一部分
 /////////////////////////////////////*/
 .title__emphasis {
-  font-size: rem(14);
+  font-size: my-rem(14);
   font-family: $jp-font-family1;
   font-weight: $regular;
   color: $green;
   line-height: calc(18 / 14);
-  margin-top: rem(10);
+  margin-top: my-rem(10);
   @include mq(md) {
-    margin-top: rem(8);
+    margin-top: my-rem(8);
   }
 }
 .title__button {
-  margin-top: rem(40);
+  margin-top: my-rem(40);
   text-align: center;
 }
 /*//////////////////////////////////////

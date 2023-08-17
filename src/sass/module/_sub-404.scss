@@ -10,15 +10,15 @@
 }
 .sub-404__image {
   position: absolute;
-  width: rem(329);
-  height: rem(329);
-  top: rem(-77);
+  width: my-rem(329);
+  height: my-rem(329);
+  top: my-rem(-77);
   left: calc((23 / 375) * 100%);
   z-index: 5;
   @include mq(md) {
-    width: rem(698);
-    height: rem(698);
-    top: rem(-122);
+    width: my-rem(698);
+    height: my-rem(698);
+    top: my-rem(-122);
     left: calc((24 / 1080) * 100%);
   }
 }
@@ -36,15 +36,15 @@
 
 .sub-404__container {
   position: relative;
-  margin-top: rem(52);
-  padding-bottom: rem(45);
+  margin-top: my-rem(52);
+  padding-bottom: my-rem(45);
   margin-right: auto;
   margin-left: auto;
   text-align: center;
   @include mq(md) {
-    margin-top: rem(94);
-    max-width: rem(700);
-    padding-bottom: rem(150);
+    margin-top: my-rem(94);
+    max-width: my-rem(700);
+    padding-bottom: my-rem(150);
   }
 }
 
@@ -55,14 +55,14 @@
 .sub-404__title {
   color: $white;
   font-family: $en-font-family2;
-  font-size: rem(80);
+  font-size: my-rem(80);
   font-weight: $normal;
   letter-spacing: 0.5em;
   text-indent: 0.5em;
   line-height: 1.15;
 
   @include mq(md) {
-    font-size: rem(160);
+    font-size: my-rem(160);
     line-height: 1.5;
   }
 }
@@ -71,13 +71,13 @@
   color: $white;
   font-family: $en-font-family2;
   text-align: center;
-  font-size: rem(16);
+  font-size: my-rem(16);
   font-weight: $normal;
   line-height: calc(24 / 16);
 }
 .sub-404__button {
-  margin-top: rem(40);
+  margin-top: my-rem(40);
   @include mq(md) {
-    margin-top: rem(80);
+    margin-top: my-rem(80);
   }
 }

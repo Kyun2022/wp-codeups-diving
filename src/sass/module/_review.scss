@@ -1,9 +1,9 @@
 @use "global" as *;
 
 .review__button {
-  margin-top: rem(40);
+  margin-top: my-rem(40);
   text-align: center;
   @include mq(md) {
-    margin-top: rem(43);
+    margin-top: my-rem(43);
   }
 }

@@ -1,13 +1,13 @@
 @use "global" as *;
 
 .siteMap-menu {
-  margin-top: rem(37);
+  margin-top: my-rem(37);
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   display: flex;
   @include mq(md) {
-    margin-top: rem(24);
+    margin-top: my-rem(24);
     max-width: initial;
     margin-right: initial;
     margin-left: initial;
@@ -17,7 +17,7 @@
 .siteMap-menu__container-left {
   width: 100%;
   max-width: calc((208 / 375) * 100%);
-  padding-left: rem(23);
+  padding-left: my-rem(23);
   @include mq(md) {
     display: flex;
     width: 100%;
@@ -27,10 +27,10 @@
 .siteMap-menu__container-right {
   width: 100%;
   max-width: calc((165 / 375) * 100%);
-  padding-left: rem(23);
-  margin-left: rem(2);
+  padding-left: my-rem(23);
+  margin-left: my-rem(2);
   @include mq(md) {
-    margin-left: rem(64);
+    margin-left: my-rem(64);
     display: flex;
     width: 100%;
     max-width: calc((476 / 1080) * 100%);
@@ -62,14 +62,14 @@
 }
 
 .siteMap-menu__contents:not(:first-child) {
-  margin-top: rem(38);
+  margin-top: my-rem(38);
   @include mq(md) {
-    margin-top: rem(39);
+    margin-top: my-rem(39);
   }
 }
 
 .siteMap-menu__list-name {
-  font-size: rem(16);
+  font-size: my-rem(16);
   font-family: $jp-font-family1;
   font-weight: $bold;
   line-height: calc(18 / 16);
@@ -79,14 +79,14 @@
 .siteMap-menu__list-name::before {
   content: "";
   display: inline-block;
-  width: rem(18);
-  height: rem(18);
+  width: my-rem(18);
+  height: my-rem(18);
   background-image: url(/assets/images/common/starfish--black.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  left: rem(-24);
+  left: my-rem(-24);
 }
 
 .siteMap-menu__list-name a {
@@ -98,29 +98,29 @@
   transition: 0.3s;
 }
 .siteMap-menu__list-name--space {
-  margin-top: rem(38);
+  margin-top: my-rem(38);
   @include mq(md) {
     margin-top: initial;
   }
 }
 
 .siteMap-menu__items {
-  margin-top: rem(26);
+  margin-top: my-rem(26);
   @include mq(md) {
-    margin-top: rem(24);
+    margin-top: my-rem(24);
   }
 }
 
 .siteMap-menu__item {
-  margin-top: rem(23);
-  font-size: rem(16);
+  margin-top: my-rem(23);
+  font-size: my-rem(16);
   font-family: $jp-font-family1;
   font-weight: $regular;
   color: $dark-green;
   line-height: calc(18 / 16);
   width: 100%;
   @include mq(md) {
-    margin-top: rem(24);
+    margin-top: my-rem(24);
   }
 }
 .siteMap-menu__item a {
@@ -131,7 +131,7 @@
   transition: 0.3s;
 }
 .siteMap-menu__space {
-  padding-right: rem(22);
+  padding-right: my-rem(22);
   @include mq(md) {
     padding-right: initial;
   }

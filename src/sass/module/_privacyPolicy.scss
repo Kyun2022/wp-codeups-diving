@@ -3,17 +3,17 @@
 .privacyPolicy__title {
   color: $dark-green;
   font-family: $jp-font-family1;
-  font-size: rem(24);
+  font-size: my-rem(24);
   font-weight: $medium;
   @include mq(md) {
-    font-size: rem(32);
+    font-size: my-rem(32);
   }
 }
 
 .privacyPolicy__main-container {
-  margin-top: rem(37);
+  margin-top: my-rem(37);
   @include mq(md) {
-    margin-top: rem(37);
+    margin-top: my-rem(37);
   }
 }
 
@@ -23,23 +23,23 @@
 .privacyPolicy__text {
   color: $dark-green;
   font-family: $jp-font-family1;
-  font-size: rem(16);
+  font-size: my-rem(16);
   font-weight: $normal;
   line-height: calc(32 / 16);
 }
 
 .privacyPolicy__container {
-  margin-top: rem(32);
+  margin-top: my-rem(32);
 }
 
 .privacyPolicy__items {
-  margin-top: rem(31);
+  margin-top: my-rem(31);
 }
 ol.privacyPolicy__items {
   list-style-type: decimal;
-  padding-left: rem(23);
+  padding-left: my-rem(23);
   margin-top: initial;
 }
 .privacyPolicy__text {
-  margin-top: rem(31);
+  margin-top: my-rem(31);
 }

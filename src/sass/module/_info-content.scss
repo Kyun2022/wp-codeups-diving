@@ -20,7 +20,7 @@
 .info-content__wrapper {
   display: flex;
   flex-direction: column-reverse;
-  padding: rem(23);
+  padding: my-rem(23);
   border: 2px solid $green;
   background: $white;
   @include mq(md) {
@@ -31,10 +31,10 @@
 .info-content__image {
   position: relative;
   width: 100%;
-  margin-top: rem(8);
+  margin-top: my-rem(8);
   @include mq(md) {
     margin-top: initial;
-    margin-left: rem(48);
+    margin-left: my-rem(48);
     width: calc((492 / 984) * 100%);
   }
 }
@@ -66,13 +66,13 @@
 }
 
 .info-content__title {
-  font-size: rem(24);
+  font-size: my-rem(24);
   font-family: $jp-font-family1;
   font-weight: $bold;
   line-height: calc(24 / 24);
-  padding-bottom: rem(7);
-  border-bottom: rem(1) solid $green;
+  padding-bottom: my-rem(7);
+  border-bottom: my-rem(1) solid $green;
 }
 .info-content__text {
-  margin-top: rem(8);
+  margin-top: my-rem(8);
 }

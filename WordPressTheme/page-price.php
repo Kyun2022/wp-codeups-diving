@@ -8,7 +8,8 @@
   </div>
 
   <div class="sub-price under-price">
-    <figure class="sub-price__decoration"><img src="/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
+    <figure class="sub-price__decoration"><img
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
     <div class="sub-price__inner inner">
       <div class="sub-price__container priceBox">
         <div class="priceBox__container" id="Price1">

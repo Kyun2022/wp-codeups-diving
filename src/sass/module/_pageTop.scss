@@ -3,20 +3,20 @@
 #pageTop {
   position: fixed;
   z-index: 9999;
-  right: rem(15);
-  bottom: rem(15);
+  right: my-rem(15);
+  bottom: my-rem(15);
   @include mq(md) {
-    right: rem(20);
-    bottom: rem(20);
+    right: my-rem(20);
+    bottom: my-rem(20);
   }
 }
 
 #pageTop a {
   content: "";
-  border: rem(1) solid $green;
+  border: my-rem(1) solid $green;
   border-radius: 50%;
-  width: rem(48);
-  height: rem(48);
+  width: my-rem(48);
+  height: my-rem(48);
   color: $green;
   background-color: $white;
   opacity: 0.5;
@@ -24,22 +24,22 @@
   justify-content: center;
   align-items: center;
   @include mq(md) {
-    width: rem(80);
-    height: rem(80);
+    width: my-rem(80);
+    height: my-rem(80);
   }
 }
 #pageTop a::after {
   content: "";
   display: inline-block;
-  width: rem(6);
-  height: rem(28);
+  width: my-rem(6);
+  height: my-rem(28);
   transform: skewY(-45deg);
-  border-right: rem(1) solid $green;
-  border-top: rem(1) solid $green;
-  margin-right: rem(5);
-  margin-top: rem(10);
+  border-right: my-rem(1) solid $green;
+  border-top: my-rem(1) solid $green;
+  margin-right: my-rem(5);
+  margin-top: my-rem(10);
   @include mq(md) {
-    height: rem(40);
+    height: my-rem(40);
   }
 }
 /*//////////////////////////////////////

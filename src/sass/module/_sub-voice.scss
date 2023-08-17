@@ -6,22 +6,22 @@
 
 .sub-voice__decoration {
   position: absolute;
-  top: rem(-25);
-  left: rem(15);
-  width: rem(120);
-  height: rem(55);
+  top: my-rem(-25);
+  left: my-rem(15);
+  width: my-rem(120);
+  height: my-rem(55);
   z-index: -1;
   @include mq(md) {
-    top: rem(-71);
-    width: rem(301);
-    height: rem(138);
-    left: calc(50% - min(47.9166vw, 38.75rem));
+    top: my-rem(-71);
+    width: my-rem(301);
+    height: my-rem(138);
+    left: calc(50% - min(47.9166vw, 38.75my-rem));
   }
 }
 
 .sub-voice__container {
-  margin-top: rem(40);
+  margin-top: my-rem(40);
 }
 .sub-voice__pageNation {
-  margin-top: rem(72);
+  margin-top: my-rem(72);
 }

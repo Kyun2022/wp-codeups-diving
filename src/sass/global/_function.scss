@@ -15,6 +15,6 @@
 }
 
 // remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
-@function rem($pixels) {
+@function my-rem($pixels) {
   @return math.div($pixels, 16) * 1rem;
 }

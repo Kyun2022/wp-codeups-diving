@@ -10,8 +10,8 @@
   background-color: $green;
   z-index: 8888;
   transition: transform 0.3s ease;
-  padding-top: rem(90);
-  padding-bottom: rem(104);
+  padding-top: my-rem(90);
+  padding-bottom: my-rem(104);
 }
 
 .drawer-menu--all-close {
@@ -22,10 +22,10 @@
 }
 
 .drawer-menu__inner {
-  max-width: rem(400);
+  max-width: my-rem(400);
   display: flex;
   justify-content: center;
-  margin-top: rem(1);
+  margin-top: my-rem(1);
   overflow-y: scroll;
   height: 100vh;
 }
@@ -33,7 +33,7 @@
 .drawer-menu__container-left {
   width: 100%;
   max-width: 53%;
-  padding-left: rem(25);
+  padding-left: my-rem(25);
   @include mq(md) {
     max-width: calc((190 / 338) * 100%);
   }
@@ -41,10 +41,10 @@
 .drawer-menu__container-right {
   width: 100%;
   max-width: 47%;
-  margin-left: rem(2);
-  padding-left: rem(25);
+  margin-left: my-rem(2);
+  padding-left: my-rem(25);
   @include mq(md) {
-    margin-left: rem(7);
+    margin-left: my-rem(7);
     max-width: calc((148 / 338) * 100%);
   }
 }
@@ -55,18 +55,18 @@
 }
 .starfish-icon {
   display: inline-block;
-  padding-right: rem(4);
-  width: rem(18);
-  height: rem(18);
+  padding-right: my-rem(4);
+  width: my-rem(18);
+  height: my-rem(18);
 }
 .ly-starfish-icon {
-  margin-top: rem(-18);
+  margin-top: my-rem(-18);
 }
 .drawer-menu__contents:not(:first-child) {
-  margin-top: rem(40);
+  margin-top: my-rem(40);
 }
 .drawer-menu__list-name {
-  font-size: rem(16);
+  font-size: my-rem(16);
   font-family: $jp-font-family1;
   font-weight: $bold;
   line-height: calc(18 / 16);
@@ -80,22 +80,22 @@
 .drawer-menu__list-name::before {
   content: "";
   display: inline-block;
-  width: rem(18);
-  height: rem(18);
+  width: my-rem(18);
+  height: my-rem(18);
   background-image: url(/assets/images/common/starfish.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  left: rem(-24);
+  left: my-rem(-24);
 }
 .drawer-menu__items {
-  margin-top: rem(24);
+  margin-top: my-rem(24);
 }
 
 .drawer-menu__item {
-  margin-top: rem(24);
-  font-size: rem(16);
+  margin-top: my-rem(24);
+  font-size: my-rem(16);
   font-family: $jp-font-family1;
   font-weight: $regular;
   color: $white;

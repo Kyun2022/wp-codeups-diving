@@ -8,7 +8,8 @@
   </div>
 
   <div class="sub-faq under-faq">
-    <figure class="sub-faq__decoration"><img src="/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
+    <figure class="sub-price__decoration"><img
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
     <div class="sub-faq__inner inner">
       <div class="sub-faq__accordion accordion">
         <div class="accordion__items">

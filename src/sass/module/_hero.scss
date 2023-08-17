@@ -27,7 +27,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   @include mq(md) {
-    top: calc(50% + rem(50));
+    top: calc(50% + my-rem(50));
   }
 }
 .hero__title::first-letter {
@@ -40,10 +40,10 @@
   color: $white;
   font-family: $en-font-family2;
   font-weight: $normal;
-  font-size: rem(40);
+  font-size: my-rem(40);
   line-height: calc(100 / 40);
   @include mq(md) {
-    font-size: rem(80);
+    font-size: my-rem(80);
     line-height: calc(100 / 80);
   }
 }

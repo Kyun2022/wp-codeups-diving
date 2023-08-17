@@ -1,3 +1,5 @@
+/* リキッドレイアウト対応 */
+
 body {
 	color: #0d2936;
 	font-family: "Noto Sans JP", sans-serif;
@@ -16,8 +18,6 @@ body.active {
 .u-mobile {
 	display: block;
 }
-
-/* リキッドレイアウト対応 */
 
 html {
 	font-size: 16px;
@@ -315,7 +315,7 @@ a {
 	display: inline-block;
 	height: 11.3125rem;
 	position: absolute;
-	right: calc(50% - min(47.9166vw, 39.8125rem));
+	right: calc(50% - min(47.9166vw, 39.8125my-rem));
 	width: 12.125rem;
 }
 
@@ -596,7 +596,7 @@ a {
 
 .blog__decoration {
 	height: 12.5625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	position: absolute;
 	top: 1.5rem;
 	width: 27.3125rem;
@@ -1050,7 +1050,7 @@ a {
 .contact__decoration {
 	height: 3.125rem;
 	position: absolute;
-	right: calc(50% - min(47.9166vw, 41.875rem));
+	right: calc(50% - min(47.9166vw, 41.875my-rem));
 	top: 3.375rem;
 	width: 6.8125rem;
 	z-index: 100;
@@ -2622,7 +2622,7 @@ micro-modal
 .price__decoration {
 	bottom: 3.75rem;
 	height: 12.5625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	position: absolute;
 	width: 27.3125rem;
 }
@@ -3736,7 +3736,7 @@ Contactの一部分
 
 .voice__top-decoration {
 	height: 8.625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	position: absolute;
 	top: -7.75rem;
 	width: 18.8125rem;
@@ -3772,7 +3772,7 @@ Contactの一部分
 	bottom: -4.1875rem;
 	height: 10.125rem;
 	position: absolute;
-	right: calc(50% - min(47.9166vw, 33.75rem));
+	right: calc(50% - min(47.9166vw, 33.75my-rem));
 	width: 4.4375rem;
 }
 
@@ -4364,7 +4364,7 @@ html {
 
 .gallery__decoration {
 	height: 8.625rem;
-	right: calc(50% - min(47.9166vw, 40rem));
+	right: calc(50% - min(47.9166vw, 40my-rem));
 	top: -4.8125rem;
 	width: 18.8125rem;
 }
@@ -4477,17 +4477,17 @@ html {
 }
 
 .info-tab__text:nth-child(1)::before {
-	background-image: url(/assets/images/common/whale-green--right.png);
+	background-image: url(/wp-content/themes/assets/images/common/whale-green--right.png);
 	display: block;
 }
 
 .info-tab__text:nth-child(2)::before {
-	background-image: url(/assets/images/common/whale-green--left.png);
+	background-image: url(/wp-content/themes/assets/images/common/whale-green--left.png);
 	display: block;
 }
 
 .info-tab__text:nth-child(3)::before {
-	background-image: url(/assets/images/common/fish-green--left.png);
+	background-image: url(/wp-content/themes/assets/images/common/fish-green--left.png);
 	display: block;
 }
 
@@ -4862,7 +4862,7 @@ html {
 
 .sub-aboutUs__decoration {
 	height: 8.625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	top: -4.4375rem;
 	width: 18.8125rem;
 }
@@ -4927,7 +4927,7 @@ html {
 
 .sub-blog__decoration {
 	height: 8.625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	top: -4.4375rem;
 	width: 18.8125rem;
 }
@@ -4953,7 +4953,7 @@ html {
 
 .sub-campaign__decoration {
 	height: 8.625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	top: -4.4375rem;
 	width: 18.8125rem;
 }
@@ -4976,7 +4976,7 @@ html {
 
 .sub-contact__decoration {
 	height: 8.625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	top: -4.4375rem;
 	width: 18.8125rem;
 }
@@ -4999,7 +4999,7 @@ html {
 
 .sub-information__decoration {
 	height: 8.625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	top: -4.4375rem;
 	width: 18.8125rem;
 }
@@ -5020,14 +5020,14 @@ html {
 
 .sub-price__decoration {
 	height: 8.625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	top: -4.4375rem;
 	width: 18.8125rem;
 }
 
 .sub-privacyPolicy__decoration {
 	height: 8.625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	top: -4.4375rem;
 	width: 18.8125rem;
 }
@@ -5049,7 +5049,7 @@ html {
 
 .sub-thanks__decoration {
 	height: 8.625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	top: -4.4375rem;
 	width: 18.8125rem;
 }
@@ -5064,7 +5064,7 @@ html {
 
 .sub-voice__decoration {
 	height: 8.625rem;
-	left: calc(50% - min(47.9166vw, 38.75rem));
+	left: calc(50% - min(47.9166vw, 38.75my-rem));
 	top: -4.4375rem;
 	width: 18.8125rem;
 }

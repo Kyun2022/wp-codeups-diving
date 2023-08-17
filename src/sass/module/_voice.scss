@@ -1,11 +1,11 @@
 @use "global" as *;
 
 .voice__top-decoration {
-  width: rem(301);
-  height: rem(138);
+  width: my-rem(301);
+  height: my-rem(138);
   position: absolute;
-  top: rem(-124);
-  left: calc(50% - min(47.9166vw, 38.75rem));
+  top: my-rem(-124);
+  left: calc(50% - min(47.9166vw, 38.75my-rem));
 }
 
 .voice__top-decoration--md-none {
@@ -21,31 +21,31 @@
 }
 .voice__inner {
   position: relative;
-  max-width: rem(600);
+  max-width: my-rem(600);
   width: 100%;
 }
 
 .voice__container {
-  margin-top: rem(43);
+  margin-top: my-rem(43);
   @include mq(md) {
-    margin-top: rem(30);
+    margin-top: my-rem(30);
   }
 }
 
 .voice__button {
-  margin-top: rem(41);
+  margin-top: my-rem(41);
   text-align: center;
   @include mq(md) {
-    margin-top: rem(80);
+    margin-top: my-rem(80);
   }
 }
 
 .voice__bottom-decoration {
-  width: rem(71);
-  height: rem(162);
+  width: my-rem(71);
+  height: my-rem(162);
   position: absolute;
-  right: calc(50% - min(47.9166vw, 33.75rem));
-  bottom: rem(-67);
+  right: calc(50% - min(47.9166vw, 33.75my-rem));
+  bottom: my-rem(-67);
 }
 
 .voice__bottom-decoration--md-none {

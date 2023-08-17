@@ -2,9 +2,9 @@
 
 .contact {
   position: relative;
-  padding: rem(54) 0 rem(105);
+  padding: my-rem(54) 0 my-rem(105);
   @include mq(md) {
-    padding: rem(140) 0 rem(160);
+    padding: my-rem(140) 0 my-rem(160);
   }
 }
 .contact--campaign,
@@ -12,71 +12,71 @@
 .contact--blog,
 .contact--price,
 .contact--faq {
-  margin-top: rem(26);
-  padding-bottom: rem(102);
+  margin-top: my-rem(26);
+  padding-bottom: my-rem(102);
   @include mq(md) {
     margin-top: initial;
-    padding-bottom: rem(160);
+    padding-bottom: my-rem(160);
   }
 }
 .contact--siteMap {
-  margin-top: rem(34);
-  padding-bottom: rem(102);
+  margin-top: my-rem(34);
+  padding-bottom: my-rem(102);
   @include mq(md) {
     margin-top: initial;
-    padding-bottom: rem(160);
+    padding-bottom: my-rem(160);
   }
 }
 .contact--privacyPolicy {
-  margin-top: rem(29);
-  padding-bottom: rem(102);
+  margin-top: my-rem(29);
+  padding-bottom: my-rem(102);
   @include mq(md) {
-    margin-top: rem(34);
-    padding-bottom: rem(160);
+    margin-top: my-rem(34);
+    padding-bottom: my-rem(160);
   }
 }
 
 .contact--termsOfService {
-  margin-top: rem(29);
-  padding-bottom: rem(102);
+  margin-top: my-rem(29);
+  padding-bottom: my-rem(102);
   @include mq(md) {
     margin-top: initial;
-    padding-bottom: rem(160);
+    padding-bottom: my-rem(160);
   }
 }
 .contact--blog-detail {
-  margin-top: rem(40);
-  padding-bottom: rem(102);
+  margin-top: my-rem(40);
+  padding-bottom: my-rem(102);
   @include mq(md) {
     margin-top: initial;
-    padding-bottom: rem(160);
+    padding-bottom: my-rem(160);
   }
 }
 .contact--aboutUs {
-  margin-top: rem(26);
-  padding-bottom: rem(102);
+  margin-top: my-rem(26);
+  padding-bottom: my-rem(102);
   @include mq(md) {
     margin-top: initial;
   }
 }
 .contact__decoration {
   position: absolute;
-  top: rem(54);
-  right: calc(50% - min(47.9166vw, 41.875rem));
-  width: rem(109);
-  height: rem(50);
+  top: my-rem(54);
+  right: calc(50% - min(47.9166vw, 41.875my-rem));
+  width: my-rem(109);
+  height: my-rem(50);
   z-index: 100;
   @include mq(md) {
-    top: rem(98);
+    top: my-rem(98);
     right: calc(
-      ((100vw - rem(1440)) / 2 + rem(50)) - min(rem(0), (100vw - rem(1405)) / 2)
+      ((100vw - my-rem(1440)) / 2 + my-rem(50)) - min(my-rem(0), (100vw - my-rem(1405)) / 2)
     );
-    width: rem(301);
-    height: rem(138);
+    width: my-rem(301);
+    height: my-rem(138);
   }
 }
 .contact__inner {
-  max-width: rem(600);
+  max-width: my-rem(600);
   width: 100%;
 }
 .contact__decoration img {
@@ -90,33 +90,33 @@
   flex-direction: column;
   @include mq(md) {
     flex-direction: row;
-    box-shadow: rem(4) rem(4) rem(10) rgba(0, 0, 0, 0.25);
-    padding: rem(80) rem(50) rem(80);
+    box-shadow: my-rem(4) my-rem(4) my-rem(10) rgba(0, 0, 0, 0.25);
+    padding: my-rem(80) my-rem(50) my-rem(80);
   }
 }
 
 .contact__info {
-  padding: rem(26) rem(25) 0;
+  padding: my-rem(26) my-rem(25) 0;
   @include mq(md) {
     padding-top: initial;
     width: 100%;
     max-width: calc((572 / 1080) * 100%);
-    padding-right: rem(82);
-    padding: rem(26) 0 0;
+    padding-right: my-rem(82);
+    padding: my-rem(26) 0 0;
   }
 }
 .contact__logo-block {
   display: block;
-  padding-bottom: rem(6);
-  border-bottom: rem(1) solid $green;
+  padding-bottom: my-rem(6);
+  border-bottom: my-rem(1) solid $green;
 }
 .contact__logo {
-  width: rem(174);
-  height: rem(65);
+  width: my-rem(174);
+  height: my-rem(65);
   margin: 0 auto;
   @include mq(md) {
-    width: rem(200);
-    height: rem(75);
+    width: my-rem(200);
+    height: my-rem(75);
   }
 }
 .contact__logo img {
@@ -128,9 +128,9 @@
 .contact__wrapper {
   display: flex;
   flex-direction: column-reverse;
-  margin-top: rem(16);
+  margin-top: my-rem(16);
   @include mq(md) {
-    margin-top: rem(24);
+    margin-top: my-rem(24);
     flex-direction: row-reverse;
   }
 }
@@ -152,14 +152,14 @@
   font-family: $jp-font-family1;
   font-weight: $regular;
   line-height: calc(24 / 16);
-  padding-bottom: rem(4);
+  padding-bottom: my-rem(4);
 }
 
 .contact__map {
-  margin-top: rem(10);
+  margin-top: my-rem(10);
   position: relative;
   @include mq(md) {
-    margin-left: rem(21);
+    margin-left: my-rem(21);
     margin-top: initial;
     width: calc((273 / 419) * 100%);
   }
@@ -182,14 +182,14 @@
   object-fit: cover;
 }
 .contact__action {
-  margin-top: rem(41);
+  margin-top: my-rem(41);
   @include mq(md) {
-    padding-top: rem(20);
+    padding-top: my-rem(20);
     margin-top: initial;
     width: 100%;
     max-width: calc((508 / 1080) * 100%);
-    padding-left: rem(16);
-    border-left: rem(1) solid $green;
+    padding-left: my-rem(16);
+    border-left: my-rem(1) solid $green;
     text-align: center;
   }
 }
@@ -198,18 +198,18 @@
 .title.scssにも記載
 /////////////////////////////////////*/
 .title__emphasis {
-  font-size: rem(14);
+  font-size: my-rem(14);
   font-family: $jp-font-family1;
   font-weight: $regular;
   color: $green;
   line-height: calc(18 / 14);
-  margin-top: rem(10);
+  margin-top: my-rem(10);
   @include mq(md) {
-    margin-top: rem(8);
+    margin-top: my-rem(8);
   }
 }
 .title__button {
-  margin-top: rem(40);
+  margin-top: my-rem(40);
 }
 /*//////////////////////////////////////
 終了

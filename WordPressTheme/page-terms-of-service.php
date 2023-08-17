@@ -3,8 +3,10 @@
 
   <section class="hero">
     <picture>
-      <source srcset="./assets/images/common/sub-siteMap__hero-pc.jpg" media="(min-width:768px)">
-      <img src="./assets/images/common/sub-siteMap__hero-sp.jpg" alt="透き通った海の中を色とりどりの魚たちが泳いでいる様子">
+      <source srcset="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/sub-siteMap__hero-pc.jpg"
+        media="(min-width:768px)">
+      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/sub-siteMap__hero-sp.jpg"
+        alt="透き通った海の中を色とりどりの魚たちが泳いでいる様子">
     </picture>
     <div class="hero__title">
       <h2 class="hero__title-text">terms&nbsp;of&nbsp;<span class="hero__title-text--capitalize">service</span></h2>
@@ -16,7 +18,8 @@
   </div>
 
   <div class="sub-termsOfService under-termsOfService">
-    <figure class="sub-termsOfService__decoration"><img src="/assets/images/common/fishes-right.png" alt="魚の群れの様子">
+    <figure class="sub-termsOfService__decoration"><img
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子">
     </figure>
     <div class="sub-termsOfService__inner inner">
       <div class="sub-termsOfService__container termsOfService">

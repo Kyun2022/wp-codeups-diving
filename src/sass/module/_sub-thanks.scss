@@ -6,16 +6,16 @@
 
 .sub-thanks__decoration {
   position: absolute;
-  top: rem(-25);
-  left: rem(15);
-  width: rem(120);
-  height: rem(55);
+  top: my-rem(-25);
+  left: my-rem(15);
+  width: my-rem(120);
+  height: my-rem(55);
   z-index: -1;
   @include mq(md) {
-    top: rem(-71);
-    width: rem(301);
-    height: rem(138);
-    left: calc(50% - min(47.9166vw, 38.75rem));
+    top: my-rem(-71);
+    width: my-rem(301);
+    height: my-rem(138);
+    left: calc(50% - min(47.9166vw, 38.75my-rem));
   }
 }
 
@@ -23,7 +23,7 @@
   width: 100%;
   max-width: 100%;
   @include mq(md) {
-    max-width: rem(700);
+    max-width: my-rem(700);
   }
 }
 
@@ -34,16 +34,16 @@
 .sub-thanks__title {
   color: $dark-green;
   font-family: $jp-font-family1;
-  font-size: rem(16);
+  font-size: my-rem(16);
   font-weight: $normal;
   line-height: calc(18 / 16);
 }
 
 .sub-thanks__text {
-  margin-top: rem(40);
+  margin-top: my-rem(40);
   color: $dark-green;
   font-family: $jp-font-family1;
-  font-size: rem(16);
+  font-size: my-rem(16);
   font-weight: $normal;
   line-height: 1.43;
 }

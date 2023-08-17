@@ -4,9 +4,9 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: rem(15);
-  width: rem(32);
-  height: rem(24);
+  right: my-rem(15);
+  width: my-rem(32);
+  height: my-rem(24);
   display: inline-block;
   z-index: 9999;
 }
@@ -18,7 +18,7 @@
 }
 .hamburger span {
   position: absolute;
-  height: rem(1);
+  height: my-rem(1);
   width: 100%;
   background-color: $white;
   transition: all 0.5s;
@@ -34,7 +34,7 @@
   top: 100%;
 }
 .hamburger.is-open span:nth-child(1) {
-  width: rem(40);
+  width: my-rem(40);
   transform-origin: top left;
   transform: rotate(36.87deg);
 }
@@ -42,7 +42,7 @@
   opacity: 0;
 }
 .hamburger.is-open span:nth-child(3) {
-  width: rem(40);
+  width: my-rem(40);
   transform-origin: bottom left;
   transform: rotate(-36.87deg);
 }

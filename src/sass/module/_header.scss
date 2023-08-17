@@ -4,26 +4,26 @@
   position: fixed;
   z-index: 1000;
   width: 100%;
-  height: rem(80);
+  height: my-rem(80);
   background: rgba(13, 41, 54, 0.68);
   @include mq(md) {
-    height: rem(90);
+    height: my-rem(90);
   }
 }
 .header__inner {
-  padding-right: rem(15);
-  padding-left: rem(15);
+  padding-right: my-rem(15);
+  padding-left: my-rem(15);
   height: inherit;
   display: flex;
   justify-content: space-between;
   align-items: center;
   @include mq(md) {
-    padding-right: rem(10);
-    padding-left: rem(20);
+    padding-right: my-rem(10);
+    padding-left: my-rem(20);
   }
   @include mq(lg) {
-    padding-right: rem(20);
-    padding-left: rem(40);
+    padding-right: my-rem(20);
+    padding-left: my-rem(40);
   }
 }
 .header__logo {
@@ -36,11 +36,11 @@
 }
 
 .header__logo img {
-  width: rem(102);
-  height: rem(38);
+  width: my-rem(102);
+  height: my-rem(38);
   @include mq(md) {
-    width: rem(133);
-    height: rem(50);
+    width: my-rem(133);
+    height: my-rem(50);
   }
 }
 .header__nav {
@@ -65,7 +65,7 @@
 .header__item {
   height: inherit;
   text-transform: capitalize;
-  font-size: rem(18);
+  font-size: my-rem(18);
   font-weight: $regular;
   font-family: $en-font-family1;
   line-height: 1;
@@ -82,10 +82,10 @@
 .header__item a::after {
   content: "";
   position: absolute;
-  bottom: rem(20);
+  bottom: my-rem(20);
   left: 0;
   background-color: $white;
-  height: rem(1);
+  height: my-rem(1);
   transform: scale(0, 1);
   transform-origin: center top;
   transition: transform 0.3s;
@@ -105,16 +105,16 @@
   align-items: center;
   justify-content: center;
   @include mq(md) {
-    padding: 0 rem(13);
+    padding: 0 my-rem(13);
   }
   @include mq(lg) {
-    padding: 0 rem(19);
+    padding: 0 my-rem(19);
   }
 }
 .header__item span {
   display: block;
   text-align: center;
-  font-size: rem(10);
+  font-size: my-rem(10);
   font-weight: $regular;
   font-family: $jp-font-family1;
   line-height: calc(15 / 10);

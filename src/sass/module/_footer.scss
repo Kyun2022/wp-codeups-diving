@@ -2,16 +2,16 @@
 
 .footer {
   background-color: $green;
-  padding: rem(48) 0 rem(56);
+  padding: my-rem(48) 0 my-rem(56);
   @include mq(md) {
-    padding: rem(80) 0;
+    padding: my-rem(80) 0;
   }
 }
 
 .footer__inner {
   display: flex;
   flex-direction: column;
-  max-width: rem(500);
+  max-width: my-rem(500);
   @include mq(md) {
     max-width: initial;
   }
@@ -27,11 +27,11 @@
 }
 
 .footer__logo {
-  width: rem(120);
-  height: rem(45);
+  width: my-rem(120);
+  height: my-rem(45);
   @include mq(md) {
-    width: rem(200);
-    height: rem(75);
+    width: my-rem(200);
+    height: my-rem(75);
   }
 }
 
@@ -39,34 +39,34 @@
   display: flex;
   flex-direction: row;
   align-items: end;
-  margin-top: rem(16);
-  gap: rem(16);
+  margin-top: my-rem(16);
+  gap: my-rem(16);
   @include mq(md) {
-    margin-left: rem(40);
+    margin-left: my-rem(40);
     margin-top: initial;
-    padding-bottom: rem(4);
+    padding-bottom: my-rem(4);
   }
 }
 
 .footer__sns-facebook,
 .footer__sns-instagram {
   display: inline-block;
-  width: rem(24);
-  height: rem(24);
+  width: my-rem(24);
+  height: my-rem(24);
   @include mq(md) {
-    width: rem(32);
-    height: rem(32);
+    width: my-rem(32);
+    height: my-rem(32);
   }
 }
 
 .footer-menu {
-  margin-top: rem(37);
+  margin-top: my-rem(37);
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   display: flex;
   @include mq(md) {
-    margin-top: rem(23);
+    margin-top: my-rem(23);
     max-width: initial;
     margin-right: initial;
     margin-left: initial;
@@ -76,7 +76,7 @@
 .footer-menu__container-left {
   width: 100%;
   max-width: 53%;
-  padding-left: rem(25);
+  padding-left: my-rem(25);
   @include mq(md) {
     display: flex;
     width: 100%;
@@ -86,10 +86,10 @@
 .footer-menu__container-right {
   width: 100%;
   max-width: 47%;
-  padding-left: rem(25);
-  margin-left: rem(2);
+  padding-left: my-rem(25);
+  margin-left: my-rem(2);
   @include mq(md) {
-    margin-left: rem(26);
+    margin-left: my-rem(26);
     display: flex;
     width: 100%;
     max-width: calc((540 / 1080) * 100%);
@@ -121,14 +121,14 @@
 }
 
 .footer-menu__contents:not(:first-child) {
-  margin-top: rem(38);
+  margin-top: my-rem(38);
   @include mq(md) {
-    margin-top: rem(38);
+    margin-top: my-rem(38);
   }
 }
 
 .footer-menu__list-name {
-  font-size: rem(16);
+  font-size: my-rem(16);
   font-family: $jp-font-family1;
   font-weight: $bold;
   line-height: calc(18 / 16);
@@ -138,14 +138,14 @@
 .footer-menu__list-name::before {
   content: "";
   display: inline-block;
-  width: rem(18);
-  height: rem(18);
+  width: my-rem(18);
+  height: my-rem(18);
   background-image: url(/assets/images/common/starfish.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  left: rem(-24);
+  left: my-rem(-24);
 }
 
 .footer-menu__list-name a {
@@ -157,29 +157,29 @@
   transition: 0.3s;
 }
 .footer-menu__list-name--space {
-  margin-top: rem(38);
+  margin-top: my-rem(38);
   @include mq(md) {
     margin-top: initial;
   }
 }
 
 .footer-menu__items {
-  margin-top: rem(26);
+  margin-top: my-rem(26);
   @include mq(md) {
-    margin-top: rem(24);
+    margin-top: my-rem(24);
   }
 }
 
 .footer-menu__item {
-  margin-top: rem(23);
-  font-size: rem(16);
+  margin-top: my-rem(23);
+  font-size: my-rem(16);
   font-family: $jp-font-family1;
   font-weight: $regular;
   color: $white;
   line-height: calc(18 / 16);
   width: 100%;
   @include mq(md) {
-    margin-top: rem(24);
+    margin-top: my-rem(24);
   }
 }
 .footer-menu__item a {
@@ -190,28 +190,28 @@
   transition: 0.3s;
 }
 .footer-menu__space {
-  padding-right: rem(22);
+  padding-right: my-rem(22);
   @include mq(md) {
     padding-right: initial;
   }
 }
 
 .footer__copyright {
-  margin-top: rem(40);
+  margin-top: my-rem(40);
   text-align: center;
   @include mq(md) {
-    margin-top: rem(80);
+    margin-top: my-rem(80);
   }
 }
 
 .footer__copyright-text {
-  font-size: rem(12);
+  font-size: my-rem(12);
   font-family: $en-font-family1;
   font-weight: $regular;
   line-height: calc(18 / 12);
   color: $white;
   @include mq(md) {
-    font-size: rem(14);
+    font-size: my-rem(14);
     line-height: calc(18 / 14);
   }
 }
