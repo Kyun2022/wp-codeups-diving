@@ -2,13 +2,18 @@
 <main>
   <?php get_template_part('parts/hero'); ?>
 
+  <?php if (function_exists('bcn_display')) { ?>
   <div class="breadcrumb inner">
-    <p class="breadcrumb-text">TOP&nbsp;&gt;&nbsp;お問い合わせ</p>
+    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+      <?php bcn_display(); ?>
+    </div>
   </div>
+  <?php } ?>
 
   <div class="sub-contact under-contact">
     <figure class="sub-contact__decoration"><img
-        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子">
+    </figure>
     <div class="sub-contact__inner inner">
       <div class="sub-contact__content">
         <div class="sub-contact__content-error sub-contact__content-error--all-none">

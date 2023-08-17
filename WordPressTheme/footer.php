@@ -29,7 +29,8 @@
             <h2 class="title__sub-text title__sub-text--layout">お問い合わせ</h2>
             <p class="title__emphasis">ご予約・お問い合わせはコチラ</p>
             <div class="title__button">
-              <button class="button" onclick="location.href='contact.html'">Contact&nbsp;us<span
+              <button class="button"
+                onclick="location.href='<?php echo esc_url(home_url('contact')); ?>'">Contact&nbsp;us<span
                   class="button__arrow"></span></button>
             </div>
           </div>

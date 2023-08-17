@@ -778,6 +778,16 @@ a {
 	color: #ffffff;
 }
 
+.breadcrumb__arrow {
+	display: inline-block;
+	margin: 0 0.5rem;
+}
+
+.breadcrumb--404 {
+	position: relative;
+	z-index: 1;
+}
+
 .button {
 	background-color: #408f95;
 	border: 0.0625rem solid #408f95;
@@ -3170,7 +3180,6 @@ ol.privacyPolicy__items {
 	position: absolute;
 	top: -4.8125rem;
 	width: 20.5625rem;
-	z-index: 5;
 }
 
 .sub-404__image img {

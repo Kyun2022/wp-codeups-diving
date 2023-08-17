@@ -1,21 +1,15 @@
 <?php get_header(); ?>
 <main>
 
-  <section class="hero">
-    <picture>
-      <source srcset="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/sub-siteMap__hero-pc.jpg"
-        media="(min-width:768px)">
-      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/sub-siteMap__hero-sp.jpg"
-        alt="透き通った海の中を色とりどりの魚たちが泳いでいる様子">
-    </picture>
-    <div class="hero__title">
-      <h2 class="hero__title-text">terms&nbsp;of&nbsp;<span class="hero__title-text--capitalize">service</span></h2>
-    </div>
-  </section>
+  <?php get_template_part('parts/hero'); ?>
 
+  <?php if (function_exists('bcn_display')) { ?>
   <div class="breadcrumb inner">
-    <p class="breadcrumb-text">TOP&nbsp;&gt;&nbsp;利用規約</p>
+    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+      <?php bcn_display(); ?>
+    </div>
   </div>
+  <?php } ?>
 
   <div class="sub-termsOfService under-termsOfService">
     <figure class="sub-termsOfService__decoration"><img

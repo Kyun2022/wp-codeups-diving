@@ -2,9 +2,13 @@
 <main>
   <?php get_template_part('parts/hero'); ?>
 
+  <?php if (function_exists('bcn_display')) { ?>
   <div class="breadcrumb inner">
-    <p class="breadcrumb-text">TOP&nbsp;&gt;&nbsp;サイトマップ</p>
+    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+      <?php bcn_display(); ?>
+    </div>
   </div>
+  <?php } ?>
 
   <div class="sub-siteMap under-siteMap">
     <div class="sub-siteMap__inner inner">

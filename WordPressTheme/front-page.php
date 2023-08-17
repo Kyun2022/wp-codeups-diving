@@ -192,7 +192,8 @@
         <div class="slider__prevButton slider__prevButton--md-none"></div>
       </div>
       <div class="campaign__button">
-        <button class="button" onclick="location.href='campaign.html'">View&nbsp;more<span
+        <button class="button"
+          onclick="location.href='<?php echo esc_url(home_url('campaign')); ?>'">View&nbsp;more<span
             class="button__arrow"></span></button>
       </div>
     </div>
@@ -222,7 +223,8 @@
           <p class="aboutUs__text text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
           <div class="aboutUs__button">
-            <button class="button" onclick="location.href='aboutUs.html'">View&nbsp;more<span
+            <button class="button"
+              onclick="location.href='<?php echo esc_url(home_url('about-us')); ?>'">View&nbsp;more<span
                 class="button__arrow"></span></button>
           </div>
         </div>
@@ -253,7 +255,8 @@
             </p>
           </div>
           <div class="information__button">
-            <button class="button" onclick="location.href='information.html'">View&nbsp;more<span
+            <button class="button"
+              onclick="location.href='<?php echo esc_url(home_url('information')); ?>'">View&nbsp;more<span
                 class="button__arrow"></span></button>
           </div>
         </div>
@@ -324,7 +327,7 @@
           </article>
         </div>
         <div class="blog__button">
-          <button class="button" onclick="location.href='blog.html'">View&nbsp;more<span
+          <button class="button" onclick="location.href='<?php echo esc_url(home_url('blog')); ?>'">View&nbsp;more<span
               class="button__arrow"></span></button>
         </div>
       </div>
@@ -388,7 +391,7 @@
         </div>
       </div>
       <div class="voice__button">
-        <button class="button" onclick="location.href='voice.html'">View&nbsp;more<span
+        <button class="button" onclick="location.href='<?php echo esc_url(home_url('voice')); ?>'">View&nbsp;more<span
             class="button__arrow"></span></button>
       </div>
     </div>
@@ -477,7 +480,7 @@
         </ul>
       </div>
       <div class="price__button">
-        <button class="button" onclick="location.href='price.html'">View&nbsp;more<span
+        <button class="button" onclick="location.href='<?php echo esc_url(home_url('price')); ?>'">View&nbsp;more<span
             class="button__arrow"></span></button>
       </div>
     </div>

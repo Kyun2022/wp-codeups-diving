@@ -2,9 +2,13 @@
 <main>
   <?php get_template_part('parts/hero'); ?>
 
+  <?php if (function_exists('bcn_display')) { ?>
   <div class="breadcrumb inner">
-    <p class="breadcrumb-text">TOP&nbsp;&gt;&nbsp;ダイビング情報</p>
+    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+      <?php bcn_display(); ?>
+    </div>
   </div>
+  <?php } ?>
 
   <!-- インフォメーション -->
   <div class="sub-information under-information">

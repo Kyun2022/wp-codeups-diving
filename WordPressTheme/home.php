@@ -3,19 +3,25 @@
 
   <?php get_template_part('parts/hero'); ?>
 
+  <?php if (function_exists('bcn_display')) { ?>
   <div class="breadcrumb inner">
-    <p class="breadcrumb-text">TOP&nbsp;&gt;&nbsp;ブログ一覧</p>
+    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+      <?php bcn_display(); ?>
+    </div>
   </div>
+  <?php } ?>
 
   <div class="sub-blog under-blog">
-    <figure class="sub-blog__decoration"><img src="/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
+    <figure class="sub-blog__decoration"><img
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
     <div class="sub-blog__inner inner">
       <div class="sub-blog__container">
         <div class="sub-blog__main-container cards">
           <div class="cards__items">
             <article class="cards__item card">
               <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img src="./assets/images/common/card_1.jpg"
+                <figure class="card__image card__image--hover"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/card_1.jpg"
                     alt="透き通った海の中でピンク色の大きな珊瑚礁が輝いている様子"></figure>
                 <div class="card__body">
                   <div class="card__header">
@@ -31,7 +37,8 @@
             </article>
             <article class="cards__item card">
               <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img src="./assets/images/common/card_2.jpg"
+                <figure class="card__image card__image--hover"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_2.jpg"
                     alt="透き通った海の中で大きなウミガメが気持ち良さそうに泳いでいる様子"></figure>
                 <div class="card__body">
                   <div class="card__header">
@@ -47,7 +54,8 @@
             </article>
             <article class="cards__item card">
               <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img src="./assets/images/common/card_3.jpg"
+                <figure class="card__image card__image--hover"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_3.jpg"
                     alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
                 <div class="card__body">
                   <div class="card__header">
@@ -63,7 +71,8 @@
             </article>
             <article class="cards__item card">
               <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img src="./assets/images/common/card_4.jpg"
+                <figure class="card__image card__image--hover"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_4.jpg"
                     alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
                 <div class="card__body">
                   <div class="card__header">
@@ -79,7 +88,8 @@
             </article>
             <article class="cards__item card">
               <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img src="./assets/images/common/card_5.jpg"
+                <figure class="card__image card__image--hover"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_5.jpg"
                     alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
                 <div class="card__body">
                   <div class="card__header">
@@ -95,7 +105,8 @@
             </article>
             <article class="cards__item card">
               <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img src="./assets/images/common/card_6.jpg"
+                <figure class="card__image card__image--hover"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_6.jpg"
                     alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
                 <div class="card__body">
                   <div class="card__header">
@@ -111,7 +122,8 @@
             </article>
             <article class="cards__item card">
               <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img src="./assets/images/common/card_3.jpg"
+                <figure class="card__image card__image--hover"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_3.jpg"
                     alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
                 <div class="card__body">
                   <div class="card__header">
@@ -127,7 +139,8 @@
             </article>
             <article class="cards__item card">
               <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img src="./assets/images/common/card_4.jpg"
+                <figure class="card__image card__image--hover"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_4.jpg"
                     alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
                 <div class="card__body">
                   <div class="card__header">
@@ -143,7 +156,8 @@
             </article>
             <article class="cards__item card">
               <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img src="./assets/images/common/card_5.jpg"
+                <figure class="card__image card__image--hover"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_5.jpg"
                     alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
                 <div class="card__body">
                   <div class="card__header">
@@ -159,7 +173,8 @@
             </article>
             <article class="cards__item card">
               <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img src="./assets/images/common/card_6.jpg"
+                <figure class="card__image card__image--hover"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_6.jpg"
                     alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
                 <div class="card__body">
                   <div class="card__header">
@@ -196,7 +211,8 @@
             <div class="aside__popular-items">
               <article class="aside__popular-item card">
                 <a href="./blog-detail.html">
-                  <figure class="card__image card__image--sub"><img src="./assets/images/common/card_4.jpg"
+                  <figure class="card__image card__image--sub"><img
+                      src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_4.jpg"
                       alt="透き通った海の中でピンク色の大きな珊瑚礁が輝いている様子"></figure>
                   <div class="card__body card__body--sub">
                     <time datetime="2023-11-17" class="card__date">2023/11/17</time>
@@ -206,7 +222,8 @@
               </article>
               <article class="aside__popular-item card">
                 <a href="./blog-detail.html">
-                  <figure class="card__image card__image--sub"><img src="./assets/images/common/card_2.jpg"
+                  <figure class="card__image card__image--sub"><img
+                      src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_2.jpg"
                       alt="透き通った海の中でピンク色の大きな珊瑚礁が輝いている様子"></figure>
                   <div class="card__body card__body--sub">
                     <time datetime="2023-11-17" class="card__date">2023/11/17</time>
@@ -216,7 +233,8 @@
               </article>
               <article class="aside__popular-item card">
                 <a href="./blog-detail.html">
-                  <figure class="card__image card__image--sub"><img src="./assets/images/common/card_3.jpg"
+                  <figure class="card__image card__image--sub"><img
+                      src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_3.jpg"
                       alt="透き通った海の中でピンク色の大きな珊瑚礁が輝いている様子"></figure>
                   <div class="card__body card__body--sub">
                     <time datetime="2023-11-17" class="card__date">2023/11/17</time>
@@ -237,11 +255,13 @@
                   <h3 class="box__title box__title--sub">ここにタイトルが入ります。ここにタイトル</h3>
                 </div>
                 <figure class="box__image box__image--sub">
-                  <img src="./assets/images/common/sub-blog__couple.jpg" alt="30代のカップルがソファーに座りながら笑顔でこちらを見ている様子">
+                  <img src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/sub-blog__couple.jpg"
+                    alt="30代のカップルがソファーに座りながら笑顔でこちらを見ている様子">
                 </figure>
               </div>
               <div class="review__button">
-                <button class="button" onclick="location.href='./voice.html'">View&nbsp;more<span
+                <button class="button"
+                  onclick="location.href='<?php echo esc_url(home_url('voice')); ?>'">View&nbsp;more<span
                     class="button__arrow"></span></button>
               </div>
             </article>
@@ -253,7 +273,8 @@
             <div class="aside__container slider">
               <article class="slider__item slider__item--sub">
                 <a href="./campaign.html">
-                  <figure class="slider__image slider__image--sub"><img src="./assets/images/common/slider_1.jpg"
+                  <figure class="slider__image slider__image--sub"><img
+                      src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/slider_1.jpg"
                       alt="さまざまな色をした魚が群れで泳いでいる様子"></figure>
                   <div class="slider__body slider__body--sub">
                     <h3 class="slider__title slider__title--sub">ライセンス取得</h3>
@@ -269,7 +290,8 @@
               </article>
               <article class="slider__item slider__item--sub">
                 <a href="./campaign.html">
-                  <figure class="slider__image slider__image--sub"><img src="./assets/images/common/slider_2.jpg"
+                  <figure class="slider__image slider__image--sub"><img
+                      src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/slider_2.jpg"
                       alt="さまざまな色をした魚が群れで泳いでいる様子"></figure>
                   <div class="slider__body slider__body--sub">
                     <h3 class="slider__title slider__title--sub">貸切体験ダイビング</h3>
@@ -285,7 +307,8 @@
               </article>
             </div>
             <div class="aside-campaign__button">
-              <button class="button" onclick="location.href='./campaign.html'">View&nbsp;more<span
+              <button class="button"
+                onclick="location.href='<?php echo esc_url(home_url('campaign')); ?>'">View&nbsp;more<span
                   class="button__arrow"></span></button>
             </div>
           </div>

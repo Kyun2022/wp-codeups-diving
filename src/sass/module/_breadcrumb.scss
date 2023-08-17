@@ -12,3 +12,13 @@
 .breadcrumb-text--white {
   color: $white;
 }
+
+.breadcrumb__arrow{
+    display:inline-block;
+    margin: 0 my-rem(8);
+}
+
+.breadcrumb--404{
+  position: relative;
+  z-index: 1;
+}

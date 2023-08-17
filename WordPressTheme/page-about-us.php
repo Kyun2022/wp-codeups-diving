@@ -1,19 +1,15 @@
 <?php get_header(); ?>
 
 <main>
-  <section class="hero">
-    <picture>
-      <source srcset="./assets/images/common/sub-aboutUs__hero-pc.jpg" media="(min-width:768px)">
-      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/sub-aboutUs__hero-sp.jpg" alt="黄色の">
-    </picture>
-    <div class="hero__title">
-      <h2 class="hero__title-text">about&nbsp;us</h2>
-    </div>
-  </section>
+  <?php get_template_part('parts/hero'); ?>
 
+  <?php if (function_exists('bcn_display')) { ?>
   <div class="breadcrumb inner">
-    <p class="breadcrumb-text">TOP&nbsp;&gt;&nbsp;私たちについて</p>
+    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+      <?php bcn_display(); ?>
+    </div>
   </div>
+  <?php } ?>
 
   <!-- sub-aboutUs -->
   <section class="sub-aboutUs under-aboutUs">
@@ -162,7 +158,8 @@
             <h2 class="title__sub-text title__sub-text--layout">お問い合わせ</h2>
             <p class="title__emphasis">ご予約・お問い合わせはコチラ</p>
             <div class="title__button">
-              <button class="button" onclick="location.href='contact.html'">Contact&nbsp;us<span
+              <button class="button"
+                onclick="location.href='<?php echo esc_url(home_url('contact')); ?>'">Contact&nbsp;us<span
                   class="button__arrow"></span></button>
             </div>
           </div>
