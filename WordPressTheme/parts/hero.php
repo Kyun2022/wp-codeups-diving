@@ -11,6 +11,12 @@
     $alt = '透き通った青い海のなかをいっぱいの透き通った魚が泳いでいる様子';
     $titleClass = 'hero__title-text';
     $title = 'blog';
+  } elseif (is_single()) {
+    $imagePC = '/assets/images/common/sub-blog__hero-pc.jpg';
+    $imageSP = '/assets/images/common/sub-blog__hero-sp.jpg';
+    $alt = '透き通った青い海のなかをいっぱいの透き通った魚が泳いでいる様子';
+    $titleClass = 'hero__title-text';
+    $title = 'blog';
   } elseif (is_page('price')) {
     $imagePC = '/assets/images/common/sub-price__hero-pc.jpg';
     $imageSP = '/assets/images/common/sub-price__hero-sp.jpg';
@@ -59,19 +65,19 @@
     $alt = '空をバックに黄い色のシーダーがこちらをみている様子';
     $titleClass = 'hero__title-text';
     $title = 'about&nbsp;us';
-  } elseif (is_archive('campaign')) {
+  } elseif (is_post_type_archive('campaign')) {
     $imagePC = '/assets/images/common/sub-campaign__hero-pc.jpg';
     $imageSP = '/assets/images/common/sub-campaign__hero-sp.jpg';
     $alt = '透き通った海の中を２匹の黄色い魚が泳いでいる様子';
     $titleClass = 'hero__title-text';
     $title = 'campaign';
-  } elseif (is_archive('voice')) {
+  } elseif (is_post_type_archive('voice')) {
     $imagePC = '/assets/images/common/sub-voice__hero-pc.jpg';
     $imageSP = '/assets/images/common/sub-voice__hero-sp.jpg';
     $alt = '5人のスキューバーたちが空を見ながら透き通った海の上に浮いている様子を上空から撮影している';
     $titleClass = 'hero__title-text';
     $title = 'voice';
-  }
+  };
 
   ?>
 

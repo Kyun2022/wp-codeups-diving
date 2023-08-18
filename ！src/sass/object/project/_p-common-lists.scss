@@ -1,0 +1,28 @@
+@use 'global' as *;
+
+.p-common-lists{
+
+}
+
+.p-common-lists__list {
+  padding: rem(20) 0;
+  border-bottom: 1px solid #ddd;
+  @include mq(md){
+    display: flex;
+    padding: rem(30) 0;
+  }
+}
+
+.p-common-lists__list dt{
+  font-weight: bold;
+  @include mq(md){
+    width: rem(174);
+  }
+}
+.p-common-lists__list dd{
+  margin-top: rem(10);
+  @include mq(md){
+    margin-top: 0;
+    width: calc(100% - rem(174));
+  }
+}

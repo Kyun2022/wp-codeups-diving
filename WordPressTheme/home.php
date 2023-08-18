@@ -17,188 +17,46 @@
     <div class="sub-blog__inner inner">
       <div class="sub-blog__container">
         <div class="sub-blog__main-container cards">
+          <?php if (have_posts()) : ?>
           <div class="cards__items">
+            <?php while (have_posts()) : the_post(); ?>
             <article class="cards__item card">
-              <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/card_1.jpg"
-                    alt="透き通った海の中でピンク色の大きな珊瑚礁が輝いている様子"></figure>
-                <div class="card__body">
+              <a href="<?php the_permalink(); ?>">
+                <figure class="card__image card__image--hover">
+                  <?php if (has_post_thumbnail()) : ?>
+                  <?php the_post_thumbnail('full', array()); ?>
+                  <?php else : ?>
+                  <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noImage.jpg"
+                    alt=" NoImage画像" />
+                  <?php endif; ?>
+                </figure>
+                <div class=" card__body">
                   <div class="card__header">
-                    <time datetime="2023-11-17" class="card__date">2023/11/17</time>
-                    <h3 class="card__title">ライセンス取得</h3>
+                    <time datetime="<?php echo get_the_date('Y-m-d'); ?>"
+                      class="card__date"><?php echo get_the_date('Y.m.d'); ?></time>
+                    <h3 class="card__title">
+                      <!-- タイトル40文字制限 -->
+                      <?php echo wp_trim_words(get_the_title(), 60, '...'); ?>
+                    </h3>
                   </div>
                   <div class="card__meta">
                     <p class="card__text text">
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
+                      <!-- 本文40文字制限 -->
+                      <?php echo wp_trim_words(get_the_content(), 80, '...'); ?>
+                    </p>
                   </div>
                 </div>
               </a>
             </article>
-            <article class="cards__item card">
-              <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_2.jpg"
-                    alt="透き通った海の中で大きなウミガメが気持ち良さそうに泳いでいる様子"></figure>
-                <div class="card__body">
-                  <div class="card__header">
-                    <time datetime="2023-11-17" class="card__date">2023/11/17</time>
-                    <h3 class="card__title">ウミガメと泳ぐ</h3>
-                  </div>
-                  <div class="card__meta">
-                    <p class="card__text text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </div>
-              </a>
-            </article>
-            <article class="cards__item card">
-              <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_3.jpg"
-                    alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
-                <div class="card__body">
-                  <div class="card__header">
-                    <time datetime="2023-11-17" class="card__date">2023/11/17</time>
-                    <h3 class="card__title">カクレクマノミ</h3>
-                  </div>
-                  <div class="card__meta">
-                    <p class="card__text text">
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </div>
-              </a>
-            </article>
-            <article class="cards__item card">
-              <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_4.jpg"
-                    alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
-                <div class="card__body">
-                  <div class="card__header">
-                    <time datetime="2023-11-17" class="card__date">2023/11/17</time>
-                    <h3 class="card__title">カクレクマノミ</h3>
-                  </div>
-                  <div class="card__meta">
-                    <p class="card__text text">
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </div>
-              </a>
-            </article>
-            <article class="cards__item card">
-              <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_5.jpg"
-                    alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
-                <div class="card__body">
-                  <div class="card__header">
-                    <time datetime="2023-11-17" class="card__date">2023/11/17</time>
-                    <h3 class="card__title">カクレクマノミ</h3>
-                  </div>
-                  <div class="card__meta">
-                    <p class="card__text text">
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </div>
-              </a>
-            </article>
-            <article class="cards__item card">
-              <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_6.jpg"
-                    alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
-                <div class="card__body">
-                  <div class="card__header">
-                    <time datetime="2023-11-17" class="card__date">2023/11/17</time>
-                    <h3 class="card__title">カクレクマノミ</h3>
-                  </div>
-                  <div class="card__meta">
-                    <p class="card__text text">
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </div>
-              </a>
-            </article>
-            <article class="cards__item card">
-              <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_3.jpg"
-                    alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
-                <div class="card__body">
-                  <div class="card__header">
-                    <time datetime="2023-11-17" class="card__date">2023/11/17</time>
-                    <h3 class="card__title">カクレクマノミ</h3>
-                  </div>
-                  <div class="card__meta">
-                    <p class="card__text text">
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </div>
-              </a>
-            </article>
-            <article class="cards__item card">
-              <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_4.jpg"
-                    alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
-                <div class="card__body">
-                  <div class="card__header">
-                    <time datetime="2023-11-17" class="card__date">2023/11/17</time>
-                    <h3 class="card__title">カクレクマノミ</h3>
-                  </div>
-                  <div class="card__meta">
-                    <p class="card__text text">
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </div>
-              </a>
-            </article>
-            <article class="cards__item card">
-              <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_5.jpg"
-                    alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
-                <div class="card__body">
-                  <div class="card__header">
-                    <time datetime="2023-11-17" class="card__date">2023/11/17</time>
-                    <h3 class="card__title">カクレクマノミ</h3>
-                  </div>
-                  <div class="card__meta">
-                    <p class="card__text text">
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </div>
-              </a>
-            </article>
-            <article class="cards__item card">
-              <a href="./blog-detail.html">
-                <figure class="card__image card__image--hover"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>//assets/images/common/card_6.jpg"
-                    alt="映画ファインディング・ニモで知られるカクレクマノミが珊瑚礁の中から顔をのぞかせている様子"></figure>
-                <div class="card__body">
-                  <div class="card__header">
-                    <time datetime="2023-11-17" class="card__date">2023/11/17</time>
-                    <h3 class="card__title">カクレクマノミ</h3>
-                  </div>
-                  <div class="card__meta">
-                    <p class="card__text text">
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                  </div>
-                </div>
-              </a>
-            </article>
+            <?php endwhile; ?>
           </div>
+          <?php else : ?>
+          <p>記事が投稿されていません</p>
+          <?php endif; ?>
+
           <div class="sub-blog__pageNation pageNation">
             <ul class="pageNation__items">
-              <li class="pageNation__item"><a href="#">&lt;</a></li>
-              <li class="pageNation__item pageNation__item--current"><a href="#">1</a></li>
-              <li class="pageNation__item"><a href="#">2</a></li>
-              <li class="pageNation__item"><a href="#">3</a></li>
-              <li class="pageNation__item"><a href="#">4</a></li>
-              <li class="pageNation__item pageNation__item--md-none"><a href="#">5</a></li>
-              <li class="pageNation__item pageNation__item--md-none"><a href="#">6</a></li>
-              <li class="pageNation__item"><a href="#">&gt;</a></li>
+              <?php wp_pagenavi(); ?>
             </ul>
           </div>
         </div>

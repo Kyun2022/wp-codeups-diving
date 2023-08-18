@@ -1,0 +1,48 @@
+@use 'global' as *;
+
+.c-section-header {
+  color: $blue;
+  text-align: center;
+}
+
+.c-section-header__jatitle {
+  font-size: rem(13);
+  font-weight: $bold;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  @include mq(md) {
+    font-size: rem(14);
+  }
+}
+
+.c-section-header__engtitle {
+  font-size: rem(30);
+  font-weight: $bold;
+  letter-spacing: 0.05em;
+  line-height: calc(37 / 30);
+  font-family: $english-family;
+  text-transform: uppercase;
+  @include mq(md){
+    font-size: rem(36);
+  }
+}
+
+.c-section-header--left {
+  @include mq(md){
+    text-align: left;
+  }
+}
+
+.c-section-header--white {
+  @extend .c-section-header;
+  color: #fff;
+}
+
+.c-section-header__subpage {
+  font-size: rem(24);
+  font-weight: bold;
+  line-height: 1.5;
+  @include mq(md){
+    font-size: rem(32);
+  }
+}

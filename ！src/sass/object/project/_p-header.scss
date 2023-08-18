@@ -1,0 +1,45 @@
+@use 'global' as *;
+
+.p-header {
+  height: rem(64);
+  background-color: transparent;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.p-header.is-color {
+  background-color: #21054d;
+}
+
+.p-header__inner {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 rem(15);
+  @include mq(md) {
+    padding: 0 rem(30);
+  }
+}
+
+.p-header__drawer {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-header__pc-nav {
+  height: inherit;
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.p-header__logoLink {
+  color: $white;
+  font-size: rem(18);
+  display: block;
+}

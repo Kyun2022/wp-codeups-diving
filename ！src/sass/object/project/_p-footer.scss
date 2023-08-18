@@ -1,0 +1,26 @@
+@use 'global' as *;
+
+.p-footer {
+  background-color: $bg-black;
+  padding-top: rem(60);
+  padding-bottom: rem(20);
+  @include mq(md){
+    padding: rem(60) 0;
+  }
+}
+
+.p-footer__inner {
+  padding: 0 rem(30);
+  margin: auto;
+}
+
+.p-footer__copyright {
+  text-align: center;
+  margin-top: rem(40);
+  color: $white;
+  font-family: $english-family;
+  font-size: rem(10);
+  font-weight: $normal;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}

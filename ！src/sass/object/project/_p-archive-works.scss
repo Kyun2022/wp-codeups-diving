@@ -1,0 +1,38 @@
+@use 'global' as *;
+
+.p-archive-works {
+
+}
+.p-archive-works__inner.l-inner {
+  padding: 0 rem(15);
+}
+
+.p-archive-works__items {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: rem(40);
+  @include mq(md){
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(28) rem(30);
+  }
+}
+
+.p-archive-works__img {
+  aspect-ratio: 345/235;
+  overflow: hidden;
+}
+.p-archive-works__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-archive-works__title {
+  margin-top: rem(15);
+}
+.p-archive-works__name {
+  text-align: center;
+  font-size: rem(16);
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}

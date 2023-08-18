@@ -1,0 +1,29 @@
+@use 'global' as *;
+
+.c-to-top {
+  position: fixed;
+  right: rem(10);
+  bottom: rem(10);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid;
+}
+.c-to-top a {
+  display: block;
+  width: rem(50);
+  height: rem(50);
+  background-color: #fff;
+  position: relative;
+}
+
+.c-to-top a span {
+  position: absolute;
+  background-color: transparent;
+  width: rem(20);
+  height: rem(20);
+  border-top: 2px solid ;
+  border-right: 2px solid;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,calc(-50% + 0.25em)) rotate(-45deg);
+}

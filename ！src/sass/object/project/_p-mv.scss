@@ -1,0 +1,80 @@
+@use 'global' as *;
+
+.p-mv {
+  position: relative;
+  height: 100vh;
+  background-image: url(../images/common/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.p-mv__inner {
+  // padding: 0 rem(30) 0 rem(50);
+}
+
+.p-mv__header {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: rem(50);
+  color: $white;
+  @include mq(md){
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+.p-mv__title {
+  font-size: rem(48);
+  font-weight: $bold;
+  font-family: $english-family;
+  line-height: 1.2916667;
+  @include mq(md){
+    font-size: rem(72);
+  }
+}
+
+.p-mv__subtitle {
+  font-size: rem(16);
+  letter-spacing: 0.108em;
+  line-height: 1.8125;
+  margin-top: rem(20);
+  @include mq(md){
+    font-size: rem(24);
+  }
+}
+
+.p-mv__btn {
+  margin-top: rem(50);
+}
+
+.p-mv__scroll {
+  font-size: rem(12);
+  letter-spacing: 0.08em;
+  font-family: $english-family;
+  font-weight: $bold;
+  color: $white;
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  bottom: 78px;
+  transform: rotate(90deg);
+}
+
+.p-mv__scroll span {
+  position: relative;
+}
+
+.p-mv__scroll span::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 50px;
+  position: absolute;
+  background-color: $white;
+  transform: rotate(90deg);
+  right: -35px;
+  bottom: -17px;
+}

@@ -1,0 +1,76 @@
+@use 'global' as *;
+
+
+.p-works__cotnent {
+  @include mq(md){
+    background: linear-gradient(90deg, transparent 0%, transparent 33%, #f0f0f0 33%, #f0f0f0 100%);
+    display: flex;
+    align-items: center;
+    padding-top: rem(60);
+    padding-bottom: rem(80);
+  }
+}
+
+.p-works__text {
+  text-align: center;
+  font-size: rem(14);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.79;
+}
+
+.p-works__btn {
+  text-align: center;
+  margin-top: rem(30);
+}
+
+.p-works__text-body {
+  background-color: #F0F0F0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-top: rem(156);
+  padding-bottom: rem(60);
+  margin-top: rem(-116);
+  @include mq(md){
+    margin-left: initial;
+    padding: 0;
+    margin-top: 0;
+    width: 40.5%;
+    background-color: transparent;
+  }
+}
+
+.p-works__images {
+  position: relative;
+  @include mq(md){
+    width: 59.5%;
+  }
+}
+
+.p-works__text-block {
+  margin-top: rem(30);
+  @include mq(md){
+  }
+}
+
+.p-works__img {
+  position: relative;
+}
+
+// 68.955%
+
+.p-works__img::before {
+  content: "";
+  display: block;
+  padding-top: 68.955%;
+}
+
+.p-works__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

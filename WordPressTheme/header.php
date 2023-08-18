@@ -24,28 +24,37 @@
     <!-- ヘッダー -->
     <header class="header js-header">
       <div class="header__inner">
-        <h1 class="header__logo"><a href="./index.html"><img
-              src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo_1.png" alt="CodeUpsの文字、会社のロゴ"></a>
+        <h1 class="header__logo">
+          <a href="<?php echo esc_url(home_url('/')); ?>">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo_1.png" alt="CodeUpsの文字、会社のロゴ">
+          </a>
         </h1>
         <nav class="header__nav header__nav--md-none">
           <ul class="header__items">
-            <li class="header__item"><a
-                href="<?php echo esc_url(home_url('campaign')); ?>">campaign<span>キャンペーン</span></a>
+            <li class="header__item">
+              <a href="<?php echo esc_url(home_url('campaign')); ?>">campaign<span>キャンペーン</span></a>
             </li>
-            <li class="header__item"><a href="<?php echo esc_url(home_url('about-us')); ?>">about
-                us<span>私たちについて</span></a>
+            <li class="header__item">
+              <a href="<?php echo esc_url(home_url('about-us')); ?>">about&nbsp;us<span>私たちについて</span></a>
             </li>
-            <li class="header__item"><a
-                href="<?php echo esc_url(home_url('information')); ?>">information<span>ダイビング情報</span></a>
+            <li class="header__item">
+              <a href="<?php echo esc_url(home_url('information')); ?>">information<span>ダイビング情報</span></a>
             </li>
-            <li class="header__item"><a href="<?php echo esc_url(home_url('blog')); ?>">blog<span>ブログ</span></a></li>
-            <li class="header__item"><a href="<?php echo esc_url(home_url('voice')); ?>">voice<span>お客様の声</span></a>
+            <li class="header__item">
+              <a href="<?php echo esc_url(home_url('blog')); ?>">blog<span>ブログ</span></a>
             </li>
-            <li class="header__item"><a href="<?php echo esc_url(home_url('price')); ?>">price<span>料金一覧</span></a></li>
-            <li class="header__item header__item--big"><a
-                href="<?php echo esc_url(home_url('faq')); ?>">faq<span>よくある質問</span></a></li>
-            <li class="header__item"><a
-                href="<?php echo esc_url(home_url('contact')); ?>">contact<span>お問い合わせ</span></a></li>
+            <li class="header__item">
+              <a href="<?php echo esc_url(home_url('voice')); ?>">voice<span>お客様の声</span></a>
+            </li>
+            <li class="header__item">
+              <a href="<?php echo esc_url(home_url('price')); ?>">price<span>料金一覧</span></a>
+            </li>
+            <li class="header__item header__item--big">
+              <a href="<?php echo esc_url(home_url('faq')); ?>">faq<span>よくある質問</span></a>
+            </li>
+            <li class="header__item">
+              <a href="<?php echo esc_url(home_url('contact')); ?>">contact<span>お問い合わせ</span></a>
+            </li>
           </ul>
         </nav>
 

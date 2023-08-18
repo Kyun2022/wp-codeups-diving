@@ -1,0 +1,39 @@
+@use 'global' as *;
+
+.p-form {
+  letter-spacing: 0.05em;
+}
+.p-form__radio {
+  margin-top: rem(5);
+  display: flex;
+  flex-direction: column;
+  gap: rem(5);
+  @include mq(md) {
+    display: block;
+    gap: 0;
+  }
+}
+.p-form dl:not(:first-child) {
+  margin-top: rem(30);
+}
+.p-form__item dt {
+  font-size: rem(15);
+  line-height: 2;
+  font-weight: 600;
+}
+.p-form__item dt span{
+  color: #391E88;
+  font-size: rem(12);
+  margin-left: rem(10);
+}
+
+.p-form__item dt  span.p-form__tel-info {
+  font-size: rem(12);
+  color: #333333;
+  margin-left: 0;
+}
+
+.p-form__btn {
+  margin-top: rem(50);
+  text-align: center;
+}

@@ -131,9 +131,9 @@
       </p>
     </div>
   </footer>
+  <?php wp_footer(); ?>
   <div id="pageTop"><a href="./index.html"></a></div>
 
-  <?php wp_footer(); ?>
   </body>
 
   </html>

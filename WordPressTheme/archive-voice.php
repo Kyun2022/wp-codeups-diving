@@ -10,7 +10,8 @@
   </div>
   <?php } ?>
   <div class="sub-voice under-voice">
-    <figure class="sub-voice__decoration"><img src="/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
+    <figure class="sub-voice__decoration"><img
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
     <div class="sub-voice__inner inner">
       <div class="sub-voice__tab tab">
         <p class="tab__text tab__text--green"><a href="./information.html">all</a></p>
@@ -30,7 +31,9 @@
                   </div>
                   <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
                 </div>
-                <figure class="box__image"><img src="./assets/images/common/box_1.jpg" alt="笑顔の女性が麦わら帽子を被ってこちらを見ている様子">
+                <figure class="box__image">
+                  <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_1.jpg"
+                    alt="笑顔の女性が麦わら帽子を被ってこちらを見ている様子">
                 </figure>
               </div>
               <div class="box__meta">
@@ -50,7 +53,9 @@
                   </div>
                   <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
                 </div>
-                <figure class="box__image"><img src="./assets/images/common/box_2.jpg" alt="笑顔の青年が親指を突き出している様子">
+                <figure class="box__image"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_2.jpg"
+                    alt="笑顔の青年が親指を突き出している様子">
                 </figure>
               </div>
               <div class="box__meta">
@@ -70,7 +75,9 @@
                   </div>
                   <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
                 </div>
-                <figure class="box__image"><img src="./assets/images/common/box_3.jpg" alt="2人の女性がこちらを笑顔で振り向いた様子">
+                <figure class="box__image"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_3.jpg"
+                    alt="2人の女性がこちらを笑顔で振り向いた様子">
                 </figure>
               </div>
               <div class="box__meta">
@@ -90,7 +97,8 @@
                   </div>
                   <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
                 </div>
-                <figure class="box__image"><img src="./assets/images/common/box_4.jpg"
+                <figure class="box__image"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_4.jpg"
                     alt="風に靡いた髪を手で押さえている女性が歯に噛んでいる様子"></figure>
               </div>
               <div class="box__meta">
@@ -110,7 +118,9 @@
                   </div>
                   <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
                 </div>
-                <figure class="box__image"><img src="./assets/images/common/box_5.jpg" alt="男性と女性がソファーに座り笑顔でこちらを見ている様子">
+                <figure class="box__image"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_5.jpg"
+                    alt="男性と女性がソファーに座り笑顔でこちらを見ている様子">
                 </figure>
               </div>
               <div class="box__meta">
@@ -130,7 +140,8 @@
                   </div>
                   <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
                 </div>
-                <figure class="box__image"><img src="./assets/images/common/box_6.jpg"
+                <figure class="box__image"><img
+                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_6.jpg"
                     alt="ボーダーラインの洋服を着た女性がこちらの視線を逸らしながら歯に噛んでいる様子"></figure>
               </div>
               <div class="box__meta">
@@ -144,14 +155,7 @@
       </div>
       <div class="sub-voice__pageNation pageNation">
         <ul class="pageNation__items">
-          <li class="pageNation__item"><a href="#">&lt;</a></li>
-          <li class="pageNation__item pageNation__item--current"><a href="#">1</a></li>
-          <li class="pageNation__item"><a href="#">2</a></li>
-          <li class="pageNation__item"><a href="#">3</a></li>
-          <li class="pageNation__item"><a href="#">4</a></li>
-          <li class="pageNation__item pageNation__item--md-none"><a href="#">5</a></li>
-          <li class="pageNation__item pageNation__item--md-none"><a href="#">6</a></li>
-          <li class="pageNation__item"><a href="#">&gt;</a></li>
+          <?php wp_pagenavi(); ?>
         </ul>
       </div>
     </div>

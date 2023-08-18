@@ -25,7 +25,8 @@
         <div class="sub-campaign__items slider">
           <article class="slider__item" id="campaign1">
             <figure class="slider__image">
-              <img src="./assets/images/common/slider_1.jpg" alt="さまざまな色をした魚が群れで泳いでいる様子">
+              <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/slider_1.jpg"
+                alt="さまざまな色をした魚が群れで泳いでいる様子">
             </figure>
             <div class="slider__body slider__body--layout">
               <p class="slider__label">ライセンス講習</p>
@@ -150,14 +151,7 @@
       </div>
       <div class="sub-campaign__pageNation pageNation">
         <ul class="pageNation__items">
-          <li class="pageNation__item"><a href="#">&lt;</a></li>
-          <li class="pageNation__item pageNation__item--current"><a href="#">1</a></li>
-          <li class="pageNation__item"><a href="#">2</a></li>
-          <li class="pageNation__item"><a href="#">3</a></li>
-          <li class="pageNation__item"><a href="#">4</a></li>
-          <li class="pageNation__item pageNation__item--md-none"><a href="#">5</a></li>
-          <li class="pageNation__item pageNation__item--md-none"><a href="#">6</a></li>
-          <li class="pageNation__item"><a href="#">&gt;</a></li>
+          <?php wp_pagenavi(); ?>
         </ul>
       </div>
     </div>

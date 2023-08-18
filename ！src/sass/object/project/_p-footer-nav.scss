@@ -1,0 +1,24 @@
+
+@use 'global' as *;
+
+.p-footer-nav {
+
+}
+
+.p-footer-nav__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(20);
+  @include mq(md){
+    justify-content: center;
+  }
+}
+
+.p-footer-nav__item a {
+  color: $white;
+  font-family: $english-family;
+  font-size: rem(12);
+  font-weight: $bold;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+}

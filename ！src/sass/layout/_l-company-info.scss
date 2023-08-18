@@ -1,0 +1,8 @@
+@use 'global' as *;
+
+.l-company-info {
+  margin-top: rem(80);
+  @include mq(md){
+    margin-top: rem(140);
+  }
+}
