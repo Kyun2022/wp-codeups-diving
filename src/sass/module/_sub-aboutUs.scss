@@ -31,35 +31,45 @@
     width: calc((399 / 1080) * 100%);
   }
 }
-.sub-aboutUs__image-sky img {
-  aspect-ratio: 399 / 606;
-  object-fit: cover;
-  width: 100%;
-  max-width: my-rem(399);
+.sub-aboutUs__image-sky::before{
+  content: "";
+  display: block;
+  padding-top: calc((606 / 399) * 100%);
 }
-
-.sub-aboutUs__image-sky--md-none {
-  display: none;
-  @include mq(md) {
-    display: block;
-  }
+.sub-aboutUs__image-sky img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sub-aboutUs__image-sea {
   position: relative;
-  width: 100%;
+  z-index: -1;
+  width: calc((281 / 345) * 100%);
+  margin-top: -49%;
+  margin-left: auto;
   @include mq(md) {
-    margin-left: auto;
-    margin-top: -49%;
-    z-index: -1;
     width: calc((880 / 1080) * 100%);
   }
 }
+
+.sub-aboutUs__image-sea::before{
+content: "";
+display: block;
+padding-top: calc((581 / 880) * 100%);
+}
 .sub-aboutUs__image-sea img {
-  aspect-ratio: 880 /581;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   object-fit: cover;
   width: 100%;
-  max-width: my-rem(880);
+  height: 100%;
 }
 .sub-aboutUs__container {
   display: flex;

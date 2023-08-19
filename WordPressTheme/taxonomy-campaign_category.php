@@ -12,52 +12,65 @@
   <?php } ?>
 
   <div class="sub-campaign under-campaign">
-    <figure class="sub-campaign__decoration"><img
-        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
+    <figure class="sub-campaign__decoration">
+      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子">
+    </figure>
     <div class="sub-campaign__inner inner">
       <div class="sub-campaign__tab tab">
-        <!-- 指定したカテゴリー(ターム)のみ表示(投稿が無いものは表示されない) -->
-        <?php
-        $taxonomy_terms = get_terms('campaign_category');
-        if (!empty($taxonomy_terms) && !is_wp_error($taxonomy_terms)) {
-          foreach ($taxonomy_terms as $taxonomy_term) :
-            if (!in_array($taxonomy_term->slug, array('license', 'experience', 'fan'))) continue;
-        ?>
-        <p class="tab__text"><a href="<?php echo esc_url(get_post_type_archive_link('campaign')); ?>">ALL</a></p>
-        <p class="<?php if ($taxonomy_term->slug === $term) {
-                        echo 'current-cat';
-                      } ?>">
-          <a href="<?php echo get_term_link($taxonomy_term); ?>"><?php echo $taxonomy_term->name; ?></a>
-        </p>
-        <?php endforeach;
-        } ?>
+        <div class="sub-campaign__tab tab">
+          <?php
+          $current_term_id = get_queried_object()->term_id;
+          $terms = get_terms(array(
+            // 表示するタクソノミースラッグを記述
+            'taxonomy' => 'campaign_category',
+            'orderby' => 'name',
+            'order'   => 'ASC',
+            // 表示するタームの数を指定
+            'number'  => 3
+          ));
+
+          // カスタム投稿一覧ページへのURL
+          $campaign_category_class = (is_post_type_archive()) ? 'current-cat' : '';
+          $campaign_category_link = sprintf(
+            //カスタム投稿一覧ページへのaタグに付与するクラスを指定できる
+            '<p class="tab__text %s"><a href="%s" alt="%s">ALL</a></p>',
+            $campaign_category_class,
+            // カスタム投稿一覧ページのスラッグを指定
+            esc_url(home_url('campaign')),
+            esc_attr(__('View all posts', 'textdomain'))
+          );
+          echo sprintf(esc_html__('%s', 'textdomain'), $campaign_category_link);
+
+          // タームのリンク
+          if ($terms) {
+            foreach ($terms as $term) {
+              // カレントクラスに付与するクラスを指定できる
+              $term_class = ($current_term_id === $term->term_id) ? 'current-cat' : '';
+              $term_link = sprintf(
+                // 各タームに付与するクラスを指定できる
+                '<p class="tab__text %s"><a href="%s" alt="%s">%s</a></p>',
+                $term_class,
+                esc_url(get_term_link($term->term_id)),
+                esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $term->name)),
+                esc_html($term->name)
+              );
+              echo sprintf(esc_html__('%s', 'textdomain'), $term_link);
+            }
+          }
+          ?>
+        </div>
+
       </div>
 
+
       <div class="sub-campaign__menu">
-        <?php
-        $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-        $type = get_query_var('campaign_category'); // タクソノミーのスラッグ
-        $args = [
-          'post_type' => 'campaign', // 投稿タイプスラッグ
-          'paged' => $paged, // ページネーションがある場合に必要
-          'posts_per_page' => 4, // 表示件数（変更不要）
-          'tax_query' => array(
-            array(
-              'taxonomy' => 'campaign_category', // タクソノミーのスラッグ
-              'field' => 'slug', // ターム名をスラッグで指定する（変更不要）
-              'terms' => $type,
-            ),
-          )
-        ];
-        //配列で指定した内容で、記事情報を取得
-        $campaign_query = new WP_Query($args);
-        ?>
-        <!-- /取得した記事情報の表示 -->
-        <?php if ($campaign_query->have_posts()) : ?>
         <div class="sub-campaign__items slider">
-          <!-- ↓ ループ開始 ↓ -->
-          <?php while ($campaign_query->have_posts()) : $campaign_query->the_post(); ?>
-          <!-- ここに投稿がある場合の記述 -->
+          <?php
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
+          query_posts($query_string . '&posts_per_page=4&paged=' . $paged); //pagedとposts_per_pageの指定
+
+          ?>
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <article class="slider__item" id="campaign1">
             <figure class="slider__image">
               <?php if (has_post_thumbnail()) : ?>
@@ -68,14 +81,16 @@
               <?php endif; ?>
             </figure>
             <div class="slider__body slider__body--layout">
+              <!-- 指定したカテゴリー(ターム)のみ表示 -->
               <?php
                   $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
                   foreach ($taxonomy_terms as $taxonomy_term) {
                     if (!in_array($taxonomy_term->slug, array('license', 'experience', 'fan')))
                       continue;
-                    echo '<p class="' . $taxonomy_term->slug . '">' . $taxonomy_term->name . '</p>';
+                    echo '<p class="slider__label ' . $taxonomy_term->slug . '">' . $taxonomy_term->name . '</p>';
                   }
                   ?>
+
               <h3 class="slider__title slider__title--layout">
                 <!-- タイトル40文字制限 -->
                 <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
@@ -109,12 +124,12 @@
         <!-- ここに投稿がない場合の記述 -->
         <p>記事が投稿されていません</p>
         <?php endif;
-        wp_reset_postdata(); ?>
+          wp_reset_postdata(); ?>
       </div>
 
       <div class="sub-campaign__pageNation pageNation">
-        <ul class="pageNation__items">
-          <?php wp_pagenavi(array('query' => $campaign_query)); ?>
+        <ul class="pageNation__items wp-pagenavi">
+          <?php wp_pagenavi(); ?>
         </ul>
       </div>
     </div>

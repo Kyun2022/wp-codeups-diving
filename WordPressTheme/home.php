@@ -17,6 +17,11 @@
     <div class="sub-blog__inner inner">
       <div class="sub-blog__container">
         <div class="sub-blog__main-container cards">
+          <?php
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
+          query_posts($query_string . '&posts_per_page=8&paged=' . $paged); //pagedとposts_per_pageの指定
+
+          ?>
           <?php if (have_posts()) : ?>
           <div class="cards__items">
             <?php while (have_posts()) : the_post(); ?>
@@ -55,7 +60,7 @@
           <?php endif; ?>
 
           <div class="sub-blog__pageNation pageNation">
-            <ul class="pageNation__items">
+            <ul class="pageNation__items wp-pagenavi">
               <?php wp_pagenavi(); ?>
             </ul>
           </div>

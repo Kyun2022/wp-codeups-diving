@@ -10,6 +10,7 @@
   </head>
 
   <!-- ローディング -->
+  <?php if (is_front_page()) : ?>
 
   <body class="js-fixed" <?php body_class(); ?>>
     <?php wp_body_open(); ?>
@@ -19,6 +20,7 @@
         <p class="loading__title-subtext">into&nbsp;the&nbsp;ocean</p>
       </div>
     </div>
+    <?php endif; ?>
 
 
     <!-- ヘッダー -->

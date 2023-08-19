@@ -31,26 +31,15 @@
         </p>
         <?php endforeach; ?>
       </div>
+
       <div class="sub-campaign__menu">
-        <?php
-        $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedの設定
-        $args = array(
-          "post_type" => "campaign",
-          "paged" => $paged,
-          "posts_per_page" => 4,
-          "order" => "ASC",
-        );
-
-
-        //配列で指定した内容で、記事情報を取得
-        $campaign_query = new WP_Query($args);
-        ?>
-        <!-- /取得した記事情報の表示 -->
-        <?php if ($campaign_query->have_posts()) : ?>
         <div class="sub-campaign__items slider">
-          <!-- ↓ ループ開始 ↓ -->
-          <?php while ($campaign_query->have_posts()) : $campaign_query->the_post(); ?>
-          <!-- ここに投稿がある場合の記述 -->
+          <?php
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
+          query_posts($query_string . '&posts_per_page=4&paged=' . $paged); //pagedとposts_per_pageの指定
+          ?>
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
           <article class="slider__item" id="campaign1">
             <figure class="slider__image">
               <?php if (has_post_thumbnail()) : ?>
@@ -109,12 +98,12 @@
         <!-- ここに投稿がない場合の記述 -->
         <p>記事が投稿されていません</p>
         <?php endif;
-        wp_reset_postdata(); ?>
+          wp_reset_postdata(); ?>
       </div>
 
       <div class="sub-campaign__pageNation pageNation">
-        <ul class="pageNation__items">
-          <?php wp_pagenavi(array('query' => $campaign_query)); ?>
+        <ul class="pageNation__items wp-pagenavi">
+          <?php wp_pagenavi(); ?>
         </ul>
       </div>
     </div>

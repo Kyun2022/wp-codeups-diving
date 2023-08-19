@@ -19,11 +19,20 @@
     width: calc((399 / 1080) * 100%);
   }
 }
+
+.aboutUs__image-sky::before{
+  content: "";
+  display: block;
+  padding-top: calc((606 / 399) * 100%);
+}
 .aboutUs__image-sky img {
-  aspect-ratio: 399 / 606;
-  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   width: 100%;
-  max-width: my-rem(399);
+  height: 100%;
+  object-fit: cover;
 }
 
 .aboutUs__image-sea {
@@ -36,11 +45,20 @@
     width: calc((880 / 1080) * 100%);
   }
 }
+
+.aboutUs__image-sea::before{
+content: "";
+display: block;
+padding-top: calc((581 / 880) * 100%);
+}
 .aboutUs__image-sea img {
-  aspect-ratio: 880 /581;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   object-fit: cover;
   width: 100%;
-  max-width: my-rem(880);
+  height: 100%;
 }
 
 .aboutUs__container {

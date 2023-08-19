@@ -97,6 +97,7 @@ Common
   /*//////////////////////////////////////
 Top
 /////////////////////////////////////*/
+
   // ローディングアニメーション
   $(window).on("load", function () {
     const loadCount = sessionStorage.getItem("loadCount");
@@ -105,7 +106,7 @@ Top
     if (loadCount === null) {
       $(".js-loading").delay(0).fadeIn(900);
       $(".js-loadingTitle").delay(300).fadeIn(800);
-      $(".js-loading").delay(2000).fadeOut(900);
+      $(".js-loading").delay(2500).fadeOut(900);
       $("body")
         .delay(2500) // ローディング画面を表示した時間に合わせて適切な時間を設定
         .queue(function (next) {
@@ -326,27 +327,17 @@ information
   /*//////////////////////////////////////
 blog
 /////////////////////////////////////*/
-  $(function () {
-    // タイトルをクリックすると
-    // タイトルをクリックすると
-    $(".js-archive-item--old").on("click", function () {
-      // クリックした次の要素を開閉
-      $(".js-subItems--old").next().slideToggle(600);
-      // タイトルにopenクラスを付け外しして矢印の向きを変更
-      $(".js-subItems--old").toggleClass("open", 600);
-      $(".archive__item--oldLayout").toggleClass("open", 600);
-    });
+
+
+$(function () {
+  // タイトルをクリックすると
+  $(".js-archive-item--open").on("click", function () {
+    // クリックした次の要素を開閉
+    $(this).find(".js-subItems--open").slideToggle(300);
+    // タイトルにopenクラスを付け外しして矢印の向きを変更
+    $(this).toggleClass("open", 300);
   });
-  $(function () {
-    // タイトルをクリックすると
-    $(".js-archive-item--new").on("click", function () {
-      // クリックした次の要素を開閉
-      $(".js-subItems--new").next().slideToggle(600);
-      // タイトルにopenクラスを付け外しして矢印の向きを変更
-      $(".js-subItems--new").toggleClass("open", 600);
-      $(".archive__item--newLayout").toggleClass("open", 600);
-    });
-  });
+});
 
   /*//////////////////////////////////////
 FAQ

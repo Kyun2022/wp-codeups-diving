@@ -65,7 +65,7 @@
     $alt = '空をバックに黄い色のシーダーがこちらをみている様子';
     $titleClass = 'hero__title-text';
     $title = 'about&nbsp;us';
-  } elseif (is_archive('campaign')) {
+  } elseif (is_post_type_archive('campaign')) {
     $imagePC = '/assets/images/common/sub-campaign__hero-pc.jpg';
     $imageSP = '/assets/images/common/sub-campaign__hero-sp.jpg';
     $alt = '透き通った海の中を２匹の黄色い魚が泳いでいる様子';
@@ -78,6 +78,12 @@
     $titleClass = 'hero__title-text';
     $title = 'campaign';
   } elseif (is_post_type_archive('voice')) {
+    $imagePC = '/assets/images/common/sub-voice__hero-pc.jpg';
+    $imageSP = '/assets/images/common/sub-voice__hero-sp.jpg';
+    $alt = '5人のスキューバーたちが空を見ながら透き通った海の上に浮いている様子を上空から撮影している';
+    $titleClass = 'hero__title-text';
+    $title = 'voice';
+  } elseif (is_tax('voice_category')) {
     $imagePC = '/assets/images/common/sub-voice__hero-pc.jpg';
     $imageSP = '/assets/images/common/sub-voice__hero-sp.jpg';
     $alt = '5人のスキューバーたちが空を見ながら透き通った海の上に浮いている様子を上空から撮影している';

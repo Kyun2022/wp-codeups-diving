@@ -9,6 +9,8 @@
   font-family: $jp-font-family1;
   font-size: my-rem(24);
   font-weight: $normal;
+  padding-left: my-rem(6);
+
 }
 
 .archive__item {
@@ -33,6 +35,7 @@
   font-family: $jp-font-family1;
   font-size: my-rem(24);
   font-weight: $normal;
+  padding-left: my-rem(24);
 }
 
 .archive__item--newLayout,

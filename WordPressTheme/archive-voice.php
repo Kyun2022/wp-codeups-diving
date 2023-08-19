@@ -14,147 +14,77 @@
         src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
     <div class="sub-voice__inner inner">
       <div class="sub-voice__tab tab">
-        <p class="tab__text tab__text--green"><a href="./information.html">all</a></p>
-        <p class="tab__text"><a href="./information.html#tab_panel-1">ライセンス講習</a></p>
-        <p class="tab__text"><a href="./information.html#tab_panel-2">ファンダイビング</a></p>
-        <p class="tab__text"><a href="./information.html#tab_panel-3">体験ダイビング</a></p>
+        <!-- 指定したカテゴリー(ターム)のみ表示(投稿が無いものは表示されない) -->
+        <p class="tab__text current-cat">
+          <a href="<?php echo esc_url(get_post_type_archive_link('voice')); ?>">ALL</a>
+        </p>
+        <?php
+        $voice_taxonomy_terms = get_terms('voice_category', array('hide_empty' => false));
+        foreach ($voice_taxonomy_terms as $voice_taxonomy_term) :
+          if (!in_array($voice_taxonomy_term->slug, array('voice-license', 'voice-experience', 'voice-fan'))) continue;
+        ?>
+        <p class="tab__text">
+          <a href="<?php echo esc_url(get_term_link($voice_taxonomy_term, 'voice_category')); ?>"><?php echo esc_html($voice_taxonomy_term->name); ?>
+          </a>
+        </p>
+        <?php endforeach; ?>
       </div>
       <div class="sub-voice__container boxes">
         <div class="boxes__items boxes__items--sub">
+          <?php $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
+          query_posts($query_string . '&posts_per_page=6&paged=' . $paged); //pagedとposts_per_pageの指定
+          ?>
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <article class="boxes__item box">
-            <a href="#">
-              <div class="box__container">
-                <div class="box__header">
-                  <div class="box__wrapper">
-                    <p class="box__gender">20代&#040;女性&#041;</p>
-                    <span class="box__label">ライセンス講習</span>
-                  </div>
-                  <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
+            <div class="box__container">
+              <div class="box__header">
+                <div class="box__wrapper">
+                  <p class="box__gender">
+                    <?php the_field("voice-age"); ?>代&#040;<?php the_field("voice-gender") ?>&#041;
+                  </p>
+                  <?php
+                      $taxonomy_terms = get_the_terms($post->ID, 'voice_category');
+                      if (!empty($taxonomy_terms)) {
+                        $limit = 5;
+                        $count = 0;
+                        foreach ($taxonomy_terms as $taxonomy_term) {
+                          if ($count < $limit) {
+                            echo '<span class="box__label">' . esc_html($taxonomy_term->name) . '</span>';
+                            $count++;
+                          } else {
+                            break;
+                          }
+                        }
+                      }
+                      ?>
                 </div>
-                <figure class="box__image">
-                  <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_1.jpg"
-                    alt="笑顔の女性が麦わら帽子を被ってこちらを見ている様子">
-                </figure>
+                <h3 class="box__title">
+                  <!-- タイトル40文字制限 -->
+                  <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+                </h3>
               </div>
-              <div class="box__meta">
-                <p class="box__text text">
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。
-                </p>
-              </div>
-            </a>
+              <figure class="box__image">
+                <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('full'); ?>
+                <?php else : ?>
+                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noImage.jpg"
+                  alt="NoImage画像" />
+                <?php endif; ?>
+              </figure>
+            </div>
+            <div class="box__meta">
+              <p class="box__text text"><?php the_field("voice-text"); ?></p>
+            </div>
           </article>
-          <article class="boxes__item box">
-            <a href="#">
-              <div class="box__container">
-                <div class="box__header">
-                  <div class="box__wrapper">
-                    <p class="box__gender">20代&#040;男性&#041;</p>
-                    <span class="box__label">ファンダイビング</span>
-                  </div>
-                  <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
-                </div>
-                <figure class="box__image"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_2.jpg"
-                    alt="笑顔の青年が親指を突き出している様子">
-                </figure>
-              </div>
-              <div class="box__meta">
-                <p class="box__text text">
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。
-                </p>
-              </div>
-            </a>
-          </article>
-          <article class="boxes__item box">
-            <a href="#">
-              <div class="box__container">
-                <div class="box__header">
-                  <div class="box__wrapper">
-                    <p class="box__gender">30代&#040;女性&#041;</p>
-                    <span class="box__label">体験ダイビング</span>
-                  </div>
-                  <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
-                </div>
-                <figure class="box__image"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_3.jpg"
-                    alt="2人の女性がこちらを笑顔で振り向いた様子">
-                </figure>
-              </div>
-              <div class="box__meta">
-                <p class="box__text text">
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。
-                </p>
-              </div>
-            </a>
-          </article>
-          <article class="boxes__item box">
-            <a href="#">
-              <div class="box__container">
-                <div class="box__header">
-                  <div class="box__wrapper">
-                    <p class="box__gender">20代&#040;女性&#041;</p>
-                    <span class="box__label">体験ダイビング</span>
-                  </div>
-                  <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
-                </div>
-                <figure class="box__image"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_4.jpg"
-                    alt="風に靡いた髪を手で押さえている女性が歯に噛んでいる様子"></figure>
-              </div>
-              <div class="box__meta">
-                <p class="box__text text">
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。
-                </p>
-              </div>
-            </a>
-          </article>
-          <article class="boxes__item box">
-            <a href="#">
-              <div class="box__container">
-                <div class="box__header">
-                  <div class="box__wrapper">
-                    <p class="box__gender">30代&#040;カップル&#041;</p>
-                    <span class="box__label">ファンダイビング</span>
-                  </div>
-                  <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
-                </div>
-                <figure class="box__image"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_5.jpg"
-                    alt="男性と女性がソファーに座り笑顔でこちらを見ている様子">
-                </figure>
-              </div>
-              <div class="box__meta">
-                <p class="box__text text">
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。
-                </p>
-              </div>
-            </a>
-          </article>
-          <article class="boxes__item box">
-            <a href="#">
-              <div class="box__container">
-                <div class="box__header">
-                  <div class="box__wrapper">
-                    <p class="box__gender">20代&#040;女性&#041;</p>
-                    <span class="box__label">ライセンス講習</span>
-                  </div>
-                  <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
-                </div>
-                <figure class="box__image"><img
-                    src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/box_6.jpg"
-                    alt="ボーダーラインの洋服を着た女性がこちらの視線を逸らしながら歯に噛んでいる様子"></figure>
-              </div>
-              <div class="box__meta">
-                <p class="box__text text">
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。
-                </p>
-              </div>
-            </a>
-          </article>
+          <?php endwhile; ?>
         </div>
+
+        <?php else : ?>
+        <p>記事が投稿されていません</p>
+        <?php endif; ?>
       </div>
       <div class="sub-voice__pageNation pageNation">
-        <ul class="pageNation__items">
+        <ul class="pageNation__items wp-pagenavi">
           <?php wp_pagenavi(); ?>
         </ul>
       </div>
