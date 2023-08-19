@@ -65,7 +65,13 @@
     $alt = '空をバックに黄い色のシーダーがこちらをみている様子';
     $titleClass = 'hero__title-text';
     $title = 'about&nbsp;us';
-  } elseif (is_post_type_archive('campaign')) {
+  } elseif (is_archive('campaign')) {
+    $imagePC = '/assets/images/common/sub-campaign__hero-pc.jpg';
+    $imageSP = '/assets/images/common/sub-campaign__hero-sp.jpg';
+    $alt = '透き通った海の中を２匹の黄色い魚が泳いでいる様子';
+    $titleClass = 'hero__title-text';
+    $title = 'campaign';
+  } elseif (is_tax('campaign_category')) {
     $imagePC = '/assets/images/common/sub-campaign__hero-pc.jpg';
     $imageSP = '/assets/images/common/sub-campaign__hero-sp.jpg';
     $alt = '透き通った海の中を２匹の黄色い魚が泳いでいる様子';
@@ -78,7 +84,6 @@
     $titleClass = 'hero__title-text';
     $title = 'voice';
   };
-
   ?>
 
   <section class="hero">

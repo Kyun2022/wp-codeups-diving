@@ -284,13 +284,13 @@
           "order" => "DESC",
         );
         //配列で指定した内容で、記事情報を取得
-        $the_query = new WP_Query($args);
+        $blog_query = new WP_Query($args);
         ?>
         <!-- 取得した記事情報の表示 -->
-        <?php if ($the_query->have_posts()) : ?>
+        <?php if ($blog_query->have_posts()) : ?>
         <div class="blog__cards blog-cards">
           <!-- ↓ ループ開始 ↓ -->
-          <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+          <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
           <!-- ここに投稿がある場合の記述 -->
           <article class="blog-cards__item card">
             <a href="<?php the_permalink(); ?>">

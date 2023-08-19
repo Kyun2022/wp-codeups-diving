@@ -57,13 +57,10 @@
   background-color: $white;
 }
 .card__body.card__body--sub {
-  margin-top: my-rem(-5);
   margin-left: my-rem(20);
+  margin-top: initial;
   width: calc((125 / 246) * 100%);
   justify-content: flex-start;
-  @include mq(md) {
-  }
-  mask-type: initial;
 }
 .card__header {
   height: 100%;
@@ -73,7 +70,6 @@
     padding-bottom: my-rem(4);
   }
 }
-
 .card__date {
   font-family: $en-font-family1;
   font-weight: $regular;

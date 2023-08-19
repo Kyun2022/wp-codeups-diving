@@ -46,3 +46,17 @@
 .tab__text--green a {
   color: $white;
 }
+/*//////////////////////////////////////
+デフォルトでbackground-colorを入れる
+/////////////////////////////////////*/
+.current-cat{
+background-color: $green;
+color: $white;
+display: flex;
+align-items:center;
+justify-content: center;
+font-size: my-rem(14);
+}
+/*//////////////////////////////////////
+終了
+/////////////////////////////////////*/

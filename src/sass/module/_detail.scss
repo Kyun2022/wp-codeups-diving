@@ -74,10 +74,10 @@
   display: inline-block;
   background-image: url(../images/common/starfish--green.png);
   background-repeat: no-repeat;
-  background-size: center;
+  background-size: my-rem(20) my-rem(20) ;
   background-position: center;
-  width: my-rem(18);
-  height: my-rem(18);
+  width: my-rem(20);
+  height: my-rem(20);
   position: absolute;
   top: my-rem(3);
   left: 0;

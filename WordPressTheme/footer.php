@@ -1,4 +1,5 @@
   <!-- contact -->
+  <?php if( !is_page(array('contact','thanks')) && !is_404()) :?>
   <section class="contact">
     <figure class="contact__decoration"><img
         src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fishes-contact.png" alt="魚の群れの様子"></figure>
@@ -38,6 +39,7 @@
       </div>
     </div>
   </section>
+  <?php endif; ?>
   </main>
 
   <!-- footer -->
