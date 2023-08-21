@@ -10,6 +10,7 @@
 .campaign__slider {
   margin-top: my-rem(17);
   padding-bottom: my-rem(10);
+  padding-left: my-rem(10);
   margin-right: calc(50% - 50vw);
   @include mq(md) {
     margin-top: my-rem(40);

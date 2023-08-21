@@ -36,6 +36,7 @@
       </div>
     </div>
   </section>
+
   <!-- campaign -->
   <section class="campaign top-campaign">
     <div class="campaign__inner inner">
@@ -50,7 +51,7 @@
           <?php
           $args = array(
             "post_type" => "campaign",
-            "posts_per_page" => 8,
+            "posts_per_page" => -1,
             "orderby" => "date",
             "order" => "DESC",
           );
@@ -122,6 +123,7 @@
       </div>
     </div>
   </section>
+
   <!-- aboutUs -->
   <section class="aboutUs top-aboutUs">
     <div class="aboutUs__inner inner">
@@ -144,8 +146,9 @@
           <h2 class="aboutUs__sub-title">Dive&nbsp;into<br>the&nbsp;Ocean</h2>
         </div>
         <div class="aboutUs__meta">
-          <p class="aboutUs__text text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+          <p class="aboutUs__text text">
+            私たちは情熱を持ってダイビングの世界を案内するダイビングインストラクター集団です。海の美しさと驚異に魅了され、その素晴らしさを多くの人々と共有することに情熱を燃やしています。安全性を最優先に考えながら、初心者から経験豊富なダイバーまで、様々なレベルの方々に楽しいダイビング体験を提供しています。
+          </p>
           <div class="aboutUs__button">
             <button class="button"
               onclick="location.href='<?php echo esc_url(home_url('about-us')); ?>'">View&nbsp;more<span
@@ -269,52 +272,73 @@
         <p class="title__text">voice</p>
         <h2 class="title__sub-text">お客様の声</h2>
       </div>
+
       <div class="voice__container boxes">
         <div class="boxes__items">
+          <?php
+          $args = array(
+            "post_type" => "voice",
+            "posts_per_page" => 2,
+            "orderby" => "date",
+            "order" => "DESC",
+          );
+
+          //配列で指定した内容で、記事情報を取得
+          $voice_query = new WP_Query($args);
+          ?>
+          <!-- 取得した記事情報の表示 -->
+          <?php if ($voice_query->have_posts()) : ?>
+          <!-- ↓ ループ開始 ↓ -->
+          <?php while ($voice_query->have_posts()) : $voice_query->the_post(); ?>
+          <!-- ここに投稿がある場合の記述 -->
           <article class="boxes__item box">
-            <a href="#">
-              <div class="box__container">
-                <div class="box__header">
-                  <div class="box__wrapper">
-                    <p class="box__gender">20代(女性)</p>
-                    <span class="box__label">ライセンス講習</span>
-                  </div>
-                  <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
+            <div class="box__container">
+              <div class="box__header">
+                <div class="box__wrapper">
+                  <p class="box__gender">
+                    <?php the_field("voice-age"); ?>代&#040;<?php the_field("voice-gender") ?>&#041;
+                  </p>
+                  <?php
+                      $taxonomy_terms = get_the_terms($post->ID, 'voice_category');
+                      if (!empty($taxonomy_terms)) {
+                        $limit = 5;
+                        $count = 0;
+                        foreach ($taxonomy_terms as $taxonomy_term) {
+                          if ($count < $limit) {
+                            echo '<span class="box__label">' . esc_html($taxonomy_term->name) . '</span>';
+                            $count++;
+                          } else {
+                            break;
+                          }
+                        }
+                      }
+                      ?>
                 </div>
-                <figure class="box__image js-slideColor2">
-                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/box_1.jpg"
-                    alt="笑顔の女性が麦わら帽子を被ってこちらを見ている様子">
-                </figure>
+                <h3 class="box__title">
+                  <!-- タイトル40文字制限 -->
+                  <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+                </h3>
               </div>
-              <div class="box__meta">
-                <p class="box__text text">
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。
-                </p>
-              </div>
-            </a>
+              <figure class="box__image">
+                <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('full'); ?>
+                <?php else : ?>
+                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noImage.jpg"
+                  alt="NoImage画像" />
+                <?php endif; ?>
+              </figure>
+            </div>
+            <div class="box__meta">
+              <p class="box__text text"><?php the_field("voice-text"); ?></p>
+            </div>
           </article>
-          <article class="boxes__item box">
-            <a href="#">
-              <div class="box__container">
-                <div class="box__header">
-                  <div class="box__wrapper">
-                    <p class="box__gender">20代(男性)</p>
-                    <span class="box__label">ファンダイビング</span>
-                  </div>
-                  <h3 class="box__title">ここにタイトルが入ります。ここにタイトル</h3>
-                </div>
-                <figure class="box__image js-slideColor3"><img
-                    src="<?php echo get_theme_file_uri(); ?>/assets/images/common/box_2.jpg" alt="笑顔の青年が親指を突き出している様子">
-                </figure>
-              </div>
-              <div class="box__meta">
-                <p class="box__text text">
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。
-                </p>
-              </div>
-            </a>
-          </article>
+          <?php endwhile; ?>
         </div>
+        <?php else : ?>
+        <!-- ここに投稿がない場合の記述 -->
+        <p>記事が投稿されていません</p>
+        <?php endif;
+          wp_reset_postdata(); ?>
       </div>
       <div class="voice__button">
         <button class="button" onclick="location.href='<?php echo esc_url(home_url('voice')); ?>'">View&nbsp;more<span

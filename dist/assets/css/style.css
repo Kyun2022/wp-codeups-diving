@@ -934,6 +934,7 @@ a {
 	margin-right: calc(50% - 50vw);
 	margin-top: 1.0625rem;
 	padding-bottom: 0.625rem;
+	padding-left: 0.625rem;
 }
 
 .campaign__button {
@@ -2731,7 +2732,7 @@ micro-modal
 }
 
 .priceBox__theme::after {
-	background-image: url(/assets/images/common/whale-white--right.png);
+	background-image: url(../images/common/whale-white--right.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;

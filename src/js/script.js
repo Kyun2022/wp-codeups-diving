@@ -135,34 +135,34 @@ Top
   });
 
   // Swiperカード
-  const mySwiperWrapper = document.querySelector(".swiper-wrapper");
-  const horizonSlider = new Swiper(".js-campaign-slider", {
-    loop: true,
-    effect: "slide",
-    disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
-    slidesPerView: 1.26,
-    breakpoints: {
-      768: {
-        slidesPerView: 3.29,
-        spaceBetween: 30,
+    const mySwiperWrapper = document.querySelector(".swiper-wrapper");
+    const horizonSlider = new Swiper(".js-campaign-slider", {
+      loop: true,
+      effect: "slide",
+      disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+      slidesPerView: 1.26,
+      breakpoints: {
+        768: {
+          slidesPerView: 3.29,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3.49,
+          spaceBetween: 40,
+        },
       },
-      1024: {
-        slidesPerView: 3.49,
-        spaceBetween: 40,
+      spaceBetween: 24,
+      speed: 2000,
+      autoplay: {
+        delay: 1000,
       },
-    },
-    spaceBetween: 24,
-    speed: 2000,
-    autoplay: {
-      delay: 1000,
-    },
-    // 前後の矢印
-    navigation: {
-      prevEl: ".slider__prevButton",
-      nextEl: ".slider__nextButton",
-    },
-  });
-
+      // 前後の矢印
+      navigation: {
+        prevEl: ".slider__prevButton",
+        nextEl: ".slider__nextButton",
+      },
+    });
+    
   // 背景色アニメーション
   // 要素の取得とスピードの設定
   const box = $(".js-slideColor"),
