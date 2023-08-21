@@ -3,41 +3,31 @@
   <!-- mv -->
   <section class="mv">
     <div class="mv__inner">
+      <?php the_field('mvPC'); ?>
       <!-- Swiper -->
       <div class="swiper mv__slider js-mv-slider">
         <div class="swiper-wrapper mv__items">
+          <?php for ($i = 1; $i <= 4; $i++) : ?>
+          <?php
+            $mvPC = get_field('mvPC' . $i); // PCの画像配列
+            $mvSP = get_field('mvSP' . $i); // SPの画像配列
+            if ($mvPC || $mvSP) :
+            ?>
           <div class="swiper-slide mv__item">
             <picture>
-              <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-pc_1.jpg"
-                media="(min-width: 768px)">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-sp_1.jpg"
-                alt="透き通った海の中で大きな亀が泳いでいる様子">
+              <!-- URLの場合 PC-->
+              <?php if ($mvPC && isset($mvPC['url'])) : ?>
+              <source srcset="<?php echo esc_url($mvPC['url']); ?>" media="(min-width: 768px)" alt="mvの画像" />
+              <?php endif; ?>
+
+              <!-- URLの場合 SP-->
+              <?php if ($mvSP && isset($mvSP['url'])) : ?>
+              <img src="<?php echo esc_url($mvSP['url']); ?>" alt="mvの画像" />
+              <?php endif; ?>
             </picture>
           </div>
-          <div class="swiper-slide mv__item">
-            <picture>
-              <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-pc_2.jpg"
-                media="(min-width: 768px)">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-sp_2.jpg"
-                alt="透き通った海の中から見上げると二人のダイバーと大きな亀が対面している">
-            </picture>
-          </div>
-          <div class="swiper-slide mv__item">
-            <picture>
-              <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-pc_3.jpg"
-                media="(min-width: 768px)">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-sp_3.jpg"
-                alt="海の向こうに２つの島が見え、近くに船が動いている様子">
-            </picture>
-          </div>
-          <div class="swiper-slide mv__item">
-            <picture>
-              <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-pc_4.jpg"
-                media="(min-width: 768px)">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv-sp_4.jpg"
-                alt="青天のなか青々とした穏やかなな波が綺麗な砂浜に注ぎ込んでいる様子">
-            </picture>
-          </div>
+          <?php endif; ?>
+          <?php endfor; ?>
         </div>
       </div>
       <div class="mv__title">
@@ -56,135 +46,69 @@
       <!-- Swiper -->
       <div class="swiper campaign__slider slider js-campaign-slider">
         <div class="swiper-wrapper slider__items">
+
+          <?php
+          $args = array(
+            "post_type" => "campaign",
+            "posts_per_page" => 8,
+            "orderby" => "date",
+            "order" => "DESC",
+          );
+
+          //配列で指定した内容で、記事情報を取得
+          $campaign_query = new WP_Query($args);
+          ?>
+          <!-- 取得した記事情報の表示 -->
+          <?php if ($campaign_query->have_posts()) : ?>
+          <!-- ↓ ループ開始 ↓ -->
+          <?php while ($campaign_query->have_posts()) : $campaign_query->the_post(); ?>
+          <!-- ここに投稿がある場合の記述 -->
           <article class="swiper-slide slider__item">
-            <figure class="slider__image"><img
-                src="<?php echo get_theme_file_uri(); ?>/assets/images/common/slider_2.jpg" alt="さまざまな色をした魚が群れで泳いでいる様子">
+            <figure class="slider__image">
+              <?php if (has_post_thumbnail()) : ?>
+              <?php the_post_thumbnail('full'); ?>
+              <?php else : ?>
+              <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noImage.jpg"
+                alt="NoImage画像" />
+              <?php endif; ?>
             </figure>
             <div class="slider__body">
-              <p class="slider__label">体験ダイビング</p>
-              <h3 class="slider__title">貸切体験ダイビング</h3>
+              <?php
+                  $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
+                  if (!empty($taxonomy_terms)) {
+                    $limit = 5;
+                    $count = 0;
+                    foreach ($taxonomy_terms as $taxonomy_term) {
+                      if ($count < $limit) {
+                        echo '<p class="slider__label">' . esc_html($taxonomy_term->name) . '</p>';
+                        $count++;
+                      } else {
+                        break;
+                      }
+                    }
+                  }
+                  ?>
+              <h3 class="slider__title">
+                <!-- タイトル40文字制限 -->
+                <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+              </h3>
               <div class="slider__meta">
-                <h4 class="slider__sub-title">全部コミコミ(お一人様)</h4>
+                <h4 class="slider__sub-title"><?php the_field("campaign-money-text"); ?></h4>
                 <div class="slider__price-unit">
-                  <p class="slider__old-price">&#165;24&#44;000</p>
-                  <p class="slider__new-price">&#165;18&#44;000</p>
+                  <p class="slider__old-price">&#165;<?php the_field("campaign-old-price"); ?></p>
+                  <p class="slider__new-price">&#165;<?php the_field("campaign-new-price"); ?></p>
                 </div>
               </div>
             </div>
           </article>
-          <article class="swiper-slide slider__item">
-            <figure class="slider__image"><img
-                src="<?php echo get_theme_file_uri(); ?>/assets/images/common/slider_3.jpg" alt="さまざまな色をした魚が群れで泳いでいる様子">
-            </figure>
-            <div class="slider__body">
-              <p class="slider__label">体験ダイビング</p>
-              <h3 class="slider__title">ナイトダイビング</h3>
-              <div class="slider__meta">
-                <h4 class="slider__sub-title">全部コミコミ(お一人様)</h4>
-                <div class="slider__price-unit">
-                  <p class="slider__old-price">&#165;10,000</p>
-                  <p class="slider__new-price">&#165;8,000</p>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="swiper-slide slider__item">
-            <figure class="slider__image"> <img
-                src="<?php echo get_theme_file_uri(); ?>/assets/images/common/slider_4.jpg" alt="さまざまな色をした魚が群れで泳いでいる様子">
-            </figure>
-            <div class="slider__body">
-              <p class="slider__label">ファンダイビング</p>
-              <h3 class="slider__title">貸切ファンダイビング</h3>
-              <div class="slider__meta">
-                <h4 class="slider__sub-title">全部コミコミ(お一人様)</h4>
-                <div class="slider__price-unit">
-                  <p class="slider__old-price">&#165;20&#44;000</p>
-                  <p class="slider__new-price">&#165;16&#44;000</p>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="swiper-slide slider__item">
-            <figure class="slider__image"><img
-                src="<?php echo get_theme_file_uri(); ?>/assets/images/common/slider_1.jpg" alt="さまざまな色をした魚が群れで泳いでいる様子">
-            </figure>
-            <div class="slider__body">
-              <p class="slider__label">ライセンス講習</p>
-              <h3 class="slider__title">ライセンス取得</h3>
-              <div class="slider__meta">
-                <h4 class="slider__sub-title">全部コミコミ(お一人様)</h4>
-                <div class="slider__price-unit">
-                  <p class="slider__old-price">&#165;56&#44;000</p>
-                  <p class="slider__new-price">&#165;46&#44;000</p>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="swiper-slide slider__item">
-            <figure class="slider__image"><img
-                src="<?php echo get_theme_file_uri(); ?>/assets/images/common/slider_2.jpg" alt="さまざまな色をした魚が群れで泳いでいる様子">
-            </figure>
-            <div class="slider__body">
-              <p class="slider__label">体験ダイビング</p>
-              <h3 class="slider__title">貸切体験ダイビング</h3>
-              <div class="slider__meta">
-                <h4 class="slider__sub-title">全部コミコミ(お一人様)</h4>
-                <div class="slider__price-unit">
-                  <p class="slider__old-price">&#165;24&#44;000</p>
-                  <p class="slider__new-price">&#165;18&#44;000</p>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="swiper-slide slider__item">
-            <figure class="slider__image"><img
-                src="<?php echo get_theme_file_uri(); ?>/assets/images/common/slider_3.jpg" alt="さまざまな色をした魚が群れで泳いでいる様子">
-            </figure>
-            <div class="slider__body">
-              <p class="slider__label">体験ダイビング</p>
-              <h3 class="slider__title">ナイトダイビング</h3>
-              <div class="slider__meta">
-                <h4 class="slider__sub-title">全部コミコミ(お一人様)</h4>
-                <div class="slider__price-unit">
-                  <p class="slider__old-price">&#165;10,000</p>
-                  <p class="slider__new-price">&#165;8,000</p>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="swiper-slide slider__item">
-            <figure class="slider__image"> <img
-                src="<?php echo get_theme_file_uri(); ?>/assets/images/common/slider_4.jpg" alt="さまざまな色をした魚が群れで泳いでいる様子">
-            </figure>
-            <div class="slider__body">
-              <p class="slider__label">ファンダイビング</p>
-              <h3 class="slider__title">貸切ファンダイビング</h3>
-              <div class="slider__meta">
-                <h4 class="slider__sub-title">全部コミコミ(お一人様)</h4>
-                <div class="slider__price-unit">
-                  <p class="slider__old-price">&#165;20,000</p>
-                  <p class="slider__new-price">&#165;16,000</p>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="swiper-slide slider__item">
-            <figure class="slider__image"><img
-                src="<?php echo get_theme_file_uri(); ?>/assets/images/common/slider_1.jpg" alt="さまざまな色をした魚が群れで泳いでいる様子">
-            </figure>
-            <div class="slider__body">
-              <p class="slider__label">ライセンス講習</p>
-              <h3 class="slider__title">ライセンス取得</h3>
-              <div class="slider__meta">
-                <h4 class="slider__sub-title">全部コミコミ(お一人様)</h4>
-                <div class="slider__price-unit">
-                  <p class="slider__old-price">&#165;56,000</p>
-                  <p class="slider__new-price">&#165;46,000</p>
-                </div>
-              </div>
-            </div>
-          </article>
+          <?php endwhile; ?>
         </div>
+
+        <?php else : ?>
+        <!-- ここに投稿がない場合の記述 -->
+        <p>記事が投稿されていません</p>
+        <?php endif;
+          wp_reset_postdata(); ?>
       </div>
       <!-- 前後の矢印 -->
       <div class="slider__button">

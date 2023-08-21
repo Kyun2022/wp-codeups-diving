@@ -60,7 +60,7 @@
                         echo '<p class="slider__label">' . esc_html($taxonomy_term->name) . '</p>';
                         $count++;
                       } else {
-                        break;
+                        break;™
                       }
                     }
                   }

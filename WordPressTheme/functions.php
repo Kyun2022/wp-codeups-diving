@@ -35,8 +35,8 @@ function my_script_init()
   wp_enqueue_script('polyfill', 'https://polyfill.io/v3/polyfill.min.js?features=es6', "", "1.0.0", false);
   wp_enqueue_script('micro-modal', 'https://unpkg.com/micromodal/dist/micromodal.min.js', array(), "1.0.1", false);
   // swiper
-  wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', "", "9.0.1", true);
-  wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', "", "9.0.1", false);
+  wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', "", "9.0.0", true);
+  wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', "", "9.0.0", 'all');
   // inview
   wp_enqueue_script('main-js', get_theme_file_uri('/assets/js/jquery.inview.min.js?20230816'), array('jquery'), '1.0.1', true);
   // 自作jsファイルの読み込み
@@ -153,3 +153,66 @@ function blog_get_archives()
  * @param int $position メニューの位置
  */
 SCF::add_options_page('wp-codeups__DIVING', 'ギャラリー画像', 'manage_options', 'theme-options','','4'); //管理画面の4番目にメニュー設置
+
+
+function ACF_img($str, $size_name = 'full', $type = 'photo', $row = '')
+{
+
+  //空入力を有効に
+  if ($type == '') {
+    $type = 'photo';
+  }
+
+  //rowを第2因数以降でも有効に
+  if ($size_name == 'row' || $type == 'row') {
+    $row = 'row';
+    $type = 'photo';
+    if ($size_name == 'row') {
+      $size_name = 'full';
+    }
+  }
+
+  //rowの処理
+  if ($row != 'row') {
+    $image = get_field($str);
+  } else {
+    //繰り返し（repeater）の画像呼び出し
+    $image = get_sub_field($str);
+  }
+
+  //画像情報の読み込み
+  if (!empty($image)) {
+    // vars
+    $url = $image['url'];
+    $alt = $image['alt'];
+    $title = $image['title'];
+    $caption = $image['caption'];
+
+    // Resize
+    if (($size_name != '') && ($size_name != 'full')) {
+      $thumb = $image['sizes'][$size_name];
+    } else {
+      $thumb = $url;
+    }
+
+    switch ($type) {
+      case 'photo':
+        $photo = '<img src="' . $thumb . '" alt="' . $alt . '" />';
+        break;
+      case 'url':
+        $photo = $thumb;
+        break;
+      case 'alt':
+        $photo = $image['alt'];
+        break;
+      case 'title':
+        $photo = $image['title'];
+        break;
+      case 'caption':
+        $photo = $image['caption'];
+        break;
+    }
+
+    echo $photo;
+  }
+}
