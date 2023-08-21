@@ -294,6 +294,7 @@ jQuery(function ($) {
     awaitOpenAnimation: true,
     disableScroll: true
   });
+
   /*//////////////////////////////////////
   information
   /////////////////////////////////////*/

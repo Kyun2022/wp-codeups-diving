@@ -281,6 +281,7 @@ aboutUs
     awaitOpenAnimation: true,
     disableScroll: true,
   });
+
   /*//////////////////////////////////////
 information
 /////////////////////////////////////*/

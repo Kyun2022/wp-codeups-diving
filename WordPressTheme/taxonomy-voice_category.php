@@ -72,7 +72,7 @@
                   <?php
                       $taxonomy_terms = get_the_terms($post->ID, 'voice_category');
                       foreach ($taxonomy_terms as $taxonomy_term) {
-                        if (!in_array($taxonomy_term->slug, array('license', 'experience', 'fan')))
+                        if (!in_array($taxonomy_term->slug, array('voice-license', 'voice-experience', 'voice-fan')))
                           continue;
                         echo '<span class="box__label ' . $taxonomy_term->slug . '">' . $taxonomy_term->name . '</span>';
                       }
