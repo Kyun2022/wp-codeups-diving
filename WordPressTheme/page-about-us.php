@@ -57,7 +57,7 @@ Template Name: 私たちについて
 
       <div class="gallery__container">
         <?php
-        $repeat_item = SCF::get_option_meta('theme-options', 'gallery_lists');
+        $repeat_item = SCF::get_option_meta('gallery_options', 'gallery_lists');
         foreach ($repeat_item as $index => $fields) {
           $image_url = wp_get_attachment_image_src($fields['gallery_item'], 'full');
         ?>
@@ -70,7 +70,7 @@ Template Name: 私たちについて
       </div>
       <div class="gallery__modal">
         <?php
-        $repeat_item = SCF::get_option_meta('theme-options', 'gallery_lists');
+        $repeat_item = SCF::get_option_meta('gallery_options', 'gallery_lists');
         foreach ($repeat_item as $index => $fields) {
           $image_url = wp_get_attachment_image_src($fields['gallery_item'], 'full');
         ?>

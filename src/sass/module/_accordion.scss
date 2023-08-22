@@ -17,10 +17,10 @@
   font-family: $jp-font-family1;
   font-weight: $normal;
   font-size: my-rem(16);
-  padding: my-rem(16);
+  padding: my-rem(16)my-rem(60)my-rem(16)my-rem(16);
   @include mq(md) {
     font-size: my-rem(20);
-    padding: my-rem(25) my-rem(40);
+    padding: my-rem(25) my-rem(100) my-rem(25) my-rem(40);
   }
 }
 

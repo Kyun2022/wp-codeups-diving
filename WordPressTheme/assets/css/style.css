@@ -363,7 +363,7 @@ a {
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
-	padding: 1rem;
+	padding: 1rem 3.75rem 1rem 1rem;
 	position: relative;
 }
 
@@ -4076,7 +4076,7 @@ html {
 
 .accordion__title {
 	font-size: 1.25rem;
-	padding: 1.5625rem 2.5rem;
+	padding: 1.5625rem 6.25rem 1.5625rem 2.5rem;
 }
 
 .accordion__title::before {

@@ -365,67 +365,71 @@
         <ul class="price__menu">
           <li class="price__items">
             <h3 class="price__header">ライセンス講習</h3>
+            <?php
+            $license_fields = SCF::get_option_meta('price_options', 'license_lists');
+            foreach ($license_fields as $license_field_name => $license_value) {
+              $license_content = esc_html($license_value['license_content']);
+              $license_subContent = esc_html($license_value['license_subContent']);
+              $license_price = esc_html($license_value['license_price']);
+            ?>
+            <?php if ($license_content && $license_subContent && $license_price) : ?>
             <dl class="price__item">
-              <dt class="price__label">オープンウォーターダイバーコース</dt>
-              <dd class="price__text">&#165;50&#44;000</dd>
+              <dt class="price__label"><?php echo $license_content; ?><?php echo $license_subContent; ?></dt>
+              <dd class="price__text">&#165;<?php echo $license_price; ?></dd>
             </dl>
-            <dl class="price__item">
-              <dt class="price__label">アドバンスドオープンウォーターコース</dt>
-              <dd class="price__text">&#165;60&#44;000</dd>
-            </dl>
-            <dl class="price__item">
-              <dt class="price__label">レスキュー＋EFRコース</dt>
-              <dd class="price__text">&#165;70&#44;000</dd>
-            </dl>
+            <?php endif; ?>
+            <?php } ?>
           </li>
           <li class="price__items">
             <h3 class="price__header">体験ダイビング</h3>
+            <?php
+            $experience_fields = SCF::get_option_meta('price_options', 'experience_lists');
+            foreach ($experience_fields as $experience_field) {
+              $experience_content = esc_html($experience_field['experience_content']);
+              $experience_subContent = esc_html($experience_field['experience_subContent']);
+              $experience_price = esc_html($experience_field['experience_price']);
+            ?>
+            <?php if ($experience_content && $experience_subContent && $experience_price) : ?>
             <dl class="price__item">
-              <dt class="price__label">ビーチ体験ダイビング(半日)</dt>
-              <dd class="price__text">&#165;7&#44;000</dd>
+              <dt class="price__label"><?php echo $experience_content; ?><?php echo $experience_subContent; ?></dt>
+              <dd class="price__text">&#165;<?php echo $experience_price; ?></dd>
             </dl>
-            <dl class="price__item">
-              <dt class="price__label">ビーチ体験ダイビング(1日)</dt>
-              <dd class="price__text">&#165;14&#44;000</dd>
-            </dl>
-            <dl class="price__item">
-              <dt class="price__label">ボート体験ダイビング(半日)</dt>
-              <dd class="price__text">&#165;10&#44;000</dd>
-            </dl>
-            <dl class="price__item">
-              <dt class="price__label">ボート体験ダイビング(1日)</dt>
-              <dd class="price__text">&#165;18&#44;000</dd>
-            </dl>
+            <?php endif; ?>
+            <?php } ?>
           </li>
           <li class="price__items">
             <h3 class="price__header">ファンダイビング</h3>
+            <?php
+            $fan_fields = SCF::get_option_meta('price_options', 'fan_lists');
+            foreach ($fan_fields as $fan_field) {
+              $fan_content = esc_html($fan_field['fan_content']);
+              $fan_subContent = esc_html($fan_field['fan_subContent']);
+              $fan_price = esc_html($fan_field['fan_price']);
+            ?>
+            <?php if ($fan_content && $fan_subContent && $fan_price) : ?>
             <dl class="price__item">
-              <dt class="price__label">ビーチダイビング(2ダイブ)</dt>
-              <dd class="price__text">&#165;14&#44;000</dd>
+              <dt class="price__label"><?php echo $fan_content; ?><?php echo $fan_subContent; ?></dt>
+              <dd class="price__text">&#165;<?php echo $fan_price; ?></dd>
             </dl>
-            <dl class="price__item">
-              <dt class="price__label">ボートダイビング(2ダイブ)</dt>
-              <dd class="price__text">&#165;18&#44;000</dd>
-            </dl>
-            <dl class="price__item">
-              <dt class="price__label">スペシャルダイビング(2ダイブ)</dt>
-              <dd class="price__text">&#165;24&#44;000</dd>
-            </dl>
-            <dl class="price__item">
-              <dt class="price__label">ナイトダイビング(1ダイブ)</dt>
-              <dd class="price__text">&#165;10&#44;000</dd>
-            </dl>
+            <?php endif; ?>
+            <?php } ?>
           </li>
           <li class="price__items">
             <h3 class="price__header">スペシャルダイビング</h3>
+            <?php
+            $special_fields = SCF::get_option_meta('price_options', 'special_lists');
+            foreach ($special_fields as $special_field) {
+              $special_content = esc_html($special_field['special_content']);
+              $special_subContent = esc_html($special_field['special_subContent']);
+              $special_price = esc_html($special_field['special_price']);
+            ?>
+            <?php if ($special_content && $special_subContent && $special_price) : ?>
             <dl class="price__item">
-              <dt class="price__label">貸切ダイビング(2ダイブ)</dt>
-              <dd class="price__text">&#165;24&#44;000</dd>
+              <dt class="price__label"><?php echo $special_content; ?><?php echo $special_subContent; ?></dt>
+              <dd class="price__text">&#165;<?php echo $special_price; ?></dd>
             </dl>
-            <dl class="price__item">
-              <dt class="price__label">1日ダイビング(3ダイブ)</dt>
-              <dd class="price__text">&#165;32&#44;000</dd>
-            </dl>
+            <?php endif; ?>
+            <?php } ?>
           </li>
         </ul>
       </div>

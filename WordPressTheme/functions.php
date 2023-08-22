@@ -152,5 +152,6 @@ function blog_get_archives()
  * @param string|null $icon_url メニューに表示するアイコンの URL
  * @param int $position メニューの位置
  */
-SCF::add_options_page('wp-codeups__DIVING', 'ギャラリー画像', 'manage_options', 'theme-options','','4'); //管理画面の4番目にメニュー設置
-SCF::add_options_page('wp-codeups__DIVING', '料金一覧', 'manage_options', 'theme_options','','4'); //管理画面の５番目にメニュー設置
+SCF::add_options_page('wp-codeups__DIVING', 'ギャラリー画像', 'manage_options', 'gallery_options','','4'); //管理画面の4番目にメニュー設置
+SCF::add_options_page('wp-codeups__DIVING', '料金一覧', 'manage_options', 'price_options','','4'); //管理画面の５番目にメニュー設置
+SCF::add_options_page('wp-codeups__DIVING', 'よくある質問', 'manage_options', 'FAQ_options','','4'); //管理画面の５番目にメニュー設置
