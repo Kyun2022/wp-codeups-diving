@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: よくある質問
+*/
+?>
 <?php get_header(); ?>
 <main>
 

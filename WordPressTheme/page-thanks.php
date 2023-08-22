@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: 送信完了
+*/
+?>
 <?php get_header(); ?>
 <main>
 

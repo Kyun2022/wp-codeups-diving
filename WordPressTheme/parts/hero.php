@@ -11,6 +11,12 @@
     $alt = '透き通った青い海のなかをいっぱいの透き通った魚が泳いでいる様子';
     $titleClass = 'hero__title-text';
     $title = 'blog';
+  } elseif (is_month('blog') || is_year('blog')) {
+    $imagePC = '/assets/images/common/sub-blog__hero-pc.jpg';
+    $imageSP = '/assets/images/common/sub-blog__hero-sp.jpg';
+    $alt = '透き通った青い海のなかをいっぱいの透き通った魚が泳いでいる様子';
+    $titleClass = 'hero__title-text';
+    $title = 'blog';
   } elseif (is_single()) {
     $imagePC = '/assets/images/common/sub-blog__hero-pc.jpg';
     $imageSP = '/assets/images/common/sub-blog__hero-sp.jpg';

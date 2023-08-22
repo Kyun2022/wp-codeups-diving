@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: 私たちについて
+*/
+?>
 <?php get_header(); ?>
 
 <main>

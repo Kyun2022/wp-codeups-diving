@@ -1578,7 +1578,7 @@ figure img {
 	padding: 0.375rem 0.875rem;
 }
 
-.detail__pageNation-item:hover {
+.detail__pageNation-item a:hover {
 	background-color: #408f95;
 	color: #ffffff;
 }

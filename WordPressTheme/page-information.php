@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: ダイビング情報
+*/
+?>
 <?php get_header(); ?>
 <main>
   <?php get_template_part('parts/hero'); ?>

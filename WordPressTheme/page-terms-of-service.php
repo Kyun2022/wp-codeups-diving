@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: 利用規約
+*/
+?>
 <?php get_header(); ?>
 <main>
 
