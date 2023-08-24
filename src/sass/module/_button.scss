@@ -1,4 +1,4 @@
-@use "global" as *;
+@use "global"as *;
 
 .button {
   display: inline-block;
@@ -16,11 +16,13 @@
   position: relative;
   z-index: 1;
 }
+
 .button.button--colorChange {
   background-color: $white;
   color: $green;
   border: my-rem(1) solid $white;
 }
+
 .button::before {
   position: absolute;
   top: 0;
@@ -32,9 +34,11 @@
   border: my-rem(1) solid $green;
   z-index: -2;
 }
+
 .button.button--colorChange::before {
   border: my-rem(1) solid $white;
 }
+
 .button::after {
   background-color: $white;
   position: absolute;
@@ -48,9 +52,11 @@
   transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
   z-index: -1;
 }
+
 .button.button--colorChange::after {
   background-color: $green;
 }
+
 .button__arrow {
   display: inline-block;
   content: "";
@@ -63,6 +69,7 @@
   margin-bottom: my-rem(3);
   z-index: -1;
 }
+
 .button__arrow--colorChange {
   display: inline-block;
   content: "";
@@ -75,6 +82,7 @@
   margin-bottom: my-rem(3);
   z-index: -1;
 }
+
 /*//////////////////////////////////////
 ホバー時スライドして色が変化する
 /////////////////////////////////////*/
@@ -93,6 +101,7 @@
   border-bottom: my-rem(1) solid $green;
   border-right: my-rem(1) solid $green;
 }
+
 .button.button--colorChange:hover {
   color: $white;
   transform: scale(1, 1);
@@ -102,6 +111,7 @@
   border-bottom: my-rem(1) solid $white;
   border-right: my-rem(1) solid $white;
 }
+
 /*//////////////////////////////////////
 終了
 /////////////////////////////////////*/

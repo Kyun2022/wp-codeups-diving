@@ -155,3 +155,10 @@ function blog_get_archives()
 SCF::add_options_page('wp-codeups__DIVING', 'ギャラリー画像', 'manage_options', 'gallery_options','','4'); //管理画面の4番目にメニュー設置
 SCF::add_options_page('wp-codeups__DIVING', '料金一覧', 'manage_options', 'price_options','','4'); //管理画面の５番目にメニュー設置
 SCF::add_options_page('wp-codeups__DIVING', 'よくある質問', 'manage_options', 'FAQ_options','','4'); //管理画面の５番目にメニュー設置
+
+// ContactForm7で自動挿入されるPタグ、brタグを削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false()
+{
+  return false;
+}

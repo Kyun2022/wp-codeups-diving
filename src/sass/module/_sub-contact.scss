@@ -1,4 +1,4 @@
-@use "global" as *;
+@use "global"as *;
 
 .sub-contact {
   position: relative;
@@ -11,6 +11,7 @@
   width: my-rem(120);
   height: my-rem(55);
   z-index: -1;
+
   @include mq(md) {
     top: my-rem(-71);
     width: my-rem(301);
@@ -18,9 +19,11 @@
     left: calc(50% - min(47.9166vw, 38.75rem));
   }
 }
+
 .sub-contact__inner.inner {
   width: 100%;
   max-width: my-rem(500);
+
   @include mq(md) {
     max-width: my-rem(750);
   }
@@ -28,18 +31,22 @@
 
 .sub-contact__content-error {
   color: $red;
+  display: none; //require判定で表示
+}
+
+.sub-contact__content-error.is-show {
+  display: block;
   display: flex;
   justify-content: center;
 }
-.sub-contact__content-error--all-none {
-  display: none; //require判定で表示
-}
+
 .sub-contact__content-errorText {
   font-family: $jp-font-family1;
   font-size: my-rem(14);
   font-weight: $normal;
   position: relative;
 }
+
 .sub-contact__content-errorText::before {
   position: absolute;
   left: my-rem(-13);
@@ -47,13 +54,16 @@
   display: inline-block;
   width: my-rem(16);
 }
+
 .sub-contact__content-errorText--md-show {
   display: block;
   text-align: left;
+
   @include mq(md) {
     display: none;
   }
 }
+
 .sub-contact__form {
   margin-top: my-rem(38);
 }

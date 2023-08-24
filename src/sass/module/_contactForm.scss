@@ -1,4 +1,4 @@
-@use "global" as *;
+@use "global"as *;
 
 .contactForm__container dl {
   display: flex;
@@ -6,6 +6,7 @@
   padding-bottom: my-rem(24);
   gap: my-rem(14);
   border-bottom: 1px dashed $green;
+
   @include mq(md) {
     gap: initial;
     flex-direction: row;
@@ -15,10 +16,12 @@
 
 .contactForm__container:not(:first-child) dl {
   padding-top: my-rem(24);
+
   @include mq(md) {
     padding-top: my-rem(41);
   }
 }
+
 .contactForm__title {
   width: 100%;
   max-width: 100%;
@@ -31,12 +34,14 @@
     max-width: calc((203 / 700) * 100%);
   }
 }
+
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder,
 textarea::placeholder {
   color: $green2;
 }
+
 .contactForm__title::after {
   content: "必須";
   display: inline-block;
@@ -54,13 +59,16 @@ textarea::placeholder {
 .contactForm__title--layout::after {
   display: none;
 }
+
 .contactForm__body {
   width: 100%;
   max-width: 100%;
+
   @include mq(md) {
     max-width: calc((497 / 700) * 100%);
   }
 }
+
 /*//////////////////////////////////////
 checkbox
 /////////////////////////////////////*/
@@ -72,15 +80,18 @@ checkbox
   font-family: $jp-font-family1;
   font-size: my-rem(16);
   font-weight: $normal;
-  user-select: none; /* テキストの選択を防ぐ */
+  user-select: none;
+  /* テキストの選択を防ぐ */
   cursor: pointer;
   transition: 0.3s ease;
   line-height: 1;
   margin-top: my-rem(5);
 }
+
 .contactForm__checkbox:not(:first-child) span {
   margin-top: my-rem(11);
 }
+
 .contactForm__checkbox span::before {
   content: "";
   display: inline-block;
@@ -89,12 +100,13 @@ checkbox
   border: 1px solid $green;
   margin-right: my-rem(8);
 }
+
 [type="checkbox"] span::after {
   opacity: 0;
   transition: 0.3s ease;
 }
 
-[type="checkbox"]:checked + span::after {
+[type="checkbox"]:checked+span::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -118,6 +130,7 @@ checkbox
   width: 100%;
   max-width: 100%;
 }
+
 .contactForm__body--select {
   position: relative;
   color: $dark-green;
@@ -126,6 +139,7 @@ checkbox
   font-weight: $normal;
   padding: my-rem(12) my-rem(8);
   border: 1px solid $green;
+
   @include mq(md) {
     padding: my-rem(5) my-rem(8);
   }
@@ -146,6 +160,7 @@ checkbox
   background-position: center;
   cursor: pointer;
 }
+
 .contactForm__body input,
 .contactForm__body textarea {
   width: 100%;
@@ -156,6 +171,7 @@ checkbox
   padding: my-rem(7) my-rem(16);
   border: 1px solid $green;
 }
+
 .contactForm__body textarea {
   height: my-rem(200);
   resize: none;
@@ -164,6 +180,7 @@ checkbox
 .contactForm__triangle {
   position: relative;
 }
+
 select option::after {
   position: absolute;
   right: 0;
@@ -173,12 +190,15 @@ select option::after {
   height: my-rem(12);
   background-image: url(/assets/images/common/triangle.png);
 }
+
 .contactForm__footer {
   padding: my-rem(38) my-rem(30) my-rem(145);
+
   @include mq(md) {
     padding: my-rem(75) 0 my-rem(160);
   }
 }
+
 .contactForm__footer-container {
   display: flex;
   justify-content: center;
@@ -189,7 +209,8 @@ select option::after {
 checkbox
 /////////////////////////////////////*/
 
-.contactForm__text span {
+
+.wpcf7-list-item-label {
   display: flex;
   align-items: center;
   position: relative;
@@ -197,32 +218,38 @@ checkbox
   font-family: $jp-font-family1;
   font-size: my-rem(14);
   font-weight: $normal;
-  user-select: none; /* テキストの選択を防ぐ */
+  user-select: none;
+  /* テキストの選択を防ぐ */
   cursor: pointer;
   transition: 0.3s ease;
   line-height: calc(22 / 16);
+
 }
 
-.contactForm__text span::before {
+
+.wpcf7-list-item-label::before {
   content: "";
   display: inline-block;
-  min-width: my-rem(22);
-  height: my-rem(22);
+  min-width: my-rem(15);
+  height: my-rem(24);
   border: 1px solid $green;
   margin-right: my-rem(10);
   margin-top: my-rem(-20);
+
   @include mq(md) {
     margin-right: my-rem(16);
     margin-top: initial;
   }
 }
 
-.contactForm__text [type="checkbox"] span::after {
+
+.wpcf7-list-item-label::after [type="checkbox"]:checked {
   opacity: 0;
   transition: 0.3s ease;
 }
 
-.contactForm__text [type="checkbox"]:checked + span::after {
+
+.wpcf7-list-item-label [type="checkbox"]:checked span::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -238,20 +265,84 @@ checkbox
   border-left: my-rem(3) solid $red;
   border-bottom: my-rem(3) solid $red;
 }
+
 /*//////////////////////////////////////
 終了
 /////////////////////////////////////*/
 .contactForm__button {
   margin-top: my-rem(26);
   text-align: center;
+
   @include mq(md) {
     margin-top: my-rem(39);
   }
 }
 
-// input[required],
-// textarea[required] {
-//   background-color: rgba(201, 72, 0, 0.2);
-//   border: 1px solid $red;
-//   color: $white;
-// }
+.contactForm__button input {
+  color: $white;
+}
+
+.contactForm__button .button:hover input[type="submit"] {
+  color: $green;
+}
+
+
+
+/*//////////////////////////////////////
+ホバー時スライドして色が変化する
+/////////////////////////////////////*/
+.form__button {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.form__button span.button__arrow {
+  display: inline-block;
+  content: "";
+  width: my-rem(40);
+  height: my-rem(8);
+  transform: skew(45deg);
+  border-bottom: my-rem(1) solid $white !important;
+  border-right: my-rem(1) solid $white !important;
+  margin-left: my-rem(8);
+  margin-bottom: my-rem(3);
+}
+
+
+.form__button::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  transform: translate(my-rem(4), my-rem(4));
+  border: my-rem(1) solid $green;
+  z-index: -2;
+}
+
+.form__button::after {
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+
+.form__button:hover {
+  color: $green;
+  background-color: $white;
+  transform: scale(1, 1);
+}
+
+.form__button:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}

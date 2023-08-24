@@ -363,7 +363,14 @@ jQuery(function ($) {
       $(this).toggleClass("open", 300);
     });
   });
-
+  /*//////////////////////////////////////
+  CONTACT
+  /////////////////////////////////////*/
+  //送信ボタンを押した時のみバリデーションメッセージ表示
+  $(".form-submit").click(function () {
+    $(".wpcf7-form-control-wrap").addClass("is-show");
+    $(".js-errorMessage").addClass("is-show");
+  });
   /*//////////////////////////////////////
   終了
   /////////////////////////////////////*/

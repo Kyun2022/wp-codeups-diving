@@ -1263,7 +1263,7 @@ checkbox
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	align-items: center;
-	color: #0d2936;
+	color: #0d2936; /* テキストの選択を防ぐ */
 	cursor: pointer;
 	display: flex;
 	font-family: "Noto Sans JP", sans-serif;
@@ -1273,7 +1273,7 @@ checkbox
 	margin-top: 0.3125rem;
 	position: relative;
 	transition: 0.3s ease;
-	user-select: none; /* テキストの選択を防ぐ */
+	user-select: none;
 }
 
 .contactForm__checkbox:not(:first-child) span {
@@ -1389,11 +1389,11 @@ select option::after {
 checkbox
 /////////////////////////////////////*/
 
-.contactForm__text span {
+.wpcf7-list-item-label {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	align-items: center;
-	color: #0d2936;
+	color: #0d2936; /* テキストの選択を防ぐ */
 	cursor: pointer;
 	display: flex;
 	font-family: "Noto Sans JP", sans-serif;
@@ -1402,25 +1402,25 @@ checkbox
 	line-height: 1.375;
 	position: relative;
 	transition: 0.3s ease;
-	user-select: none; /* テキストの選択を防ぐ */
+	user-select: none;
 }
 
-.contactForm__text span::before {
+.wpcf7-list-item-label::before {
 	border: 1px solid #408f95;
 	content: "";
 	display: inline-block;
-	height: 1.375rem;
+	height: 1.5rem;
 	margin-right: 0.625rem;
 	margin-top: -1.25rem;
-	min-width: 1.375rem;
+	min-width: 0.9375rem;
 }
 
-.contactForm__text [type=checkbox] span::after {
+.wpcf7-list-item-label::after [type=checkbox]:checked {
 	opacity: 0;
 	transition: 0.3s ease;
 }
 
-.contactForm__text [type=checkbox]:checked + span::after {
+.wpcf7-list-item-label [type=checkbox]:checked span::after {
 	border-bottom: 0.1875rem solid #c94800;
 	border-left: 0.1875rem solid #c94800;
 	content: "";
@@ -1443,6 +1443,76 @@ checkbox
 .contactForm__button {
 	margin-top: 1.625rem;
 	text-align: center;
+}
+
+.contactForm__button input {
+	color: #ffffff;
+}
+
+.contactForm__button .button:hover input[type=submit] {
+	color: #408f95;
+}
+
+/*//////////////////////////////////////
+ホバー時スライドして色が変化する
+/////////////////////////////////////*/
+
+.form__button {
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+}
+
+.form__button span.button__arrow {
+	border-bottom: 0.0625rem solid #ffffff !important;
+	border-right: 0.0625rem solid #ffffff !important;
+}
+
+.form__button span.button__arrow {
+	content: "";
+	display: inline-block;
+	height: 0.5rem;
+	margin-bottom: 0.1875rem;
+	margin-left: 0.5rem;
+	transform: skew(45deg);
+	width: 2.5rem;
+}
+
+.form__button::before {
+	border: 0.0625rem solid #408f95;
+	bottom: 0;
+	content: "";
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: translate(0.25rem, 0.25rem);
+	z-index: -2;
+}
+
+.form__button::after {
+	background-color: #ffffff;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transform: scale(0, 1);
+	transform-origin: left top;
+	transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+	width: 100%;
+	z-index: -1;
+}
+
+.form__button:hover {
+	background-color: #ffffff;
+	color: #408f95;
+	transform: scale(1, 1);
+}
+
+.form__button:hover::after {
+	transform: scale(1, 1);
+	transform-origin: left top;
 }
 
 .detail__container {
@@ -3448,12 +3518,13 @@ ol.privacyPolicy__items {
 
 .sub-contact__content-error {
 	color: #c94800;
-	display: flex;
-	justify-content: center;
+	display: none;
 }
 
-.sub-contact__content-error--all-none {
-	display: none;
+.sub-contact__content-error.is-show {
+	display: block;
+	display: flex;
+	justify-content: center;
 }
 
 .sub-contact__content-errorText {
@@ -3915,6 +3986,46 @@ Contactの一部分
 	margin-left: 2rem;
 }
 
+.wpcf7-form-control.wpcf7-acceptance .wpcf7-list-item-label::before {
+	height: 1.375rem;
+	min-width: 1.375rem;
+}
+
+.wpcf7-form-control.wpcf7-acceptance .wpcf7-list-item-label::after {
+	height: 0.5rem;
+	position: absolute;
+	top: 40%;
+	width: 1.1875rem;
+}
+
+.wpcf7-list-item:before {
+	display: none !important;
+}
+
+.wpcf7-spinner {
+	display: none !important;
+}
+
+div.wpcf7 .ajax-loader {
+	display: none !important;
+}
+
+.wpcf7-response-output {
+	display: none !important;
+}
+
+.wpcf7-form-control-wrap .wpcf7-not-valid-tip {
+	display: none;
+	margin-top: 10px;
+}
+
+.wpcf7-form-control-wrap.is-show .wpcf7-not-valid {
+	background: rgba(201, 72, 0, 0.2);
+	border: 0.0625rem solid #c94800;
+	color: #ffffff;
+	display: block;
+}
+
 @media screen and (min-width: 768px) {
 
 .u-desktop {
@@ -4335,7 +4446,7 @@ html {
 	padding: 4.6875rem 0 10rem;
 }
 
-.contactForm__text span::before {
+.wpcf7-list-item-label::before {
 	margin-right: 1rem;
 	margin-top: 0;
 	margin-top: initial;

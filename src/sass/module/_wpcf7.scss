@@ -1,0 +1,43 @@
+@use 'global'as *;
+
+
+.wpcf7-form-control.wpcf7-acceptance .wpcf7-list-item-label::before {
+  min-width: my-rem(22);
+  height: my-rem(22);
+}
+
+.wpcf7-form-control.wpcf7-acceptance .wpcf7-list-item-label::after {
+  width: my-rem(19);
+  height: my-rem(8);
+  position: absolute;
+  top: 40%;
+}
+
+.wpcf7-list-item:before {
+  display: none !important;
+}
+
+.wpcf7-spinner {
+  display: none !important;
+}
+
+div.wpcf7 .ajax-loader {
+  display: none !important;
+}
+
+// CSSでデフォルトではバリデーションメッセージ(入力内容に問題があります。確認して再度お試しください。)を非表示
+.wpcf7-response-output {
+  display: none !important;
+}
+
+.wpcf7-form-control-wrap .wpcf7-not-valid-tip {
+  display: none;
+  margin-top: 10px;
+}
+
+.wpcf7-form-control-wrap.is-show .wpcf7-not-valid {
+  display: block;
+  border: my-rem(1) solid $red;
+  background: rgba(201, 72, 0, 0.20);
+  color: $white;
+}

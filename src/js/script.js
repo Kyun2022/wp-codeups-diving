@@ -135,34 +135,34 @@ Top
   });
 
   // Swiperカード
-    const mySwiperWrapper = document.querySelector(".swiper-wrapper");
-    const horizonSlider = new Swiper(".js-campaign-slider", {
-      loop: true,
-      effect: "slide",
-      disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
-      slidesPerView: 1.26,
-      breakpoints: {
-        768: {
-          slidesPerView: 3.29,
-          spaceBetween: 30,
-        },
-        1024: {
-          slidesPerView: 3.49,
-          spaceBetween: 40,
-        },
+  const mySwiperWrapper = document.querySelector(".swiper-wrapper");
+  const horizonSlider = new Swiper(".js-campaign-slider", {
+    loop: true,
+    effect: "slide",
+    disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+    slidesPerView: 1.26,
+    breakpoints: {
+      768: {
+        slidesPerView: 3.29,
+        spaceBetween: 30,
       },
-      spaceBetween: 24,
-      speed: 2000,
-      autoplay: {
-        delay: 1000,
+      1024: {
+        slidesPerView: 3.49,
+        spaceBetween: 40,
       },
-      // 前後の矢印
-      navigation: {
-        prevEl: ".slider__prevButton",
-        nextEl: ".slider__nextButton",
-      },
-    });
-    
+    },
+    spaceBetween: 24,
+    speed: 2000,
+    autoplay: {
+      delay: 1000,
+    },
+    // 前後の矢印
+    navigation: {
+      prevEl: ".slider__prevButton",
+      nextEl: ".slider__nextButton",
+    },
+  });
+
   // 背景色アニメーション
   // 要素の取得とスピードの設定
   const box = $(".js-slideColor"),
@@ -330,15 +330,15 @@ blog
 /////////////////////////////////////*/
 
 
-$(function () {
-  // タイトルをクリックすると
-  $(".js-archive-item--open").on("click", function () {
-    // クリックした次の要素を開閉
-    $(this).find(".js-subItems--open").slideToggle(300);
-    // タイトルにopenクラスを付け外しして矢印の向きを変更
-    $(this).toggleClass("open", 300);
+  $(function () {
+    // タイトルをクリックすると
+    $(".js-archive-item--open").on("click", function () {
+      // クリックした次の要素を開閉
+      $(this).find(".js-subItems--open").slideToggle(300);
+      // タイトルにopenクラスを付け外しして矢印の向きを変更
+      $(this).toggleClass("open", 300);
+    });
   });
-});
 
   /*//////////////////////////////////////
 FAQ
@@ -352,7 +352,14 @@ FAQ
       $(this).toggleClass("open", 300);
     });
   });
-
+  /*//////////////////////////////////////
+CONTACT
+/////////////////////////////////////*/
+  //送信ボタンを押した時のみバリデーションメッセージ表示
+  $(".form-submit").click(function () {
+    $(".wpcf7-form-control-wrap").addClass("is-show");
+    $(".js-errorMessage").addClass("is-show");
+  });
   /*//////////////////////////////////////
 終了
 /////////////////////////////////////*/
