@@ -162,3 +162,9 @@ function wpcf7_autop_return_false()
 {
   return false;
 }
+
+// 特定のページのエディターを非表示
+add_action('init', function () {
+  remove_post_type_support('voice', 'editor');
+  remove_post_type_support('campaign', 'editor');
+}, 99);

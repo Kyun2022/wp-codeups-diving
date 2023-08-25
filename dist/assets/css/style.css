@@ -2863,10 +2863,10 @@ micro-modal
 	margin-top: 2.3125rem;
 }
 
-.privacyPolicy__sub-title,
-.privacyPolicy__items,
-.privacyPolicy__item,
-.privacyPolicy__text {
+.privacyPolicy__main-container p,
+.privacyPolicy__main-container ol,
+.privacyPolicy__main-container ul,
+.privacyPolicy__main-container li {
 	color: #0d2936;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
@@ -2874,22 +2874,22 @@ micro-modal
 	line-height: 2;
 }
 
-.privacyPolicy__container {
+.privacyPolicy__main-container div {
 	margin-top: 2rem;
 }
 
-.privacyPolicy__items {
+.privacyPolicy__main-container ul {
 	margin-top: 1.9375rem;
 }
 
-ol.privacyPolicy__items {
+.privacyPolicy__main-container ol {
 	list-style-type: decimal;
 	margin-top: 0;
 	margin-top: initial;
 	padding-left: 1.4375rem;
 }
 
-.privacyPolicy__text {
+.privacyPolicy__main-container p {
 	margin-top: 1.9375rem;
 }
 
@@ -3630,7 +3630,7 @@ ol.privacyPolicy__items {
 }
 
 .sub-privacyPolicy__inner.inner {
-	max-width: 31.25rem;
+	max-width: 45.625rem;
 	width: 100%;
 }
 
@@ -3648,7 +3648,7 @@ ol.privacyPolicy__items {
 }
 
 .sub-termsOfService__inner.inner {
-	max-width: 31.25rem;
+	max-width: 45.625rem;
 	width: 100%;
 }
 
@@ -3789,10 +3789,10 @@ ol.privacyPolicy__items {
 	margin-top: 2.3125rem;
 }
 
-.termsOfService__sub-title,
-.termsOfService__items,
-.termsOfService__item,
-.termsOfService__text {
+.termsOfService__main-container p,
+.termsOfService__main-container ol,
+.termsOfService__main-container li,
+.termsOfService__main-container ul {
 	color: #0d2936;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
@@ -3800,29 +3800,27 @@ ol.privacyPolicy__items {
 	line-height: 2;
 }
 
-.termsOfService__container {
+.termsOfService__container p:last-child {
 	margin-top: 2rem;
 }
 
-.termsOfService__items {
+.termsOfService__main-container div {
 	margin-top: 1.9375rem;
 }
 
-ol.termsOfService__items {
+.termsOfService__main-container ol {
 	list-style-type: decimal;
 	margin-top: 0;
 	margin-top: initial;
 	padding-left: 1.4375rem;
 }
 
-.termsOfService__text {
+.termsOfService__main-container ol {
 	margin-top: 1.9375rem;
 }
 
-.termsOfService__container--marginTop,
-.termsOfService__text--marginTop {
-	margin-top: 0;
-	margin-top: initial;
+em {
+	font-style: normal;
 }
 
 .text {
@@ -4024,6 +4022,11 @@ div.wpcf7 .ajax-loader {
 	border: 0.0625rem solid #c94800;
 	color: #ffffff;
 	display: block;
+}
+
+.wpcf7-list-item-label::before {
+	margin-top: 0;
+	margin-top: initial;
 }
 
 @media screen and (min-width: 768px) {
@@ -5261,7 +5264,7 @@ html {
 }
 
 .sub-privacyPolicy__inner.inner {
-	max-width: 50rem;
+	max-width: 53.125rem;
 }
 
 .sub-termsOfService__decoration {
@@ -5272,7 +5275,7 @@ html {
 }
 
 .sub-termsOfService__inner.inner {
-	max-width: 50rem;
+	max-width: 53.125rem;
 }
 
 .sub-thanks__decoration {

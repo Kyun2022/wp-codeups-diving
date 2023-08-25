@@ -1,10 +1,11 @@
-@use "global" as *;
+@use "global"as *;
 
 .privacyPolicy__title {
   color: $dark-green;
   font-family: $jp-font-family1;
   font-size: my-rem(24);
   font-weight: $medium;
+
   @include mq(md) {
     font-size: my-rem(32);
   }
@@ -12,15 +13,16 @@
 
 .privacyPolicy__main-container {
   margin-top: my-rem(37);
+
   @include mq(md) {
     margin-top: my-rem(37);
   }
 }
 
-.privacyPolicy__sub-title,
-.privacyPolicy__items,
-.privacyPolicy__item,
-.privacyPolicy__text {
+.privacyPolicy__main-container p,
+.privacyPolicy__main-container ol,
+.privacyPolicy__main-container ul,
+.privacyPolicy__main-container li {
   color: $dark-green;
   font-family: $jp-font-family1;
   font-size: my-rem(16);
@@ -28,18 +30,21 @@
   line-height: calc(32 / 16);
 }
 
-.privacyPolicy__container {
+.privacyPolicy__main-container div{
   margin-top: my-rem(32);
 }
 
-.privacyPolicy__items {
+.privacyPolicy__main-container ul {
   margin-top: my-rem(31);
 }
-ol.privacyPolicy__items {
+
+.privacyPolicy__main-container ol {
   list-style-type: decimal;
   padding-left: my-rem(23);
   margin-top: initial;
 }
-.privacyPolicy__text {
+
+.privacyPolicy__main-container p {
   margin-top: my-rem(31);
 }
+

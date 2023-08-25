@@ -23,8 +23,8 @@
 
 .sub-termsOfService__inner.inner {
   width: 100%;
-  max-width: my-rem(500);
+  max-width: my-rem(730);
   @include mq(md) {
-    max-width: my-rem(800);
+    max-width: my-rem(850);
   }
 }

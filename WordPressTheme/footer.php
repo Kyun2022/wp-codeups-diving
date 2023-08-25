@@ -137,7 +137,7 @@
             </div>
             <div class="footer-menu__contents">
               <p class="footer-menu__list-name">
-                <a href="<?php echo esc_url(home_url('privacy-policy')); ?>">プライバシー<br class="u-mobile">ポリシー</a>
+                <a href="<?php echo esc_url(home_url('privacypolicy')); ?>">プライバシー<br class="u-mobile">ポリシー</a>
               </p>
             </div>
             <div class="footer-menu__contents">

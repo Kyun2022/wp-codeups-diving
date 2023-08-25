@@ -1,10 +1,11 @@
-@use "global" as *;
+@use "global"as *;
 
 .termsOfService__title {
   color: $dark-green;
   font-family: $jp-font-family1;
   font-size: my-rem(24);
   font-weight: $medium;
+
   @include mq(md) {
     font-size: my-rem(32);
   }
@@ -12,15 +13,16 @@
 
 .termsOfService__main-container {
   margin-top: my-rem(37);
+
   @include mq(md) {
     margin-top: my-rem(37);
   }
 }
 
-.termsOfService__sub-title,
-.termsOfService__items,
-.termsOfService__item,
-.termsOfService__text {
+.termsOfService__main-container p,
+.termsOfService__main-container ol,
+.termsOfService__main-container li,
+.termsOfService__main-container ul {
   color: $dark-green;
   font-family: $jp-font-family1;
   font-size: my-rem(16);
@@ -28,22 +30,26 @@
   line-height: calc(32 / 16);
 }
 
-.termsOfService__container {
+.termsOfService__container p:last-child {
   margin-top: my-rem(32);
 }
 
-.termsOfService__items {
+.termsOfService__main-container div {
   margin-top: my-rem(31);
 }
-ol.termsOfService__items {
+
+.termsOfService__main-container ol {
   list-style-type: decimal;
   padding-left: my-rem(23);
   margin-top: initial;
 }
-.termsOfService__text {
+
+.termsOfService__main-container ol {
   margin-top: my-rem(31);
 }
-.termsOfService__container--marginTop,
-.termsOfService__text--marginTop {
-  margin-top: initial;
+
+
+
+em {
+  font-style: normal;
 }

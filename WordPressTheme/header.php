@@ -125,7 +125,7 @@
                 <p class="drawer-menu__list-name"><a href="<?php echo esc_url(home_url('sitemap')); ?>">サイトマップ</a></p>
               </div>
               <div class="drawer-menu__contents">
-                <p class="drawer-menu__list-name"><a href="<?php echo esc_url(home_url('privacy-policy')); ?>">プライバシー<br
+                <p class="drawer-menu__list-name"><a href="<?php echo esc_url(home_url('privacypolicy')); ?>">プライバシー<br
                       class="u-mobile">ポリシー</a>
                 </p>
               </div>

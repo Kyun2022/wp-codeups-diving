@@ -94,7 +94,7 @@ Template Name: サイトマップ
               </div>
               <div class="siteMap-menu__contents">
                 <p class="siteMap-menu__list-name">
-                  <a href="<?php echo esc_url(home_url('privacy-policy')); ?>">プライバシー<br class="u-mobile">ポリシー</a>
+                  <a href="<?php echo esc_url(home_url('privacypolicy')); ?>">プライバシー<br class="u-mobile">ポリシー</a>
                 </p>
               </div>
               <div class="siteMap-menu__contents">

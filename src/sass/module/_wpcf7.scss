@@ -41,3 +41,10 @@ div.wpcf7 .ajax-loader {
   background: rgba(201, 72, 0, 0.20);
   color: $white;
 }
+
+.wpcf7-list-item-label::before {
+  margin-top: initial;
+  @include mq(md) {
+    
+  }
+}
