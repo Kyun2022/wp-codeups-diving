@@ -4,16 +4,10 @@
 背景色のアニメーション後に画像を表示する
 /////////////////////////////////////*/
 
-.js-slideColor,
-.js-slideColor2,
-.js-slideColor3,
-.js-slideColor4 {
+.js-slideColor {
   overflow: hidden;
 }
-.js-slideColor .is-view,
-.js-slideColor2 .is-view2,
-.js-slideColor3 .is-view3,
-.js-slideColor4 .is-view4 {
+.js-slideColor .is-view{
   position: absolute;
   top: 0;
   right: 0;

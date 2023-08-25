@@ -170,8 +170,8 @@ jQuery(function ($) {
 
   //.js-slideColorの付いた全ての要素に対して下記の処理を行う
   box.each(function () {
-    $(".js-slideColor").append('<div class="is-view"></div>');
-    var color = $(".js-slideColor").find($(".is-view")),
+    $(this).append('<div class="is-view"></div>');
+    var color = $(this).find($(".is-view")),
       image = $(this).find("img");
     var counter = 0;
     image.css("opacity", "0");
@@ -192,96 +192,6 @@ jQuery(function ($) {
           }, speed);
         });
         counter = 1;
-      }
-    });
-  });
-  var box2 = $(".js-slideColor2"),
-    speed2 = 600;
-  //.js-slideColorの付いた全ての要素に対して下記の処理を行う
-
-  box2.each(function () {
-    $(".js-slideColor2").append('<div class="is-view2"></div>');
-    var color2 = $(".js-slideColor2").find($(".is-view2")),
-      image2 = $(this).find("img");
-    var counter2 = 0;
-    image2.css("opacity", "0");
-    color2.css("width", "0%");
-    //inviewを使って背景色が画面に現れたら処理をする
-    color2.on("inview", function () {
-      if (counter2 === 0) {
-        $(this).delay(300).animate({
-          width: "100%"
-        }, speed2, function () {
-          image2.css("opacity", "1");
-          $(this).css({
-            left: "0",
-            right: "auto"
-          });
-          $(this).animate({
-            width: "0%"
-          }, speed2);
-        });
-        counter2 = 1;
-      }
-    });
-  });
-  var box3 = $(".js-slideColor3"),
-    speed3 = 600;
-  //.js-slideColorの付いた全ての要素に対して下記の処理を行う
-
-  box3.each(function () {
-    $(".js-slideColor3").append('<div class="is-view3"></div>');
-    var color3 = $(".js-slideColor3").find($(".is-view3")),
-      image3 = $(this).find("img");
-    var counter3 = 0;
-    image3.css("opacity", "0");
-    color3.css("width", "0%");
-    //inviewを使って背景色が画面に現れたら処理をする
-    color3.on("inview", function () {
-      if (counter3 === 0) {
-        $(this).delay(300).animate({
-          width: "100%"
-        }, speed3, function () {
-          image3.css("opacity", "1");
-          $(this).css({
-            left: "0",
-            right: "auto"
-          });
-          $(this).animate({
-            width: "0%"
-          }, speed3);
-        });
-        counter3 = 1;
-      }
-    });
-  });
-  var box4 = $(".js-slideColor4"),
-    speed4 = 600;
-  //.js-slideColorの付いた全ての要素に対して下記の処理を行う
-
-  box4.each(function () {
-    $(".js-slideColor4").append('<div class="is-view4"></div>');
-    var color4 = $(".js-slideColor4").find($(".is-view4")),
-      image4 = $(this).find("img");
-    var counter4 = 0;
-    image4.css("opacity", "0");
-    color4.css("width", "0%");
-    //inviewを使って背景色が画面に現れたら処理をする
-    color4.on("inview", function () {
-      if (counter4 === 0) {
-        $(this).delay(300).animate({
-          width: "100%"
-        }, speed4, function () {
-          image4.css("opacity", "1");
-          $(this).css({
-            left: "0",
-            right: "auto"
-          });
-          $(this).animate({
-            width: "0%"
-          }, speed4);
-        });
-        counter4 = 1;
       }
     });
   });

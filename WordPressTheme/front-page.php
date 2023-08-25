@@ -169,8 +169,8 @@
         <h2 class="title__sub-text">ダイビング情報</h2>
       </div>
       <div class="information__container">
-        <figure class="information__image js-slideColor"><img
-            src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-pc.jpg" alt="海の中で黄色の魚が泳ぐ様子">
+        <figure class="information__image js-slideColor">
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-pc.jpg" alt="海の中で黄色の魚が泳ぐ様子">
         </figure>
         <div class="information__body">
           <div class="information__header">
@@ -319,7 +319,7 @@
                   <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
                 </h3>
               </div>
-              <figure class="box__image">
+              <figure class="box__image js-slideColor">
                 <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('full'); ?>
                 <?php else : ?>
@@ -357,7 +357,7 @@
         <h2 class="title__sub-text">料金一覧</h2>
       </div>
       <div class="price__container">
-        <picture class="price__images js-slideColor4">
+        <picture class="price__images js-slideColor">
           <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-pc.jpg"
             media="(min-width:768px)">
           <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-sp.jpg" alt="橙色の大きな亀が泳いでいる様子">

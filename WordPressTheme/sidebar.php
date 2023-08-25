@@ -79,7 +79,7 @@
                      <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
                    </h3>
                  </div>
-                 <figure class="box__image box__image--sub">
+                 <figure class="box__image box__image--sub js-slideColor">
                    <?php if (has_post_thumbnail()) : ?>
                    <?php the_post_thumbnail('full'); ?>
                    <?php else : ?>
