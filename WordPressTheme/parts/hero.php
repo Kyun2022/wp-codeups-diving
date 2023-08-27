@@ -66,8 +66,8 @@
     $titleClass = 'hero__title-text';
     $title = 'terms&nbsp;of&nbsp;<span class="hero__title-text--capitalize">service';
   } elseif (is_page('about-us')) {
-    $imagePC = '/assets/images/common/sub-aboutUs__hero-pc.jpg';
-    $imageSP = '/assets/images/common/sub-aboutUs__hero-sp.jpg';
+    $imagePC = '/assets/images/common/sub-aboutus__hero-pc.jpg';
+    $imageSP = '/assets/images/common/sub-aboutus__hero-sp.jpg';
     $alt = '空をバックに黄い色のシーダーがこちらをみている様子';
     $titleClass = 'hero__title-text';
     $title = 'about&nbsp;us';

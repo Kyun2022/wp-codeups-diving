@@ -69,8 +69,8 @@
               <?php if (has_post_thumbnail()) : ?>
               <?php the_post_thumbnail('full'); ?>
               <?php else : ?>
-              <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noImage.jpg"
-                alt="NoImage画像" />
+              <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.jpg"
+                alt="noimage画像" />
               <?php endif; ?>
             </figure>
             <div class="slider__body">
@@ -225,8 +225,8 @@
                 <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('full', array()); ?>
                 <?php else : ?>
-                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noImage.jpg"
-                  alt=" NoImage画像" />
+                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.jpg"
+                  alt=" noimage画像" />
                 <?php endif; ?>
               </figure>
               <div class="card__body">
@@ -323,8 +323,8 @@
                 <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('full'); ?>
                 <?php else : ?>
-                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noImage.jpg"
-                  alt="NoImage画像" />
+                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.jpg"
+                  alt="noimage画像" />
                 <?php endif; ?>
               </figure>
             </div>

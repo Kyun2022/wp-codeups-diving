@@ -4,11 +4,11 @@
   <?php get_template_part('parts/hero'); ?>
 
   <?php if (function_exists('bcn_display')) { ?>
-  <div class="breadcrumb inner">
-    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-      <?php bcn_display(); ?>
+    <div class="breadcrumb inner">
+      <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+        <?php bcn_display(); ?>
+      </div>
     </div>
-  </div>
   <?php } ?>
 
   <div class="sub-campaign under-campaign">
@@ -71,18 +71,17 @@
 
           ?>
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-          <article class="slider__item" id="campaign1">
-            <figure class="slider__image">
-              <?php if (has_post_thumbnail()) : ?>
-              <?php the_post_thumbnail('full'); ?>
-              <?php else : ?>
-              <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noImage.jpg"
-                alt="NoImage画像" />
-              <?php endif; ?>
-            </figure>
-            <div class="slider__body slider__body--layout">
-              <!-- 指定したカテゴリー(ターム)のみ表示 -->
-              <?php
+              <article class="slider__item" id="campaign1">
+                <figure class="slider__image">
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('full'); ?>
+                  <?php else : ?>
+                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.jpg" alt="noimage画像" />
+                  <?php endif; ?>
+                </figure>
+                <div class="slider__body slider__body--layout">
+                  <!-- 指定したカテゴリー(ターム)のみ表示 -->
+                  <?php
                   $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
                   foreach ($taxonomy_terms as $taxonomy_term) {
                     if (!in_array($taxonomy_term->slug, array('license', 'experience', 'fan')))
@@ -91,39 +90,37 @@
                   }
                   ?>
 
-              <h3 class="slider__title slider__title--layout">
-                <!-- タイトル40文字制限 -->
-                <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
-              </h3>
-              <div class="slider__meta slider__meta--layout">
-                <h4 class="slider__sub-title"><?php the_field("campaign-money-text"); ?></h4>
-                <div class="slider__price-unit slider__price-unit--layout">
-                  <p class="slider__old-price slider__old-price--layout">&#165;<?php the_field("campaign-old-price"); ?>
-                  </p>
-                  <p class="slider__new-price">&#165;<?php the_field("campaign-new-price"); ?></p>
-                </div>
-              </div>
-              <p class="about__title"><?php the_field("custom-textarea"); ?></p>
-              <div class="slider__detail slider__detail--md-none">
-                <p class="slider__text text"><?php the_field("campaign-main-text"); ?></p>
-                <div class="slider__box">
-                  <p class="slider__date"><?php the_field("campaign-period"); ?></p>
-                  <p class="slider__sub-text"><?php the_field("campaign-info"); ?></p>
-                  <div class="slider__button-block">
-                    <button class="button"
-                      onclick="location.href='<?php echo esc_url(home_url('contact')); ?>'">contact&nbsp;us<span™
-                        class="button__arrow"></span™></button>
+                  <h3 class="slider__title slider__title--layout">
+                    <!-- タイトル40文字制限 -->
+                    <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+                  </h3>
+                  <div class="slider__meta slider__meta--layout">
+                    <h4 class="slider__sub-title"><?php the_field("campaign-money-text"); ?></h4>
+                    <div class="slider__price-unit slider__price-unit--layout">
+                      <p class="slider__old-price slider__old-price--layout">&#165;<?php the_field("campaign-old-price"); ?>
+                      </p>
+                      <p class="slider__new-price">&#165;<?php the_field("campaign-new-price"); ?></p>
+                    </div>
+                  </div>
+                  <p class="about__title"><?php the_field("custom-textarea"); ?></p>
+                  <div class="slider__detail slider__detail--md-none">
+                    <p class="slider__text text"><?php the_field("campaign-main-text"); ?></p>
+                    <div class="slider__box">
+                      <p class="slider__date"><?php the_field("campaign-period"); ?></p>
+                      <p class="slider__sub-text"><?php the_field("campaign-info"); ?></p>
+                      <div class="slider__button-block">
+                        <button class="button" onclick="location.href='<?php echo esc_url(home_url('contact')); ?>'">contact&nbsp;us<span™ class="button__arrow"></span™></button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </article>
-          <?php endwhile; ?>
+              </article>
+            <?php endwhile; ?>
         </div>
-        <?php else : ?>
+      <?php else : ?>
         <!-- ここに投稿がない場合の記述 -->
         <p>記事が投稿されていません</p>
-        <?php endif;
+      <?php endif;
           wp_reset_postdata(); ?>
       </div>
 
