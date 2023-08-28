@@ -72,9 +72,18 @@
               <div class="slider__meta slider__meta--layout">
                 <h4 class="slider__sub-title"><?php the_field("campaign-money-text"); ?></h4>
                 <div class="slider__price-unit slider__price-unit--layout">
-                  <p class="slider__old-price slider__old-price--layout">&#165;<?php the_field("campaign-old-price"); ?>
+                  <p class="slider__old-price slider__old-price--layout">&#165;
+                    <?php
+                        $old_price = number_format(get_field("campaign-old-price"));
+                        echo $old_price;
+                        ?>
                   </p>
-                  <p class="slider__new-price">&#165;<?php the_field("campaign-new-price"); ?></p>
+                  <p class="slider__new-price">&#165;
+                    <?php
+                        $new_prices = number_format(get_field("campaign-new-price"));
+                        echo $new_prices;
+                        ?>
+                  </p>
                 </div>
               </div>
               <p class="about__title"><?php the_field("custom-textarea"); ?></p>
@@ -100,7 +109,6 @@
         <?php endif;
           wp_reset_postdata(); ?>
       </div>
-
       <div class="sub-campaign__pageNation pageNation">
         <ul class="pageNation__items wp-pagenavi">
           <?php wp_pagenavi(); ?>
