@@ -72,16 +72,16 @@
               <div class="slider__meta slider__meta--layout">
                 <h4 class="slider__sub-title"><?php the_field("campaign-money-text"); ?></h4>
                 <div class="slider__price-unit slider__price-unit--layout">
-                  <p class="slider__old-price slider__old-price--layout">&#165;
-                    <?php
+                  <p class="slider__old-price slider__old-price--layout">
+                    &#165;<?php
                         $old_price = number_format(get_field("campaign-old-price"));
                         echo $old_price;
                         ?>
                   </p>
-                  <p class="slider__new-price">&#165;
-                    <?php
-                        $new_prices = number_format(get_field("campaign-new-price"));
-                        echo $new_prices;
+                  <p class="slider__new-price">
+                    &#165;<?php
+                        $new_price = number_format(get_field("campaign-new-price"));
+                        echo $new_price;
                         ?>
                   </p>
                 </div>
