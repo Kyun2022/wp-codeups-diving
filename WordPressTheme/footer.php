@@ -121,6 +121,8 @@
                 </li>
                 <li class="footer-menu__item"><a href="<?php echo esc_url(home_url('price#price3')); ?>">ファンダイビング</a>
                 </li>
+                <li class="footer-menu__item"><a href="<?php echo esc_url(home_url('price#price4')); ?>">スペシャルダイビング</a>
+                </li>
               </ul>
             </div>
           </div>
