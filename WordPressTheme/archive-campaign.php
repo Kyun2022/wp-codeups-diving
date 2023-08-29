@@ -34,9 +34,7 @@
 
       <div class="sub-campaign__menu">
         <div class="sub-campaign__items slider">
-          <?php
-          $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
-          query_posts($query_string . '&posts_per_page=4&paged=' . $paged); //pagedとposts_per_pageの指定
+          <?php $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
           ?>
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -74,15 +72,15 @@
                 <div class="slider__price-unit slider__price-unit--layout">
                   <p class="slider__old-price slider__old-price--layout">
                     &#165;<?php
-                        $old_price = number_format(get_field("campaign-old-price"));
-                        echo $old_price;
-                        ?>
+                              $old_price = number_format(get_field("campaign-old-price"));
+                              echo $old_price;
+                              ?>
                   </p>
                   <p class="slider__new-price">
                     &#165;<?php
-                        $new_price = number_format(get_field("campaign-new-price"));
-                        echo $new_price;
-                        ?>
+                              $new_price = number_format(get_field("campaign-new-price"));
+                              echo $new_price;
+                              ?>
                   </p>
                 </div>
               </div>

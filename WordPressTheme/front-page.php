@@ -323,8 +323,8 @@
                       ?>
                 </div>
                 <h3 class="box__title">
-                  <!-- タイトル40文字制限 -->
-                  <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+                  <!-- タイトル20文字制限 -->
+                  <?php echo wp_trim_words(get_the_title(), 20, '...'); ?>
                 </h3>
               </div>
               <figure class="box__image js-slideColor">
@@ -337,7 +337,10 @@
               </figure>
             </div>
             <div class="box__meta">
-              <p class="box__text text"><?php the_field("voice-text"); ?></p>
+              <p class="box__text text">
+                <!-- タイトル170文字制限 -->
+                <?php echo wp_trim_words(get_field("voice-text"), 170, '...'); ?>
+              </p>
             </div>
           </article>
           <?php endwhile; ?>
@@ -383,7 +386,12 @@
             <?php if ($license_content && $license_subContent && $license_price) : ?>
             <dl class="price__item">
               <dt class="price__label"><?php echo $license_content; ?><?php echo $license_subContent; ?></dt>
-              <dd class="price__text">&#165;<?php echo $license_price; ?></dd>
+              <dd class="price__text">
+                &#165;<?php
+                          $license_prices = number_format($license_price);
+                          echo $license_prices;
+                          ?>
+              </dd>
             </dl>
             <?php endif; ?>
             <?php } ?>
@@ -400,7 +408,12 @@
             <?php if ($experience_content && $experience_subContent && $experience_price) : ?>
             <dl class="price__item">
               <dt class="price__label"><?php echo $experience_content; ?><?php echo $experience_subContent; ?></dt>
-              <dd class="price__text">&#165;<?php echo $experience_price; ?></dd>
+              <dd class="price__text">
+                &#165;<?php
+                          $experience_prices = number_format($experience_price);
+                          echo $experience_prices;
+                          ?>
+              </dd>
             </dl>
             <?php endif; ?>
             <?php } ?>
@@ -417,7 +430,12 @@
             <?php if ($fan_content && $fan_subContent && $fan_price) : ?>
             <dl class="price__item">
               <dt class="price__label"><?php echo $fan_content; ?><?php echo $fan_subContent; ?></dt>
-              <dd class="price__text">&#165;<?php echo $fan_price; ?></dd>
+              <dd class="price__text">
+                &#165;<?php
+                          $fan_prices = number_format($fan_price);
+                          echo $fan_prices;
+                          ?>
+              </dd>
             </dl>
             <?php endif; ?>
             <?php } ?>
@@ -434,7 +452,12 @@
             <?php if ($special_content && $special_subContent && $special_price) : ?>
             <dl class="price__item">
               <dt class="price__label"><?php echo $special_content; ?><?php echo $special_subContent; ?></dt>
-              <dd class="price__text">&#165;<?php echo $special_price; ?></dd>
+              <dd class="price__text">
+                &#165;<?php
+                          $special_prices = number_format($special_price);
+                          echo $special_prices;
+                          ?>
+              </dd>
             </dl>
             <?php endif; ?>
             <?php } ?>

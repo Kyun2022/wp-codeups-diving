@@ -8,11 +8,11 @@ Template Name: サイトマップ
   <?php get_template_part('parts/hero'); ?>
 
   <?php if (function_exists('bcn_display')) { ?>
-  <div class="breadcrumb inner">
-    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-      <?php bcn_display(); ?>
+    <div class="breadcrumb inner">
+      <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+        <?php bcn_display(); ?>
+      </div>
     </div>
-  </div>
   <?php } ?>
 
   <div class="sub-siteMap under-siteMap">
@@ -72,11 +72,11 @@ Template Name: サイトマップ
               <div class="siteMap-menu__contents">
                 <p class="siteMap-menu__list-name"><a href="<?php echo esc_url(home_url('price')); ?>">料金一覧</a></p>
                 <ul class="siteMap-menu__items">
-                  <li class="siteMap-menu__item"><a href="<?php echo esc_url(home_url('price#Price1')); ?>">ライセンス講習</a>
+                  <li class="siteMap-menu__item"><a href="<?php echo esc_url(home_url('price#price1')); ?>">ライセンス講習</a>
                   </li>
-                  <li class="siteMap-menu__item"><a href="<?php echo esc_url(home_url('price#Price2')); ?>">体験ダイビング</a>
+                  <li class="siteMap-menu__item"><a href="<?php echo esc_url(home_url('price#price2')); ?>">体験ダイビング</a>
                   </li>
-                  <li class="siteMap-menu__item"><a href="<?php echo esc_url(home_url('price#Price3')); ?>">ファンダイビング</a>
+                  <li class="siteMap-menu__item"><a href="<?php echo esc_url(home_url('price#price3')); ?>">ファンダイビング</a>
                   </li>
                 </ul>
               </div>

@@ -168,3 +168,48 @@ add_action('init', function () {
   remove_post_type_support('voice', 'editor');
   remove_post_type_support('campaign', 'editor');
 }, 99);
+
+// 投稿ページの表示件数を変更する
+function custom_posts_per_page($query)
+{
+  if (!is_admin() && $query->is_main_query()) {
+    // カスタム投稿のスラッグを記述
+    if (is_post_type_archive('campaign')) {
+      // 表示件数を指定
+      $query->set('posts_per_page', 4);
+    }
+    if (is_post_type_archive('voice')) {
+      // 表示件数を指定
+      $query->set('posts_per_page', 6);
+    }
+  }
+}
+add_action('pre_get_posts', 'custom_posts_per_page');
+
+//カスタムフィールドの「post_views_count」にアクセス数を保存する
+function setPostViews($post_id)
+{
+  $count_key = 'post_views_count';
+  $count = get_post_meta($post_id, $count_key, true);
+  if ($count == '') {
+    $count = 0;
+    delete_post_meta($post_id, $count_key);
+    add_post_meta($post_id, $count_key, '0');
+  } else {
+    $count++;
+    update_post_meta($post_id, $count_key, $count);
+  }
+}
+
+//カスタムフィールドに保存されているアクセス数を取得する
+function getPostViews($post_id)
+{
+  $count_key = 'post_views_count';
+  $count = get_post_meta($post_id, $count_key, true);
+  if ($count == '') {
+    delete_post_meta($post_id, $count_key);
+    add_post_meta($post_id, $count_key, '0');
+    return "0 View";
+  }
+  return $count . ' Views';
+}

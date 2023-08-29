@@ -67,8 +67,6 @@
         <div class="sub-campaign__items slider">
           <?php
           $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
-          query_posts($query_string . '&posts_per_page=4&paged=' . $paged); //pagedとposts_per_pageの指定
-
           ?>
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <article class="slider__item" id="campaign1">

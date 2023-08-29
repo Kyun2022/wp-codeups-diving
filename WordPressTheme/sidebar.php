@@ -4,9 +4,16 @@
              <p class="aside__title-text">人気記事</p>
            </div>
            <?php
+            if (function_exists('setPostViews')) {
+              setPostViews(get_the_ID());
+            }
+
             $args = array(
-              "post_type" => "post",
-              "posts_per_page" => 3,
+              'post_type' => array('post'),
+              'posts_per_page' => 3,
+              'post_status' => array('publish'),
+              'meta_key' => 'post_views_count',
+              'orderby' => 'meta_value_num',
               "orderby" => "date",
               "order" => "DESC",
             );

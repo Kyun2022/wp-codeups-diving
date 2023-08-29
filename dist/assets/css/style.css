@@ -3744,6 +3744,7 @@ micro-modal
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 0.875rem;
 	font-weight: 400;
+	width: 100%;
 }
 
 .tab__text--green {

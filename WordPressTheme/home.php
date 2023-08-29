@@ -19,8 +19,6 @@
         <div class="sub-blog__main-container cards">
           <?php
           $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
-          query_posts($query_string . '&posts_per_page=8&paged=' . $paged); //pagedとposts_per_pageの指定
-
           ?>
           <?php if (have_posts()) : ?>
           <div class="cards__items">

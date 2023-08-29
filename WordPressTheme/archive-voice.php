@@ -32,7 +32,6 @@
       <div class="sub-voice__container boxes">
         <div class="boxes__items boxes__items--sub">
           <?php $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
-          query_posts($query_string . '&posts_per_page=6&paged=' . $paged); //pagedとposts_per_pageの指定
           ?>
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <article class="boxes__item box">
@@ -59,8 +58,8 @@
                       ?>
                 </div>
                 <h3 class="box__title">
-                  <!-- タイトル40文字制限 -->
-                  <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+                  <!-- タイトル20文字制限 -->
+                  <?php echo wp_trim_words(get_the_title(), 20, '...'); ?>
                 </h3>
               </div>
               <figure class="box__image js-slideColor">
@@ -73,7 +72,10 @@
               </figure>
             </div>
             <div class="box__meta">
-              <p class="box__text text"><?php the_field("voice-text"); ?></p>
+              <p class="box__text text">
+                <!-- タイトル170文字制限 -->
+                <?php echo wp_trim_words(get_field("voice-text"), 170, '...'); ?>
+              </p>
             </div>
           </article>
           <?php endwhile; ?>

@@ -115,11 +115,11 @@
             <div class="footer-menu__contents">
               <p class="footer-menu__list-name"><a href="<?php echo esc_url(home_url('price')); ?>">料金一覧</a></p>
               <ul class="footer-menu__items">
-                <li class="footer-menu__item"><a href="<?php echo esc_url(home_url('price#Price1')); ?>">ライセンス講習</a>
+                <li class="footer-menu__item"><a href="<?php echo esc_url(home_url('price#price1')); ?>">ライセンス講習</a>
                 </li>
-                <li class="footer-menu__item"><a href="<?php echo esc_url(home_url('price#Price2')); ?>">体験ダイビング</a>
+                <li class="footer-menu__item"><a href="<?php echo esc_url(home_url('price#price2')); ?>">体験ダイビング</a>
                 </li>
-                <li class="footer-menu__item"><a href="<?php echo esc_url(home_url('price#Price3')); ?>">ファンダイビング</a>
+                <li class="footer-menu__item"><a href="<?php echo esc_url(home_url('price#price3')); ?>">ファンダイビング</a>
                 </li>
               </ul>
             </div>
