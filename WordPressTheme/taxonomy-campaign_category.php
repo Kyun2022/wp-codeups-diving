@@ -59,9 +59,7 @@
           }
           ?>
         </div>
-
       </div>
-
 
       <div class="sub-campaign__menu">
         <div class="sub-campaign__items slider">
@@ -88,7 +86,6 @@
                     echo '<p class="slider__label ' . $taxonomy_term->slug . '">' . $taxonomy_term->name . '</p>';
                   }
                   ?>
-
               <h3 class="slider__title slider__title--layout">
                 <!-- タイトル40文字制限 -->
                 <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
