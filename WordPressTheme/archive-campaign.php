@@ -3,13 +3,8 @@
 
   <?php get_template_part('parts/hero'); ?>
 
-  <?php if (function_exists('bcn_display')) { ?>
-  <div class="breadcrumb inner">
-    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-      <?php bcn_display(); ?>
-    </div>
-  </div>
-  <?php } ?>
+  <?php get_template_part('parts/breadcrumb'); ?>
+
 
   <div class="sub-campaign under-campaign">
     <figure class="sub-campaign__decoration"><img

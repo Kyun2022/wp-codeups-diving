@@ -3,13 +3,7 @@
 
   <?php get_template_part('parts/hero'); ?>
 
-  <?php if (function_exists('bcn_display')) { ?>
-  <div class="breadcrumb inner">
-    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-      <?php bcn_display(); ?>
-    </div>
-  </div>
-  <?php } ?>
+  <?php get_template_part('parts/breadcrumb'); ?>
 
   <div class="sub-campaign under-campaign">
     <figure class="sub-campaign__decoration">
@@ -95,15 +89,15 @@
                 <div class="slider__price-unit slider__price-unit--layout">
                   <p class="slider__old-price slider__old-price--layout">
                     &#165;<?php
-                        $old_price = number_format(get_field("campaign-old-price"));
-                        echo $old_price;
-                        ?>
+                              $old_price = number_format(get_field("campaign-old-price"));
+                              echo $old_price;
+                              ?>
                   </p>
                   <p class="slider__new-price">
                     &#165;<?php
-                        $new_price = number_format(get_field("campaign-new-price"));
-                        echo $new_price;
-                        ?>
+                              $new_price = number_format(get_field("campaign-new-price"));
+                              echo $new_price;
+                              ?>
                   </p>
                 </div>
               </div>

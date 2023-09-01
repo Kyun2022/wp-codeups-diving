@@ -2,13 +2,8 @@
 <main>
   <?php get_template_part('parts/hero'); ?>
 
-  <?php if (function_exists('bcn_display')) { ?>
-  <div class="breadcrumb inner">
-    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-      <?php bcn_display(); ?>
-    </div>
-  </div>
-  <?php } ?>
+  <?php get_template_part('parts/breadcrumb'); ?>
+
   <div class="sub-voice under-voice">
     <figure class="sub-voice__decoration"><img
         src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>

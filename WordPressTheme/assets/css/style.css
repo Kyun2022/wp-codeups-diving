@@ -2481,9 +2481,9 @@ micro-modal
 }
 
 .modal__image img {
-	-o-object-fit: cover;
+	-o-object-fit: contain;
 	aspect-ratio: 920/586;
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .modal--slide {

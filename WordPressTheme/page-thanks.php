@@ -6,8 +6,8 @@ Template Name: 送信完了
 <?php get_header(); ?>
 <main>
 
-  <?php get_template_part('parts/hero'); ?> <div class="breadcrumb inner">
-
+  <?php get_template_part('parts/hero'); ?>
+  <div class="breadcrumb inner">
     <p class="breadcrumb-text">TOP&nbsp;&gt;&nbsp;お問い合わせ&nbsp;&gt;&nbsp;送信完了</p>
   </div>
 

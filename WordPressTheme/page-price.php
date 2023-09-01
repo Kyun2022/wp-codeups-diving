@@ -8,13 +8,8 @@ Template Name: 料金の一覧
 
   <?php get_template_part('parts/hero'); ?>
 
-  <?php if (function_exists('bcn_display')) { ?>
-  <div class="breadcrumb inner">
-    <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-      <?php bcn_display(); ?>
-    </div>
-  </div>
-  <?php } ?>
+  <?php get_template_part('parts/breadcrumb'); ?>
+
 
   <div class="sub-price under-price">
     <figure class="sub-price__decoration">
