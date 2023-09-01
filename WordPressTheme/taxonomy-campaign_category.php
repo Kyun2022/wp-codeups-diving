@@ -17,8 +17,7 @@
           $terms = get_terms(array(
             // 表示するタクソノミースラッグを記述
             'taxonomy' => 'campaign_category',
-            'orderby' => 'name',
-            'order'   => 'ASC',
+            'orderby' => 'rand',
             // 表示するタームの数を指定
             'number'  => 3
           ));
@@ -57,9 +56,6 @@
 
       <div class="sub-campaign__menu">
         <div class="sub-campaign__items slider">
-          <?php
-          $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
-          ?>
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <article class="slider__item" id="campaign1">
             <figure class="slider__image">
@@ -87,12 +83,14 @@
               <div class="slider__meta slider__meta--layout">
                 <h4 class="slider__sub-title"><?php the_field("campaign-money-text"); ?></h4>
                 <div class="slider__price-unit slider__price-unit--layout">
+                  <?php if (!empty(get_field("campaign-old-price"))) : ?>
                   <p class="slider__old-price slider__old-price--layout">
                     &#165;<?php
-                              $old_price = number_format(get_field("campaign-old-price"));
-                              echo $old_price;
-                              ?>
+                                $old_price = number_format(get_field("campaign-old-price"));
+                                echo $old_price;
+                                ?>
                   </p>
+                  <?php endif; ?>
                   <p class="slider__new-price">
                     &#165;<?php
                               $new_price = number_format(get_field("campaign-new-price"));
@@ -121,8 +119,7 @@
         <?php else : ?>
         <!-- ここに投稿がない場合の記述 -->
         <p>記事が投稿されていません</p>
-        <?php endif;
-          wp_reset_postdata(); ?>
+        <?php endif; ?>
       </div>
 
       <div class="sub-campaign__pageNation pageNation">

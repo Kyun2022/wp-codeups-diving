@@ -33,7 +33,8 @@ Template Name: サイトマップ
                 </ul>
               </div>
               <div class="siteMap-menu__contents">
-                <p class="siteMap-menu__list-name"><a href="<?php echo esc_url(home_url('about-us')); ?>">私たちについて</a>
+                <p class="siteMap-menu__list-name">
+                  <a href="<?php echo esc_url(home_url('about-us')); ?>">私たちについて</a>
                 </p>
               </div>
             </div>

@@ -12,9 +12,6 @@
     <div class="sub-blog__inner inner">
       <div class="sub-blog__container">
         <div class="sub-blog__main-container cards">
-          <?php
-          $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
-          ?>
           <?php if (have_posts()) : ?>
           <div class="cards__items">
             <?php while (have_posts()) : the_post(); ?>

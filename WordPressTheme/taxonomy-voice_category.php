@@ -53,8 +53,6 @@
       </div>
       <div class="sub-voice__container boxes">
         <div class="boxes__items boxes__items--sub">
-          <?php $paged = get_query_var('paged') ? get_query_var('paged') : 1; //pagedに渡す変数
-          ?>
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <article class="boxes__item box">
             <div class="box__container">
@@ -88,19 +86,16 @@
               </figure>
             </div>
             <div class="box__meta">
-              <p class="box__text text">
-                <!-- タイトル170文字制限 -->
-                <?php echo wp_trim_words(get_field("voice-text"), 170, '...'); ?>
-              </p>
+              <p class="box__text text"><?php echo get_field("voice-text"); ?></p>
             </div>
           </article>
           <?php endwhile; ?>
         </div>
-
         <?php else : ?>
         <p>記事が投稿されていません</p>
         <?php endif; ?>
       </div>
+
       <div class="sub-voice__pageNation pageNation">
         <ul class="pageNation__items wp-pagenavi">
           <?php wp_pagenavi(); ?>

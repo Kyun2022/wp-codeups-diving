@@ -3,7 +3,6 @@
   <!-- mv -->
   <section class="mv">
     <div class="mv__inner">
-      <?php the_field('mvPC'); ?>
       <!-- Swiper -->
       <div class="swiper mv__slider js-mv-slider">
         <div class="swiper-wrapper mv__items">
@@ -47,13 +46,11 @@
       <!-- Swiper -->
       <div class="swiper campaign__slider slider js-campaign-slider">
         <div class="swiper-wrapper slider__items">
-
           <?php
           $args = array(
             "post_type" => "campaign",
             "posts_per_page" => -1,
-            "orderby" => "date",
-            "order" => "DESC",
+            "orderby" => "rand",
           );
 
           //配列で指定した内容で、記事情報を取得
@@ -96,11 +93,13 @@
               <div class="slider__meta">
                 <h4 class="slider__sub-title"><?php the_field("campaign-money-text"); ?></h4>
                 <div class="slider__price-unit">
+                  <?php if (get_field("campaign-old-price")) : ?>
                   <p class="slider__old-price">
                     &#165;<?php
-                              $old_price = number_format(get_field("campaign-old-price"));
-                              echo $old_price;
-                              ?></p>
+                                $old_price = number_format(get_field("campaign-old-price"));
+                                echo $old_price;
+                                ?></p>
+                  <?php endif; ?>
                   <p class="slider__new-price">
                     &#165;<?php
                               $new_price = number_format(get_field("campaign-new-price"));
@@ -215,8 +214,7 @@
         $args = array(
           "post_type" => "post",
           "posts_per_page" => 3,
-          "orderby" => "date",
-          "order" => "DESC",
+          "orderby" => "rand",
         );
         //配列で指定した内容で、記事情報を取得
         $blog_query = new WP_Query($args);
@@ -255,13 +253,13 @@
               </div>
             </a>
           </article>
-          <?php endwhile; ?>
+          <?php endwhile;
+            wp_reset_postdata(); ?>
         </div>
         <?php else : ?>
         <!-- ここに投稿がない場合の記述 -->
         <p>記事が投稿されていません</p>
-        <?php endif;
-        wp_reset_postdata(); ?>
+        <?php endif; ?>
 
         <div class="blog__button">
           <button class="button" onclick="location.href='<?php echo esc_url(home_url('blog')); ?>'">View&nbsp;more<span
@@ -287,8 +285,7 @@
           $args = array(
             "post_type" => "voice",
             "posts_per_page" => 2,
-            "orderby" => "date",
-            "order" => "DESC",
+            "orderby" => "rand",
           );
 
           //配列で指定した内容で、記事情報を取得

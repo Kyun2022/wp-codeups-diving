@@ -72,13 +72,13 @@
               <p class="footer-menu__list-name"><a href="<?php echo esc_url(home_url('campaign')); ?>">キャンペーン</a></p>
               <ul class="footer-menu__items">
                 <li class="footer-menu__item">
-                  <a href="<?php echo esc_url(home_url('campaign#campaign1')); ?>">ライセンス取得</a>
+                  <a href="<?php echo esc_url(home_url('campaign#campaign1')); ?>">ライセンス講習</a>
                 </li>
                 <li class="footer-menu__item">
-                  <a href="<?php echo esc_url(home_url('campaign#campaign2')); ?>">貸切体験ダイビング</a>
+                  <a href="<?php echo esc_url(home_url('campaign#campaign2')); ?>">ファンダイビング</a>
                 </li>
                 <li class="footer-menu__item"><a
-                    href="<?php echo esc_url(home_url('campaign#campaign3')); ?>">ナイトダイビング</a></li>
+                    href="<?php echo esc_url(home_url('campaign#campaign3')); ?>">体験ダイビング</a></li>
               </ul>
             </div>
             <div class="footer-menu__contents">

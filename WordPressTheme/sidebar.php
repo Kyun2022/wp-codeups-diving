@@ -14,7 +14,6 @@
               'post_status' => array('publish'),
               'meta_key' => 'post_views_count',
               'orderby' => 'meta_value_num',
-              "orderby" => "date",
               "order" => "DESC",
             );
             //配列で指定した内容で、記事情報を取得
@@ -46,13 +45,13 @@
                  </div>
                </a>
              </article>
-             <?php endwhile; ?>
+             <?php endwhile;
+                wp_reset_postdata(); ?>
            </div>
            <?php else : ?>
            <!-- ここに投稿がない場合の記述 -->
            <p>記事が投稿されていません</p>
-           <?php endif;
-            wp_reset_postdata(); ?>
+           <?php endif; ?>
          </div>
 
          <div class="aside__review review">
