@@ -77,20 +77,18 @@
                   }
                   ?>
               <h3 class="slider__title slider__title--layout">
-                <!-- タイトル40文字制限 -->
-                <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+                <!-- タイトル20文字制限 -->
+                <?php echo wp_trim_words(get_the_title(), 20, '...'); ?>
               </h3>
               <div class="slider__meta slider__meta--layout">
                 <h4 class="slider__sub-title"><?php the_field("campaign-money-text"); ?></h4>
                 <div class="slider__price-unit slider__price-unit--layout">
-                  <?php if (!empty(get_field("campaign-old-price"))) : ?>
                   <p class="slider__old-price slider__old-price--layout">
                     &#165;<?php
-                                $old_price = number_format(get_field("campaign-old-price"));
-                                echo $old_price;
-                                ?>
+                              $old_price = number_format(get_field("campaign-old-price"));
+                              echo $old_price;
+                              ?>
                   </p>
-                  <?php endif; ?>
                   <p class="slider__new-price">
                     &#165;<?php
                               $new_price = number_format(get_field("campaign-new-price"));
@@ -99,7 +97,6 @@
                   </p>
                 </div>
               </div>
-              <p class="about__title"><?php the_field("custom-textarea"); ?></p>
               <div class="slider__detail slider__detail--md-none">
                 <p class="slider__text text"><?php the_field("campaign-main-text"); ?></p>
                 <div class="slider__box">
