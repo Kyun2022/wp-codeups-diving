@@ -52,7 +52,7 @@
                 </div>
                 <h3 class="box__title">
                   <!-- タイトル40文字制限 -->
-                  <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+                  <?php echo wp_trim_words(get_the_title(), 22, '...'); ?>
                 </h3>
               </div>
               <figure class="box__image js-slideColor">
