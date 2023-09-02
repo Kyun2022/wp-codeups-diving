@@ -69,16 +69,22 @@
         <div class="footer-menu__container-left">
           <div class="footer-menu__sub-container--left1">
             <div class="footer-menu__contents">
-              <p class="footer-menu__list-name"><a href="<?php echo esc_url(home_url('campaign')); ?>">キャンペーン</a></p>
+              <p class="footer-menu__list-name">
+                <a href="<?php echo esc_url(get_post_type_archive_link('campaign')); ?>">キャンペーン</a>
+              </p>
               <ul class="footer-menu__items">
+                <?php
+                  $category_slugs = array('license', 'experience', 'fan');
+                  foreach ($category_slugs as $slug) :
+                    $term = get_term_by('slug', $slug, 'campaign_category');
+                    if (!$term) continue;
+                  ?>
                 <li class="footer-menu__item">
-                  <a href="<?php echo esc_url(home_url('campaign#campaign1')); ?>">ライセンス講習</a>
+                  <a href="<?php echo esc_url(get_term_link($term, 'campaign_category')); ?>">
+                    <?php echo esc_html($term->name); ?>
+                  </a>
                 </li>
-                <li class="footer-menu__item">
-                  <a href="<?php echo esc_url(home_url('campaign#campaign2')); ?>">ファンダイビング</a>
-                </li>
-                <li class="footer-menu__item"><a
-                    href="<?php echo esc_url(home_url('campaign#campaign3')); ?>">体験ダイビング</a></li>
+                <?php endforeach; ?>
               </ul>
             </div>
             <div class="footer-menu__contents">
@@ -95,10 +101,10 @@
                   <a href="<?php echo esc_url(home_url('information#tab_panel-1')); ?>">ライセンス講習</a>
                 </li>
                 <li class="footer-menu__item">
-                  <a href="<?php echo esc_url(home_url('information#tab_panel-3')); ?>">体験ダイビング</a>
+                  <a href="<?php echo esc_url(home_url('information#tab_panel-2')); ?>">ファンダイビング</a>
                 </li>
                 <li class="footer-menu__item">
-                  <a href="<?php echo esc_url(home_url('information#tab_panel-2')); ?>">ファンダイビング</a>
+                  <a href="<?php echo esc_url(home_url('information#tab_panel-3')); ?>">体験ダイビング</a>
                 </li>
               </ul>
             </div>

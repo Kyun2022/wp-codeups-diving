@@ -324,8 +324,8 @@
                       ?>
                 </div>
                 <h3 class="box__title">
-                  <!-- タイトル20文字制限 -->
-                  <?php echo wp_trim_words(get_the_title(), 20, '...'); ?>
+                  <!-- タイトル40文字制限 -->
+                  <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
                 </h3>
               </div>
               <figure class="box__image js-slideColor">
@@ -338,10 +338,7 @@
               </figure>
             </div>
             <div class="box__meta">
-              <p class="box__text text">
-                <!-- タイトル170文字制限 -->
-                <?php echo (get_field("voice-text")); ?>
-              </p>
+              <p class="box__text text"><?php echo (get_field("voice-text")); ?></p>
             </div>
           </article>
           <?php endwhile;

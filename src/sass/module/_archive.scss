@@ -1,4 +1,4 @@
-@use "global" as *;
+@use "global"as *;
 
 .archive__container {
   margin-top: my-rem(24);
@@ -25,11 +25,12 @@
   font-family: $jp-font-family1;
   font-size: my-rem(24);
   font-weight: $normal;
-  display: none;
 }
+
 .archive__sub-items.open {
   display: block;
 }
+
 .archive__sub-item {
   color: $green;
   font-family: $jp-font-family1;
@@ -43,6 +44,7 @@
 .archive__sub-item--layout {
   cursor: pointer;
 }
+
 .archive__item--newLayout::before,
 .archive__item--oldLayout::before,
 .archive__sub-item--layout::before {
@@ -55,10 +57,12 @@
   border-color: transparent transparent transparent $green;
   margin-right: my-rem(10);
 }
+
 .archive__item--newLayout.open::before {
   transform: rotate(90deg);
   transition: transform 0.3s;
 }
+
 .archive__item--oldLayout.open::before {
   transform: rotate(90deg);
   transition: transform 0.3s;

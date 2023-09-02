@@ -91,10 +91,6 @@ img {
 
 /* Natural flow and rhythm in articles by default */
 
-article > * + * {
-	margin-top: 1em;
-}
-
 /* Inherit fonts for inputs and buttons */
 
 input,
@@ -446,7 +442,6 @@ a {
 
 .archive__sub-items {
 	color: #408f95;
-	display: none;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1.5rem;
 	font-weight: 400;
@@ -2174,28 +2169,23 @@ micro-modal
 }
 
 .hero {
-	height: 34.25rem;
+	height: 28.75rem;
 	position: relative;
 }
 
-.hero__image {
-	position: relative;
+.hero picture {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }
 
-.hero__image:before {
-	content: "";
-	display: block;
-	padding-top: 38.0555555556%;
-}
-
-.hero__image img {
+.hero source,
+.hero img {
 	-o-object-fit: cover;
 	height: 100%;
-	left: 50%;
 	object-fit: cover;
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
 	width: 100%;
 }
 
@@ -3065,6 +3055,7 @@ micro-modal
 	background-color: #ffffff;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 	padding: 1.0625rem 1rem 1.375rem;
 }
 
@@ -3234,7 +3225,12 @@ micro-modal
 /////////////////////////////////////*/
 
 .slider__detail {
+	display: flex;
 	height: inherit;
+}
+
+.slider__text {
+	height: auto;
 }
 
 .slider__detail--md-none {
@@ -3357,8 +3353,9 @@ micro-modal
 }
 
 .sub-aboutUs__image-sky {
+	display: none;
 	position: relative;
-	width: 38.2608695652%;
+	width: 100%;
 	z-index: 2;
 }
 
@@ -3380,11 +3377,9 @@ micro-modal
 }
 
 .sub-aboutUs__image-sea {
-	margin-left: auto;
-	margin-top: -49%;
+	max-width: 100%;
 	position: relative;
-	width: 81.4492753623%;
-	z-index: -1;
+	width: 100%;
 }
 
 .sub-aboutUs__image-sea::before {
@@ -4670,6 +4665,10 @@ html {
 	padding: 0 0.8125rem;
 }
 
+.hero {
+	height: 34.25rem;
+}
+
 .hero__title {
 	top: calc(50% + 3.125rem);
 }
@@ -5102,11 +5101,15 @@ html {
 }
 
 .sub-aboutUs__image-sky {
-	width: 36.9444444444%;
+	display: block;
+	max-width: 36.9444444444%;
 }
 
 .sub-aboutUs__image-sea {
-	width: 81.4814814815%;
+	margin-left: auto;
+	margin-top: -49%;
+	max-width: 81.4814814815%;
+	z-index: -1;
 }
 
 .sub-aboutUs__container {

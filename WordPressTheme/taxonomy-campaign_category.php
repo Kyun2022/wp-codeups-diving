@@ -17,7 +17,6 @@
           $terms = get_terms(array(
             // 表示するタクソノミースラッグを記述
             'taxonomy' => 'campaign_category',
-            'orderby' => 'rand',
             // 表示するタームの数を指定
             'number'  => 3
           ));
@@ -26,7 +25,7 @@
           $campaign_category_class = (is_post_type_archive()) ? 'current-cat' : '';
           $campaign_category_link = sprintf(
             //カスタム投稿一覧ページへのaタグに付与するクラスを指定できる
-            '<p class="tab__text %s"><a href="%s" alt="%s">ALL</a></p>',
+            '<p class="tab__text js-campaignContent-target %s"><a href="%s" alt="%s">ALL</a></p>',
             $campaign_category_class,
             // カスタム投稿一覧ページのスラッグを指定
             esc_url(home_url('campaign')),
@@ -41,7 +40,7 @@
               $term_class = ($current_term_id === $term->term_id) ? 'current-cat' : '';
               $term_link = sprintf(
                 // 各タームに付与するクラスを指定できる
-                '<p class="tab__text %s"><a href="%s" alt="%s">%s</a></p>',
+                '<p class="tab__text js-campaignContent-target %s"><a href="%s" alt="%s">%s</a></p>',
                 $term_class,
                 esc_url(get_term_link($term->term_id)),
                 esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $term->name)),
@@ -56,8 +55,12 @@
 
       <div class="sub-campaign__menu">
         <div class="sub-campaign__items slider">
-          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-          <article class="slider__item" id="campaign1">
+          <?php if (have_posts()) :
+            $post_count = 0; // カウンターを初期化
+            while (have_posts()) : the_post();
+              $post_count++; // ポストごとにカウントを加算
+          ?>
+          <article class="slider__item" id="campaign<?php echo $post_count; ?>">
             <figure class="slider__image">
               <?php if (has_post_thumbnail()) : ?>
               <?php the_post_thumbnail('full'); ?>

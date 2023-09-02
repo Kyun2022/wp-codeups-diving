@@ -51,8 +51,8 @@
                       ?>
                 </div>
                 <h3 class="box__title">
-                  <!-- タイトル20文字制限 -->
-                  <?php echo wp_trim_words(get_the_title(), 20, '...'); ?>
+                  <!-- タイトル40文字制限 -->
+                  <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
                 </h3>
               </div>
               <figure class="box__image js-slideColor">

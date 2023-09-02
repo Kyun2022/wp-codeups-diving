@@ -1,13 +1,15 @@
-@use "global" as *;
+@use "global"as *;
 
 .sub-aboutUs {
   position: relative;
 }
+
 .sub-aboutUs__inner {
   max-width: my-rem(600);
   width: 100%;
   position: relative;
 }
+
 .sub-aboutUs__decoration {
   position: absolute;
   top: my-rem(-25);
@@ -15,6 +17,7 @@
   width: my-rem(120);
   height: my-rem(55);
   z-index: -1;
+
   @include mq(md) {
     top: my-rem(-71);
     width: my-rem(301);
@@ -26,51 +29,62 @@
 .sub-aboutUs__image-sky {
   position: relative;
   z-index: 2;
-  width: calc((132 / 345) * 100%);
+  width: 100%;
+  display: none;
+
   @include mq(md) {
-    width: calc((399 / 1080) * 100%);
+    display: block;
+    max-width: calc((399 / 1080) * 100%);
   }
 }
-.sub-aboutUs__image-sky::before{
+
+.sub-aboutUs__image-sky::before {
   content: "";
   display: block;
   padding-top: calc((606 / 399) * 100%);
 }
+
 .sub-aboutUs__image-sky img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+
+
 .sub-aboutUs__image-sea {
   position: relative;
-  z-index: -1;
-  width: calc((281 / 345) * 100%);
-  margin-top: -49%;
-  margin-left: auto;
+  width: 100%;
+  max-width: 100%;
+  
   @include mq(md) {
-    width: calc((880 / 1080) * 100%);
+    z-index: -1;
+    margin-top: -49%;
+    margin-left: auto;
+    max-width: calc((880 / 1080) * 100%);
   }
 }
 
-.sub-aboutUs__image-sea::before{
-content: "";
-display: block;
-padding-top: calc((581 / 880) * 100%);
+.sub-aboutUs__image-sea::before {
+  content: "";
+  display: block;
+  padding-top: calc((581 / 880) * 100%);
 }
+
 .sub-aboutUs__image-sea img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
+
 .sub-aboutUs__container {
   display: flex;
   flex-direction: column;
@@ -93,6 +107,7 @@ padding-top: calc((581 / 880) * 100%);
   position: absolute;
   top: my-rem(-245);
   left: my-rem(24);
+
   @include mq(md) {
     position: initial;
     top: initial;
@@ -108,6 +123,7 @@ padding-top: calc((581 / 880) * 100%);
   font-weight: $regular;
   line-height: calc(40 / 40);
   color: $white;
+
   @include mq(md) {
     font-size: my-rem(80);
     line-height: calc(100 / 80);

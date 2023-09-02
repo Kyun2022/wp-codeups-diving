@@ -27,10 +27,15 @@
         <?php endforeach; ?>
       </div>
 
+
       <div class="sub-campaign__menu">
         <div class="sub-campaign__items slider">
-          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-          <article class="slider__item" id="campaign1">
+          <?php if (have_posts()) :
+            $post_count = 0; // カウンターを初期化
+            while (have_posts()) : the_post();
+              $post_count++; // ポストごとにカウントを加算
+          ?>
+          <article class="slider__item" id="campaign<?php echo $post_count; ?>">
             <figure class="slider__image">
               <?php if (has_post_thumbnail()) : ?>
               <?php the_post_thumbnail('full'); ?>
