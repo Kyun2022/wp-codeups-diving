@@ -85,14 +85,20 @@
                 <div class="slider__price-unit slider__price-unit--layout">
                   <p class="slider__old-price slider__old-price--layout">
                     &#165;<?php
-                              $old_price = number_format(get_field("campaign-old-price"));
-                              echo $old_price;
+                              $old_price = get_field("campaign-old-price");
+                              if ($old_price !== null) {
+                                $formatted_old_price = number_format($old_price);
+                                echo $formatted_old_price;
+                              }
                               ?>
                   </p>
                   <p class="slider__new-price">
                     &#165;<?php
-                              $new_price = number_format(get_field("campaign-new-price"));
-                              echo $new_price;
+                              $new_price = get_field("campaign-new-price");
+                              if ($new_price !== null) {
+                                $formatted_new_price = number_format($new_price);
+                                echo $formatted_new_price;
+                              }
                               ?>
                   </p>
                 </div>

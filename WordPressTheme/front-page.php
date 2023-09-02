@@ -95,15 +95,21 @@
                 <div class="slider__price-unit">
                   <p class="slider__old-price slider__old-price--layout">
                     &#165;<?php
-                                $old_price = number_format(get_field("campaign-old-price"));
-                                echo $old_price;
-                                ?>
+                              $old_price = get_field("campaign-old-price");
+                              if ($old_price !== null) {
+                                $formatted_old_price = number_format($old_price);
+                                echo $formatted_old_price;
+                              }
+                              ?>
                   </p>
                   <p class="slider__new-price">
                     &#165;<?php
-                              $new_price = number_format(get_field("campaign-new-price"));
-                              echo $new_price;
-                              ?></p>
+                              $new_price = get_field("campaign-new-price");
+                              if ($new_price !== null) {
+                                $formatted_new_price = number_format($new_price);
+                                echo $formatted_new_price;
+                              }
+                              ?>
                 </div>
               </div>
             </div>
@@ -334,18 +340,19 @@
             <div class="box__meta">
               <p class="box__text text">
                 <!-- タイトル170文字制限 -->
-                <?php echo wp_trim_words(get_field("voice-text"), 170, '...'); ?>
+                <?php echo (get_field("voice-text")); ?>
               </p>
             </div>
           </article>
-          <?php endwhile; ?>
+          <?php endwhile;
+            wp_reset_postdata(); ?>
         </div>
         <?php else : ?>
         <!-- ここに投稿がない場合の記述 -->
         <p>記事が投稿されていません</p>
-        <?php endif;
-          wp_reset_postdata(); ?>
+        <?php endif; ?>
       </div>
+
       <div class="voice__button">
         <button class="button" onclick="location.href='<?php echo esc_url(home_url('voice')); ?>'">View&nbsp;more<span
             class="button__arrow"></span></button>
