@@ -267,7 +267,7 @@ jQuery(function ($) {
     // タイトルをクリックすると
     $(".js-archive-item--open").on("click", function () {
       // クリックした次の要素を開閉
-      $(this).find(".js-subItems--open").slideToggle(300);
+      $(this).find(".js-subItems--open").slideToggle(800);
       // タイトルにopenクラスを付け外しして矢印の向きを変更
       $(this).toggleClass("open", 300);
     });

@@ -74,11 +74,11 @@
               </p>
               <ul class="footer-menu__items">
                 <?php
-                  $category_slugs = array('license', 'experience', 'fan');
-                  foreach ($category_slugs as $slug) :
-                    $term = get_term_by('slug', $slug, 'campaign_category');
-                    if (!$term) continue;
-                  ?>
+                $category_slugs = array('license', 'fan', 'experience');
+                foreach ($category_slugs as $slug) :
+                  $term = get_term_by('slug', $slug, 'campaign_category');
+                  if (!$term) continue;
+                ?>
                 <li class="footer-menu__item">
                   <a href="<?php echo esc_url(get_term_link($term, 'campaign_category')); ?>">
                     <?php echo esc_html($term->name); ?>

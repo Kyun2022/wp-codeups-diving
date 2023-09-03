@@ -2,6 +2,7 @@
 
 .archive__container {
   margin-top: my-rem(24);
+  width: fit-content;
 }
 
 .archive__items {
@@ -10,7 +11,7 @@
   font-size: my-rem(24);
   font-weight: $normal;
   padding-left: my-rem(6);
-
+  width: fit-content;
 }
 
 .archive__item {
@@ -18,6 +19,8 @@
   font-family: $jp-font-family1;
   font-size: my-rem(24);
   font-weight: $normal;
+  width: fit-content;
+
 }
 
 .archive__sub-items {
@@ -25,10 +28,7 @@
   font-family: $jp-font-family1;
   font-size: my-rem(24);
   font-weight: $normal;
-}
-
-.archive__sub-items.open {
-  display: block;
+  width: fit-content;
 }
 
 .archive__sub-item {
@@ -37,12 +37,16 @@
   font-size: my-rem(24);
   font-weight: $normal;
   padding-left: my-rem(24);
+  display: block;
+  width: fit-content;
 }
+
 
 .archive__item--newLayout,
 .archive__item--oldLayout,
 .archive__sub-item--layout {
   cursor: pointer;
+
 }
 
 .archive__item--newLayout::before,
