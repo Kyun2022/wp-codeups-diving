@@ -1836,7 +1836,7 @@ figure img {
 }
 
 .footer-menu__list-name::before {
-	background-image: url(/assets/images/common/starfish.png);
+	background-image: url(../images/common/starfish.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
