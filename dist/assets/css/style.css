@@ -3236,8 +3236,9 @@ micro-modal
 	height: inherit;
 }
 
-.slider__text {
+.slider__text.text {
 	height: auto;
+	text-align: left;
 }
 
 .slider__detail--md-none {

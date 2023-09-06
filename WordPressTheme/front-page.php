@@ -91,25 +91,19 @@
                 <?php echo wp_trim_words(get_the_title(), 20, '...'); ?>
               </h3>
               <div class="slider__meta">
-                <h4 class="slider__sub-title"><?php the_field("campaign-money-text"); ?></h4>
+                <?php $price_groups = get_field('campaign_price_group'); ?>
+                <h4 class="slider__sub-title">
+                  <?php echo esc_html($price_groups['campaign-money-text']); ?>
+                </h4>
                 <div class="slider__price-unit">
+                  <?php if ($price_groups['campaign-old-price']) : ?>
                   <p class="slider__old-price slider__old-price--layout">
-                    &#165;<?php
-                              $old_price = get_field("campaign-old-price");
-                              if ($old_price !== null) {
-                                $formatted_old_price = number_format($old_price);
-                                echo $formatted_old_price;
-                              }
-                              ?>
+                    &#165;<?php echo number_format($price_groups['campaign-old-price']); ?>
                   </p>
+                  <?php endif; ?>
                   <p class="slider__new-price">
-                    &#165;<?php
-                              $new_price = get_field("campaign-new-price");
-                              if ($new_price !== null) {
-                                $formatted_new_price = number_format($new_price);
-                                echo $formatted_new_price;
-                              }
-                              ?>
+                    &#165;<?php echo number_format($price_groups['campaign-new-price']); ?>
+                  </p>
                 </div>
               </div>
             </div>

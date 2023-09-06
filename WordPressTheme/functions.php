@@ -1,4 +1,8 @@
 <?php
+
+/* --------------------------------------------
+ /* アイキャッチ画像設定
+ /* -------------------------------------------- */
 function my_setup()
 {
   add_theme_support('post-thumbnails'); // アイキャッチ画像を有効化
@@ -15,7 +19,9 @@ function my_setup()
     )
   );
 }
-
+/* --------------------------------------------
+ /* headタグ内設定項目
+ /* -------------------------------------------- */
 
 add_action('after_setup_theme', 'my_setup');
 /* CSSとJavaScriptの読み込み */
@@ -47,12 +53,15 @@ function my_script_init()
 add_action('wp_enqueue_scripts', 'my_script_init');
 
 
-
-//記事表示時の整形無効
+/* --------------------------------------------
+ /* 記事表示時の整形無効
+ /* -------------------------------------------- */
 remove_filter('the_content', 'wpautop');
 remove_filter('the_excerpt', 'wpautop');
 
-// ビジュアルエディタ(TinyMCE)の整形無効
+/* --------------------------------------------
+ /* 項目ビジュアルエディタ(TinyMCE)の整形無効
+ /* -------------------------------------------- */
 add_filter(
   'tiny_mce_before_init',
   function ($init_array) {
@@ -67,7 +76,9 @@ add_filter(
   }
 );
 
-// 管理画面の『投稿』の名前を変える
+ /* --------------------------------------------
+ /* 項目管理画面の『投稿』の名前を変える
+ /* -------------------------------------------- */ 
 function Change_menulabel()
 {
   global $menu;
@@ -97,7 +108,9 @@ add_action('init', 'Change_objectlabel');
 add_action('admin_menu', 'Change_menulabel');
 
 
-// Archiveページ月別選択
+ /* --------------------------------------------
+ /* Archiveページ月別選択
+ /* -------------------------------------------- */
 function blog_get_archives_callback($item, $index, $currYear)
 {
   global $wp_locale;
@@ -143,7 +156,9 @@ function blog_get_archives()
   }
 }
 
-// smart_custom_field
+ /* --------------------------------------------
+ /* 項目smart_custom_field
+ /* -------------------------------------------- */
 /**
  * @param string $page_title ページのtitle属性値
  * @param string $menu_title 管理画面のメニューに表示するタイトル
@@ -153,10 +168,13 @@ function blog_get_archives()
  * @param int $position メニューの位置
  */
 SCF::add_options_page('wp-codeups__DIVING', 'ギャラリー画像', 'manage_options', 'gallery_options', '', '80');
-SCF::add_options_page('wp-codeups__DIVING', '料金一覧', 'manage_options', 'price_options', '', '80'); SCF::add_options_page('wp-codeups__DIVING', 'よくある質問', 'manage_options', 'FAQ_options', '', '80');
+SCF::add_options_page('wp-codeups__DIVING', '料金一覧', 'manage_options', 'price_options', '', '80');
+SCF::add_options_page('wp-codeups__DIVING', 'よくある質問', 'manage_options', 'FAQ_options', '', '80');
 
 
-// ContactForm7で自動挿入されるPタグ、brタグを削除
+ /* --------------------------------------------
+ /* ContactForm7で自動挿入されるPタグ、brタグを削除
+ /* -------------------------------------------- */
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false()
 {
@@ -169,7 +187,9 @@ add_action('init', function () {
   remove_post_type_support('campaign', 'editor');
 }, 99);
 
-// 投稿ページの表示件数を変更する
+ /* --------------------------------------------
+ /* 投稿ページの表示件数を変更する
+ /* -------------------------------------------- */
 function custom_posts_per_page($query)
 {
   if (!is_admin() && $query->is_main_query()) {
@@ -194,7 +214,9 @@ function custom_posts_per_page($query)
 }
 add_action('pre_get_posts', 'custom_posts_per_page');
 
-//カスタムフィールドの「post_views_count」にアクセス数を保存する
+ /* --------------------------------------------
+ /* カスタムフィールドの「post_views_count」にアクセス数を保存する
+ /* -------------------------------------------- */
 function setPostViews($post_id)
 {
   $count_key = 'post_views_count';
@@ -209,7 +231,9 @@ function setPostViews($post_id)
   }
 }
 
-//カスタムフィールドに保存されているアクセス数を取得する
+ /* --------------------------------------------
+ /* カスタムフィールドに保存されているアクセス数を取得する
+ /* -------------------------------------------- */
 function getPostViews($post_id)
 {
   $count_key = 'post_views_count';
@@ -220,4 +244,11 @@ function getPostViews($post_id)
     return "0 View";
   }
   return $count . ' Views';
+}
+
+ /* --------------------------------------------
+ /* 【管理画面】　ACF Options Page の設定 */
+ /* -------------------------------------------- */
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page();
 }
