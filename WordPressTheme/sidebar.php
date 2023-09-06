@@ -170,21 +170,21 @@
            <p>記事が投稿されていません</p>
            <?php endif;
             wp_reset_postdata(); ?>
-
-
-
            <div class="aside-campaign__button">
              <button class="button"
                onclick="location.href='<?php echo esc_url(home_url('campaign')); ?>'">View&nbsp;more<span
-                 class="button__arrow"></span></button>
+                 class="button__arrow"></span>
+             </button>
            </div>
          </div>
+
+
          <div class="aside__archive archive">
            <div class="aside__title">
              <p class="aside__title-text">アーカイブ</p>
            </div>
            <div class="archive__container">
-             <ul class="archive__items">
+             <ul class="archive_items">
                <?php blog_get_archives(); ?>
              </ul>
            </div>

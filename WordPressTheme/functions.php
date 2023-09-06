@@ -76,9 +76,9 @@ add_filter(
   }
 );
 
- /* --------------------------------------------
+/* --------------------------------------------
  /* 項目管理画面の『投稿』の名前を変える
- /* -------------------------------------------- */ 
+ /* -------------------------------------------- */
 function Change_menulabel()
 {
   global $menu;
@@ -108,7 +108,7 @@ add_action('init', 'Change_objectlabel');
 add_action('admin_menu', 'Change_menulabel');
 
 
- /* --------------------------------------------
+/* --------------------------------------------
  /* Archiveページ月別選択
  /* -------------------------------------------- */
 function blog_get_archives_callback($item, $index, $currYear)
@@ -145,18 +145,17 @@ function blog_get_archives()
     foreach ($years as $year) {
       echo '<li class="archive__item archive__item--newLayout js-archive-item--open">';
       echo  $year;
-      echo '<ul class="archive__sub-items js-subItems--open">';
+      echo '</li>';
+      echo '<ul class="archive__sub-items js-subItems--close">';
 
       array_walk($arcResults, "blog_get_archives_callback", $year);
 
-      echo '</li>';
       echo '</ul>';
-      echo '</li>';
     }
   }
 }
 
- /* --------------------------------------------
+/* --------------------------------------------
  /* 項目smart_custom_field
  /* -------------------------------------------- */
 /**
@@ -172,7 +171,7 @@ SCF::add_options_page('wp-codeups__DIVING', '料金一覧', 'manage_options', 'p
 SCF::add_options_page('wp-codeups__DIVING', 'よくある質問', 'manage_options', 'FAQ_options', '', '80');
 
 
- /* --------------------------------------------
+/* --------------------------------------------
  /* ContactForm7で自動挿入されるPタグ、brタグを削除
  /* -------------------------------------------- */
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
@@ -187,7 +186,7 @@ add_action('init', function () {
   remove_post_type_support('campaign', 'editor');
 }, 99);
 
- /* --------------------------------------------
+/* --------------------------------------------
  /* 投稿ページの表示件数を変更する
  /* -------------------------------------------- */
 function custom_posts_per_page($query)
@@ -214,7 +213,7 @@ function custom_posts_per_page($query)
 }
 add_action('pre_get_posts', 'custom_posts_per_page');
 
- /* --------------------------------------------
+/* --------------------------------------------
  /* カスタムフィールドの「post_views_count」にアクセス数を保存する
  /* -------------------------------------------- */
 function setPostViews($post_id)
@@ -231,7 +230,7 @@ function setPostViews($post_id)
   }
 }
 
- /* --------------------------------------------
+/* --------------------------------------------
  /* カスタムフィールドに保存されているアクセス数を取得する
  /* -------------------------------------------- */
 function getPostViews($post_id)
@@ -246,9 +245,9 @@ function getPostViews($post_id)
   return $count . ' Views';
 }
 
- /* --------------------------------------------
+/* --------------------------------------------
  /* 【管理画面】　ACF Options Page の設定 */
- /* -------------------------------------------- */
+/* -------------------------------------------- */
 if (function_exists('acf_add_options_page')) {
   acf_add_options_page();
 }

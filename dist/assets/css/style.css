@@ -455,6 +455,10 @@ a {
 	width: fit-content;
 }
 
+.archive__sub-items.close {
+	display: none;
+}
+
 .archive__sub-item {
 	color: #408f95;
 	display: block;
@@ -483,16 +487,6 @@ a {
 	height: 0;
 	margin-right: 0.625rem;
 	width: 0;
-}
-
-.archive__item--newLayout.open::before {
-	transform: rotate(90deg);
-	transition: transform 0.3s;
-}
-
-.archive__item--oldLayout.open::before {
-	transform: rotate(90deg);
-	transition: transform 0.3s;
 }
 
 .archive__item--close-layout {
