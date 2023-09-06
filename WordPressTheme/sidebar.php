@@ -119,8 +119,7 @@
             $args = array(
               "post_type" => "campaign",
               "posts_per_page" => 2,
-              "orderby" => "date",
-              "order" => "ASC",
+              "orderby" => "rand",
             );
 
             //配列で指定した内容で、記事情報を取得
@@ -147,19 +146,18 @@
                    <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
                  </h3>
                  <div class="slider__meta slider__meta--sub">
-                   <h4 class="slider__sub-title"><?php the_field("campaign-money-text"); ?></h4>
+                   <?php $price_groups = get_field('campaign_price_group'); ?>
+                   <h4 class="slider__sub-title">
+                     <?php echo esc_html($price_groups['campaign-money-text']); ?>
+                   </h4>
                    <div class="slider__price-unit slider__price-unit--sub">
+                     <?php if ($price_groups['campaign-old-price']) : ?>
                      <p class="slider__old-price slider__old-price--sub">
-                       &#165;<?php
-                                  $old_prices = number_format(get_field("campaign-old-price"));
-                                  echo $old_prices;
-                                  ?>
+                       &#165;<?php echo number_format($price_groups['campaign-old-price']); ?>
                      </p>
+                     <?php endif; ?>
                      <p class="slider__new-price slider__new-price--sub">
-                       &#165;<?php
-                                  $new_prices = number_format(get_field("campaign-new-price"));
-                                  echo $new_prices;
-                                  ?>
+                       &#165;<?php echo number_format($price_groups['campaign-new-price']); ?>
                      </p>
                    </div>
                  </div>

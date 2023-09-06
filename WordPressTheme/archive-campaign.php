@@ -65,9 +65,7 @@
                 <?php echo wp_trim_words(get_the_title(), 20, '...'); ?>
               </h3>
               <div class="slider__meta slider__meta--layout">
-                <?php
-                    $price_groups = get_field('campaign_price_group');
-                    ?>
+                <?php $price_groups = get_field('campaign_price_group'); ?>
                 <h4 class="slider__sub-title">
                   <?php echo esc_html($price_groups['campaign-money-text']); ?>
                 </h4>
