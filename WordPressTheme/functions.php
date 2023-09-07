@@ -39,14 +39,14 @@ function my_script_init()
   );
   // micromodal
   wp_enqueue_script('polyfill', 'https://polyfill.io/v3/polyfill.min.js?features=es6', "", "1.0.0", false);
-  wp_enqueue_script('micro-modal', 'https://unpkg.com/micromodal/dist/micromodal.min.js', array(), "1.0.1", false);
+  wp_enqueue_script('micro-modal', 'https://unpkg.com/micromodal/dist/micromodal.min.js', [], "1.0.1", false);
   // swiper
   wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', "", "9.0.0", true);
   wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', "", "9.0.0", 'all');
   // inview
-  wp_enqueue_script('main-js', get_theme_file_uri('/assets/js/jquery.inview.min.js?20230816'), array('jquery'), '1.0.1', true);
+  wp_enqueue_script('main-js', get_theme_file_uri('/assets/js/jquery.inview.min.js?20230816'), ['jquery'], '1.0.1', true);
   // 自作jsファイルの読み込み
-  wp_enqueue_script('main', get_theme_file_uri('/assets/js/script.js?20230816'), array('jquery'), '1.0.1', true);
+  wp_enqueue_script('main', get_theme_file_uri('/assets/js/script.js?20230816'), ['jquery'], '1.0.1', true);
   // 自作cssファイルの読み込み
   wp_enqueue_style('style-css', get_theme_file_uri('assets/css/style.css?20230816'), '1.0.1', false);
 }

@@ -1,3 +1,5 @@
+"use strict";
+
 jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
 
@@ -64,19 +66,16 @@ jQuery(function ($) {
 
   // #pageTopをクリックした際の設定
   $("#pageTop").click(function () {
-    $("body,html").animate(
-      {
-        scrollTop: 0, //ページトップまでスクロール
-      },
-      500
-    ); //ページトップスクロールの速さ。数字が大きいほど遅くなる
+    $("body,html").animate({
+      scrollTop: 0 //ページトップまでスクロール
+    }, 500); //ページトップスクロールの速さ。数字が大きいほど遅くなる
     return false; //リンク自体の無効化
   });
 
   // スクロールするとロゴの色変更
   $(function () {
     $(window).on("scroll", function () {
-      const sliderHeight = $(".mv").height();
+      var sliderHeight = $(".mv").height();
       if (sliderHeight - 30 < $(this).scrollTop()) {
         $(".js-header").addClass("headerColorScroll");
       } else {
@@ -84,7 +83,6 @@ jQuery(function ($) {
       }
     });
   });
-
   $(function () {
     // 別ページの場合は以下
     var urlHash = location.hash;
@@ -95,40 +93,41 @@ jQuery(function ($) {
         var headerHight = 130;
         var target = $(urlHash);
         var position = target.offset().top - headerHight;
-        $("body,html").stop().animate({ scrollTop: position }, 400);
+        $("body,html").stop().animate({
+          scrollTop: position
+        }, 400);
       }, 100);
     }
   });
 
-
   // ページ内スクロール
   $('a[href^="#"]').click(function () {
-    const speed = 600;
-    let href = $(this).attr("href");
-    let target = $(href == "#" || href == "" ? "html" : href);
-    let position = target.offset().top;
-    $("body,html").animate({ scrollTop: position }, speed, "swing");
+    var speed = 600;
+    var href = $(this).attr("href");
+    var target = $(href == "#" || href == "" ? "html" : href);
+    var position = target.offset().top;
+    $("body,html").animate({
+      scrollTop: position
+    }, speed, "swing");
     return false;
   });
-
 
   /* --------------------------------------------
   /* ローディングアニメーション
   /* -------------------------------------------- */
   $(window).on("load", function () {
-    const loadCount = sessionStorage.getItem("loadCount");
+    var loadCount = sessionStorage.getItem("loadCount");
 
     // 初回のロード時の処理
     if (loadCount === null) {
       $(".js-loading").delay(0).fadeIn(900);
       $(".js-loadingTitle").delay(300).fadeIn(800);
       $(".js-loading").delay(2500).fadeOut(900);
-      $("body")
-        .delay(2500) // ローディング画面を表示した時間に合わせて適切な時間を設定
-        .queue(function (next) {
-          $("body").removeClass("js-fixed");
-          next();
-        });
+      $("body").delay(2500) // ローディング画面を表示した時間に合わせて適切な時間を設定
+      .queue(function (next) {
+        $("body").removeClass("js-fixed");
+        next();
+      });
       sessionStorage.setItem("loadCount", 1);
     } else {
       // 2回目以降のロード時の処理
@@ -142,45 +141,46 @@ jQuery(function ($) {
   /* --------------------------------------------
   /* Swiper
   /* -------------------------------------------- */
-  const swiper = new Swiper(".js-mv-slider", {
+  var swiper = new Swiper(".js-mv-slider", {
     loop: true,
     allowTouchMove: false,
     effect: "fade",
     speed: 3000,
     autoplay: {
-      delay: 3000,
-    },
+      delay: 3000
+    }
   });
 
   /* --------------------------------------------
   /* Swiper-card
   /* -------------------------------------------- */
-  const mySwiperWrapper = document.querySelector(".swiper-wrapper");
-  const horizonSlider = new Swiper(".js-campaign-slider", {
+  var mySwiperWrapper = document.querySelector(".swiper-wrapper");
+  var horizonSlider = new Swiper(".js-campaign-slider", {
     loop: true,
     effect: "slide",
-    disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+    disableOnInteraction: false,
+    // 矢印をクリックしても自動再生を止めない
     slidesPerView: 1.26,
     breakpoints: {
       768: {
         slidesPerView: 3.29,
-        spaceBetween: 30,
+        spaceBetween: 30
       },
       1024: {
         slidesPerView: 3.49,
-        spaceBetween: 40,
-      },
+        spaceBetween: 40
+      }
     },
     spaceBetween: 24,
     speed: 2000,
     autoplay: {
-      delay: 1000,
+      delay: 1000
     },
     // 前後の矢印
     navigation: {
       prevEl: ".slider__prevButton",
-      nextEl: ".slider__nextButton",
-    },
+      nextEl: ".slider__nextButton"
+    }
   });
 
   /* --------------------------------------------
@@ -196,24 +196,27 @@ jQuery(function ($) {
     var color = $(this).find($(".is-view")),
       image = $(this).find("img");
     var counter = 0;
-
     image.css("opacity", "0");
     color.css("width", "0%");
     //inviewを使って背景色が画面に現れたら処理をする
     color.on("inview", function () {
       if (counter === 0) {
-        $(this)
-          .delay(300)
-          .animate({ width: "100%" }, speed, function () {
-            image.css("opacity", "1");
-            $(this).css({ left: "0", right: "auto" });
-            $(this).animate({ width: "0%" }, speed);
+        $(this).delay(300).animate({
+          width: "100%"
+        }, speed, function () {
+          image.css("opacity", "1");
+          $(this).css({
+            left: "0",
+            right: "auto"
           });
+          $(this).animate({
+            width: "0%"
+          }, speed);
+        });
         counter = 1;
       }
     });
   });
-
 
   /* --------------------------------------------
   /* about us
@@ -221,23 +224,22 @@ jQuery(function ($) {
   MicroModal.init({
     awaitCloseAnimation: true,
     awaitOpenAnimation: true,
-    disableScroll: true,
+    disableScroll: true
   });
 
   /* --------------------------------------------
   /* タブメニュー
   /* -------------------------------------------- */
-  const $js_tab = $(".js-infoTab-trigger");
-  const $js_tab_target = $(".js-infoContent-target");
-  const cls = "is-active";
-
+  var $js_tab = $(".js-infoTab-trigger");
+  var $js_tab_target = $(".js-infoContent-target");
+  var cls = "is-active";
   $js_tab.on("click", function () {
-    const this_category = $(this).data("category");
+    var this_category = $(this).data("category");
     $js_tab.removeClass(cls);
     $(this).addClass(cls);
     $js_tab_target.removeClass(cls);
     $js_tab_target.each(function () {
-      const target_data = $(this).data("target");
+      var target_data = $(this).data("target");
       if (this_category === target_data) {
         $(this).addClass(cls);
       }
@@ -272,12 +274,11 @@ jQuery(function ($) {
   /* アーカイブ　月別リンク
   /* -------------------------------------------- */
 
-   $(document).ready(function () {
+  $(document).ready(function () {
     $(".js-archive-item--open").click(function () {
       $(this).next(".js-subItems--close").toggleClass("close");
     });
   });
-
 
   /* --------------------------------------------
   /* FAQ アコーディオン
@@ -292,7 +293,6 @@ jQuery(function ($) {
     });
   });
 
-
   /* --------------------------------------------
   /* コンタクトページ　バリデーション
   /* -------------------------------------------- */
@@ -301,8 +301,6 @@ jQuery(function ($) {
     $(".wpcf7-form-control-wrap").addClass("is-show");
     $(".js-errorMessage").addClass("is-show");
   });
-
-
 
   /*/////////////  終了  ////////////////*/
 });
