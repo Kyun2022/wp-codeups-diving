@@ -1,132 +1,132 @@
-@use "global" as *;
+@use 'global' as *;
 
 .priceBox {
 }
 .priceBox__container {
-  display: flex;
-  flex-direction: column;
-  @include mq(md) {
-    flex-direction: row;
-  }
+	display: flex;
+	flex-direction: column;
+	@include mq(md) {
+		flex-direction: row;
+	}
 }
 .priceBox__container:not(:first-child) {
-  margin-top: my-rem(40);
-  @include mq(md) {
-    margin-top: my-rem(81);
-  }
+	margin-top: my-rem(40);
+	@include mq(md) {
+		margin-top: my-rem(81);
+	}
 }
 
 .priceBox__theme {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 100%;
-  padding: my-rem(8) my-rem(15);
-  line-height: calc(24 / 16);
-  background-color: $green;
-  color: $white;
-  @include mq(md) {
-    padding: my-rem(20) my-rem(15);
-    max-width: calc((200 / 700) * 100%);
-  }
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 100%;
+	padding: my-rem(8) my-rem(15);
+	line-height: calc(24 / 16);
+	background-color: $green;
+	color: $white;
+	@include mq(md) {
+		padding: my-rem(20) my-rem(15);
+		max-width: calc((200 / 700) * 100%);
+	}
 }
 
 .priceBox__theme-text {
-  font-family: $jp-font-family1;
-  font-weight: $bold;
-  font-size: my-rem(16);
+	font-family: $jp-font-family1;
+	font-weight: $bold;
+	font-size: my-rem(16);
 }
 
 .priceBox__items {
-  width: 100%;
-  max-width: 100%;
-  @include mq(md) {
-    max-width: calc((500 / 700) * 100%);
-    border-bottom: 1px solid $green;
-  }
+	width: 100%;
+	max-width: 100%;
+	@include mq(md) {
+		max-width: calc((500 / 700) * 100%);
+		border-bottom: 1px solid $green;
+	}
 }
 
 .priceBox__theme {
-  display: flex;
-  flex-direction: row-reverse;
-  @include mq(md) {
-    flex-direction: column;
-  }
+	display: flex;
+	flex-direction: row-reverse;
+	@include mq(md) {
+		flex-direction: column;
+	}
 }
 .priceBox__theme::after {
-  content: "";
-  background-image: url(../images/common/whale-white--right.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: my-rem(24);
-  height: my-rem(24);
-  margin-right: my-rem(8);
-  @include mq(md) {
-    margin-right: initial;
-    margin-top: my-rem(8);
-    width: my-rem(64);
-    height: my-rem(64);
-  }
+	content: '';
+	background-image: url(../images/common/whale-white--right.webp);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: my-rem(24);
+	height: my-rem(24);
+	margin-right: my-rem(8);
+	@include mq(md) {
+		margin-right: initial;
+		margin-top: my-rem(8);
+		width: my-rem(64);
+		height: my-rem(64);
+	}
 }
 .priceBox__content {
-  text-align: center;
-  padding: my-rem(12) my-rem(16);
-  line-height: calc(24 / 16);
-  font-weight: $normal;
-  border-bottom: 1px solid $green;
-  border-left: 1px solid $green;
-  width: 100%;
-  max-width: calc((240 / 345) * 100%);
-  height: my-rem(60);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include mq(md) {
-    height: initial;
-    padding: my-rem(17) my-rem(16);
-    justify-content: flex-start;
-    border-bottom: initial;
-    border-left: initial;
-    border-top: 1px solid $green;
-    border-right: 1px solid $green;
-    max-width: calc((338 / 500) * 100%);
-  }
+	text-align: center;
+	padding: my-rem(12) my-rem(16);
+	line-height: calc(24 / 16);
+	font-weight: $normal;
+	border-bottom: 1px solid $green;
+	border-left: 1px solid $green;
+	width: 100%;
+	max-width: calc((240 / 345) * 100%);
+	height: my-rem(60);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include mq(md) {
+		height: initial;
+		padding: my-rem(17) my-rem(16);
+		justify-content: flex-start;
+		border-bottom: initial;
+		border-left: initial;
+		border-top: 1px solid $green;
+		border-right: 1px solid $green;
+		max-width: calc((338 / 500) * 100%);
+	}
 }
 
 .priceBox__wrapper {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 .priceBox__price {
-  width: 100%;
-  max-width: 100%;
-  padding: my-rem(12) my-rem(16);
-  text-align: right;
-  line-height: calc(24 / 16);
-  font-weight: $normal;
-  max-width: calc((106 / 345) * 100%);
-  border-bottom: 1px solid $green;
-  border-right: 1px solid $green;
-  border-left: 1px solid $green;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  @include mq(md) {
-    border-bottom: initial;
-    border-left: initial;
-    border-top: 1px solid $green;
-    border-right: 1px solid $green;
-    max-width: calc((162 / 500) * 100%);
-    padding: my-rem(17) my-rem(16);
-  }
+	width: 100%;
+	max-width: 100%;
+	padding: my-rem(12) my-rem(16);
+	text-align: right;
+	line-height: calc(24 / 16);
+	font-weight: $normal;
+	max-width: calc((106 / 345) * 100%);
+	border-bottom: 1px solid $green;
+	border-right: 1px solid $green;
+	border-left: 1px solid $green;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	@include mq(md) {
+		border-bottom: initial;
+		border-left: initial;
+		border-top: 1px solid $green;
+		border-right: 1px solid $green;
+		max-width: calc((162 / 500) * 100%);
+		padding: my-rem(17) my-rem(16);
+	}
 }
 
 .priceBox__br {
-  display: block;
-  @include mq(md) {
-    display: none;
-  }
+	display: block;
+	@include mq(md) {
+		display: none;
+	}
 }

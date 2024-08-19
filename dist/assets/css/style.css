@@ -1,5 +1,3 @@
-/* リキッドレイアウト対応 */
-
 body {
 	color: #0d2936;
 	font-family: "Noto Sans JP", sans-serif;
@@ -18,6 +16,8 @@ body.active {
 .u-mobile {
 	display: block;
 }
+
+/* リキッドレイアウト対応 */
 
 html {
 	font-size: 16px;
@@ -533,7 +533,7 @@ a {
 }
 
 .aside__title-text::after {
-	background-image: url(../images/common/whale-black--left.png);
+	background-image: url(../images/common/whale-black--left.webp);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1326,7 +1326,7 @@ checkbox
 }
 
 .contactForm__body--select::before {
-	background-image: url(/assets/images/common/triangle.png);
+	background-image: url(/assets/images/common/triangle.webp);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1362,7 +1362,7 @@ checkbox
 }
 
 select option::after {
-	background-image: url(/assets/images/common/triangle.png);
+	background-image: url(/assets/images/common/triangle.webp);
 	content: "";
 	display: block;
 	height: 0.75rem;
@@ -1563,7 +1563,7 @@ checkbox
 }
 
 .detail__content li::before {
-	background-image: url(../images/common/starfish--green.png);
+	background-image: url(../images/common/starfish--green.webp);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 1.25rem 1.25rem;
@@ -1728,7 +1728,7 @@ figure img {
 }
 
 .drawer-menu__list-name::before {
-	background-image: url(/assets/images/common/starfish.png);
+	background-image: url(/assets/images/common/starfish.webp);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1830,7 +1830,7 @@ figure img {
 }
 
 .footer-menu__list-name::before {
-	background-image: url(../images/common/starfish.png);
+	background-image: url(../images/common/starfish.webp);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -2794,7 +2794,7 @@ micro-modal
 }
 
 .priceBox__theme::after {
-	background-image: url(../images/common/whale-white--right.png);
+	background-image: url(../images/common/whale-white--right.webp);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -2925,7 +2925,7 @@ micro-modal
 }
 
 .siteMap-menu__list-name::before {
-	background-image: url(/assets/images/common/starfish--black.png);
+	background-image: url(/assets/images/common/starfish--black.webp);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -4712,32 +4712,32 @@ html {
 }
 
 .info-tab__text:nth-child(1)::before {
-	background-image: url(../images/common/whale-green--right.png);
+	background-image: url(../images/common/whale-green--right.webp);
 	display: block;
 }
 
 .info-tab__text:nth-child(2)::before {
-	background-image: url(../images/common/whale-green--left.png);
+	background-image: url(../images/common/whale-green--left.webp);
 	display: block;
 }
 
 .info-tab__text:nth-child(3)::before {
-	background-image: url(../images/common/fish-green--left.png);
+	background-image: url(../images/common/fish-green--left.webp);
 	display: block;
 }
 
 .info-tab__text.is-active:nth-child(1)::before {
-	background-image: url(../images/common/whale-white--right.png);
+	background-image: url(../images/common/whale-white--right.webp);
 	display: block;
 }
 
 .info-tab__text.is-active:nth-child(2)::before {
-	background-image: url(../images/common/whale-white--left.png);
+	background-image: url(../images/common/whale-white--left.webp);
 	display: block;
 }
 
 .info-tab__text.is-active:nth-child(3)::before {
-	background-image: url(../images/common/fish-white--left.png);
+	background-image: url(../images/common/fish-white--left.webp);
 	display: block;
 }
 

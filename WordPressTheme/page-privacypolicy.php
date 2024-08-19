@@ -13,7 +13,7 @@ Template Name: プライバシーポリシー
 
   <div class="sub-privacyPolicy under-privacyPolicy">
     <figure class="sub-privacyPolicy__decoration">
-      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子">
+      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.webp" alt="魚の群れの様子">
     </figure>
     <div class="sub-privacyPolicy__inner inner">
       <div class="sub-privacyPolicy__container privacyPolicy">

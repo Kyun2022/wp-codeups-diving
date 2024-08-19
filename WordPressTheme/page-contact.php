@@ -11,7 +11,7 @@ Template Name: お問い合わせ
 
   <div class="sub-contact under-contact">
     <figure class="sub-contact__decoration"><img
-        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子">
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.webp" alt="魚の群れの様子">
     </figure>
     <div class="sub-contact__inner inner">
       <div class="sub-contact__content">

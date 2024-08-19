@@ -3,16 +3,16 @@
   <div class="sub-404 under-404">
 
     <?php if (function_exists('bcn_display')) { ?>
-    <div class="breadcrumb inner breadcrumb--404">
-      <div class="breadcrumb breadcrumb-text--white" vocab="http://schema.org/" typeof="BreadcrumbList">
-        <?php bcn_display(); ?>
+      <div class="breadcrumb inner breadcrumb--404">
+        <div class="breadcrumb breadcrumb-text--white" vocab="http://schema.org/" typeof="BreadcrumbList">
+          <?php bcn_display(); ?>
+        </div>
       </div>
-    </div>
     <?php } ?>
 
     <div class="sub-404__inner inner">
       <figure class="sub-404__image"><img
-          src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/whale-right--big.png" alt="大きな鯨のデザイン">
+          src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/whale-right--big.webp" alt="大きな鯨のデザイン">
       </figure>
       <div class="sub-404__container">
         <div class="sub-404__box">

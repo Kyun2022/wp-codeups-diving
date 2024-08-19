@@ -13,7 +13,7 @@ Template Name: よくある質問
 
   <div class="sub-faq under-faq">
     <figure class="sub-price__decoration"><img
-        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.webp" alt="魚の群れの様子"></figure>
     <div class="sub-faq__inner inner">
       <div class="sub-faq__accordion accordion">
         <div class="accordion__items">
@@ -23,14 +23,14 @@ Template Name: よくある質問
             $faq_question = esc_html($FAQ_field['faq_question']);
             $faq_answer = esc_html($FAQ_field['faq_answer']);
           ?>
-          <?php if ($faq_question && $faq_answer) : ?>
-          <div class="accordion__item">
-            <h3 class="accordion__title js-faqAccordion-title"><?php echo $faq_question; ?></h3>
-            <div class="accordion__content">
-              <p class="accordion__content-text"><?php echo $faq_answer; ?></p>
-            </div>
-          </div>
-          <?php endif; ?>
+            <?php if ($faq_question && $faq_answer) : ?>
+              <div class="accordion__item">
+                <h3 class="accordion__title js-faqAccordion-title"><?php echo $faq_question; ?></h3>
+                <div class="accordion__content">
+                  <p class="accordion__content-text"><?php echo $faq_answer; ?></p>
+                </div>
+              </div>
+            <?php endif; ?>
           <?php } ?>
         </div>
       </div>

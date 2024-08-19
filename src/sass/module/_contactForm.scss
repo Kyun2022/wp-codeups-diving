@@ -1,348 +1,340 @@
-@use "global"as *;
+@use 'global' as *;
 
 .contactForm__container dl {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: my-rem(24);
-  gap: my-rem(14);
-  border-bottom: 1px dashed $green;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: my-rem(24);
+	gap: my-rem(14);
+	border-bottom: 1px dashed $green;
 
-  @include mq(md) {
-    gap: initial;
-    flex-direction: row;
-    padding-bottom: my-rem(38);
-  }
+	@include mq(md) {
+		gap: initial;
+		flex-direction: row;
+		padding-bottom: my-rem(38);
+	}
 }
 
 .contactForm__container:not(:first-child) dl {
-  padding-top: my-rem(24);
+	padding-top: my-rem(24);
 
-  @include mq(md) {
-    padding-top: my-rem(41);
-  }
+	@include mq(md) {
+		padding-top: my-rem(41);
+	}
 }
 
 .contactForm__title {
-  width: 100%;
-  max-width: 100%;
-  color: $dark-green;
-  font-family: $jp-font-family1;
-  font-size: my-rem(16);
-  font-weight: $bold;
+	width: 100%;
+	max-width: 100%;
+	color: $dark-green;
+	font-family: $jp-font-family1;
+	font-size: my-rem(16);
+	font-weight: $bold;
 
-  @include mq(md) {
-    max-width: calc((203 / 700) * 100%);
-  }
+	@include mq(md) {
+		max-width: calc((203 / 700) * 100%);
+	}
 }
 
-input[type="text"]::placeholder,
-input[type="email"]::placeholder,
-input[type="tel"]::placeholder,
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+input[type='tel']::placeholder,
 textarea::placeholder {
-  color: $green2;
+	color: $green2;
 }
 
 .contactForm__title::after {
-  content: "必須";
-  display: inline-block;
-  background-color: $red;
-  color: $white;
-  font-family: $jp-font-family1;
-  font-size: my-rem(12);
-  font-weight: $normal;
-  text-indent: 0.48em;
-  letter-spacing: 0.48em;
-  padding: my-rem(2) my-rem(10) my-rem(2);
-  margin-left: my-rem(5);
+	content: '必須';
+	display: inline-block;
+	background-color: $red;
+	color: $white;
+	font-family: $jp-font-family1;
+	font-size: my-rem(12);
+	font-weight: $normal;
+	text-indent: 0.48em;
+	letter-spacing: 0.48em;
+	padding: my-rem(2) my-rem(10) my-rem(2);
+	margin-left: my-rem(5);
 }
 
 .contactForm__title--layout::after {
-  display: none;
+	display: none;
 }
 
 .contactForm__body {
-  width: 100%;
-  max-width: 100%;
+	width: 100%;
+	max-width: 100%;
 
-  @include mq(md) {
-    max-width: calc((497 / 700) * 100%);
-  }
+	@include mq(md) {
+		max-width: calc((497 / 700) * 100%);
+	}
 }
 
 /*//////////////////////////////////////
 checkbox
 /////////////////////////////////////*/
 .contactForm__checkbox span {
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: $dark-green;
-  font-family: $jp-font-family1;
-  font-size: my-rem(16);
-  font-weight: $normal;
-  user-select: none;
-  /* テキストの選択を防ぐ */
-  cursor: pointer;
-  transition: 0.3s ease;
-  line-height: 1;
-  margin-top: my-rem(5);
+	display: flex;
+	align-items: center;
+	position: relative;
+	color: $dark-green;
+	font-family: $jp-font-family1;
+	font-size: my-rem(16);
+	font-weight: $normal;
+	user-select: none;
+	/* テキストの選択を防ぐ */
+	cursor: pointer;
+	transition: 0.3s ease;
+	line-height: 1;
+	margin-top: my-rem(5);
 }
 
 .contactForm__checkbox:not(:first-child) span {
-  margin-top: my-rem(11);
+	margin-top: my-rem(11);
 }
 
 .contactForm__checkbox span::before {
-  content: "";
-  display: inline-block;
-  width: my-rem(14);
-  height: my-rem(14);
-  border: 1px solid $green;
-  margin-right: my-rem(8);
+	content: '';
+	display: inline-block;
+	width: my-rem(14);
+	height: my-rem(14);
+	border: 1px solid $green;
+	margin-right: my-rem(8);
 }
 
-[type="checkbox"] span::after {
-  opacity: 0;
-  transition: 0.3s ease;
+[type='checkbox'] span::after {
+	opacity: 0;
+	transition: 0.3s ease;
 }
 
-[type="checkbox"]:checked+span::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  display: block;
-  opacity: 1;
-  /*チェックマークじゃない場合は以下を変更する*/
-  transform: translateY(-50%) rotate(-45deg);
-  width: calc(my-rem(10) * 0.9);
-  height: calc(my-rem(10) * 0.5);
-  margin-top: -0.05em;
-  margin-left: 0.16em;
-  border-left: my-rem(2) solid $red;
-  border-bottom: my-rem(2) solid $red;
+[type='checkbox']:checked + span::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	display: block;
+	opacity: 1;
+	/*チェックマークじゃない場合は以下を変更する*/
+	transform: translateY(-50%) rotate(-45deg);
+	width: calc(my-rem(10) * 0.9);
+	height: calc(my-rem(10) * 0.5);
+	margin-top: -0.05em;
+	margin-left: 0.16em;
+	border-left: my-rem(2) solid $red;
+	border-bottom: my-rem(2) solid $red;
 }
 
 /*//////////////////////////////////////
 終了
 /////////////////////////////////////*/
 .contactForm__body select {
-  width: 100%;
-  max-width: 100%;
+	width: 100%;
+	max-width: 100%;
 }
 
 .contactForm__body--select {
-  position: relative;
-  color: $dark-green;
-  font-family: $jp-font-family1;
-  font-size: my-rem(12);
-  font-weight: $normal;
-  padding: my-rem(12) my-rem(8);
-  border: 1px solid $green;
+	position: relative;
+	color: $dark-green;
+	font-family: $jp-font-family1;
+	font-size: my-rem(12);
+	font-weight: $normal;
+	padding: my-rem(12) my-rem(8);
+	border: 1px solid $green;
 
-  @include mq(md) {
-    padding: my-rem(5) my-rem(8);
-  }
+	@include mq(md) {
+		padding: my-rem(5) my-rem(8);
+	}
 }
 
 .contactForm__body--select::before {
-  position: absolute;
-  top: 50%;
-  right: my-rem(8);
-  transform: translateY(-50%);
-  width: my-rem(12);
-  height: my-rem(12);
-  content: "";
-  z-index: -1;
-  background-image: url(/assets/images/common/triangle.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
+	position: absolute;
+	top: 50%;
+	right: my-rem(8);
+	transform: translateY(-50%);
+	width: my-rem(12);
+	height: my-rem(12);
+	content: '';
+	z-index: -1;
+	background-image: url(/assets/images/common/triangle.webp);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	cursor: pointer;
 }
 
 .contactForm__body input,
 .contactForm__body textarea {
-  width: 100%;
-  color: $dark-green;
-  font-family: $jp-font-family1;
-  font-size: my-rem(16);
-  font-weight: $normal;
-  padding: my-rem(7) my-rem(16);
-  border: 1px solid $green;
+	width: 100%;
+	color: $dark-green;
+	font-family: $jp-font-family1;
+	font-size: my-rem(16);
+	font-weight: $normal;
+	padding: my-rem(7) my-rem(16);
+	border: 1px solid $green;
 }
 
 .contactForm__body textarea {
-  height: my-rem(200);
-  resize: none;
+	height: my-rem(200);
+	resize: none;
 }
 
 .contactForm__triangle {
-  position: relative;
+	position: relative;
 }
 
 select option::after {
-  position: absolute;
-  right: 0;
-  content: "";
-  display: block;
-  width: my-rem(12);
-  height: my-rem(12);
-  background-image: url(/assets/images/common/triangle.png);
+	position: absolute;
+	right: 0;
+	content: '';
+	display: block;
+	width: my-rem(12);
+	height: my-rem(12);
+	background-image: url(/assets/images/common/triangle.webp);
 }
 
 .contactForm__footer {
-  padding: my-rem(38) my-rem(30) my-rem(145);
+	padding: my-rem(38) my-rem(30) my-rem(145);
 
-  @include mq(md) {
-    padding: my-rem(75) 0 my-rem(160);
-  }
+	@include mq(md) {
+		padding: my-rem(75) 0 my-rem(160);
+	}
 }
 
 .contactForm__footer-container {
-  display: flex;
-  justify-content: center;
-  gap: my-rem(16);
+	display: flex;
+	justify-content: center;
+	gap: my-rem(16);
 }
 
 /*//////////////////////////////////////
 checkbox
 /////////////////////////////////////*/
 
-
 .wpcf7-list-item-label {
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: $dark-green;
-  font-family: $jp-font-family1;
-  font-size: my-rem(14);
-  font-weight: $normal;
-  user-select: none;
-  /* テキストの選択を防ぐ */
-  cursor: pointer;
-  transition: 0.3s ease;
-  line-height: calc(22 / 16);
-
+	display: flex;
+	align-items: center;
+	position: relative;
+	color: $dark-green;
+	font-family: $jp-font-family1;
+	font-size: my-rem(14);
+	font-weight: $normal;
+	user-select: none;
+	/* テキストの選択を防ぐ */
+	cursor: pointer;
+	transition: 0.3s ease;
+	line-height: calc(22 / 16);
 }
-
 
 .wpcf7-list-item-label::before {
-  content: "";
-  display: inline-block;
-  min-width: my-rem(15);
-  height: my-rem(24);
-  border: 1px solid $green;
-  margin-right: my-rem(10);
-  margin-top: my-rem(-20);
+	content: '';
+	display: inline-block;
+	min-width: my-rem(15);
+	height: my-rem(24);
+	border: 1px solid $green;
+	margin-right: my-rem(10);
+	margin-top: my-rem(-20);
 
-  @include mq(md) {
-    margin-right: my-rem(16);
-    margin-top: initial;
-  }
+	@include mq(md) {
+		margin-right: my-rem(16);
+		margin-top: initial;
+	}
 }
 
-
-.wpcf7-list-item-label::after [type="checkbox"]:checked {
-  opacity: 0;
-  transition: 0.3s ease;
+.wpcf7-list-item-label::after [type='checkbox']:checked {
+	opacity: 0;
+	transition: 0.3s ease;
 }
 
-
-.wpcf7-list-item-label [type="checkbox"]:checked span::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  display: block;
-  opacity: 1;
-  /*チェックマークじゃない場合は以下を変更する*/
-  transform: translateY(-50%) rotate(-45deg);
-  width: calc(my-rem(20) * 0.9);
-  height: calc(my-rem(20) * 0.5);
-  margin-top: -0.1em;
-  margin-left: 0.1em;
-  border-left: my-rem(3) solid $red;
-  border-bottom: my-rem(3) solid $red;
+.wpcf7-list-item-label [type='checkbox']:checked span::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	display: block;
+	opacity: 1;
+	/*チェックマークじゃない場合は以下を変更する*/
+	transform: translateY(-50%) rotate(-45deg);
+	width: calc(my-rem(20) * 0.9);
+	height: calc(my-rem(20) * 0.5);
+	margin-top: -0.1em;
+	margin-left: 0.1em;
+	border-left: my-rem(3) solid $red;
+	border-bottom: my-rem(3) solid $red;
 }
 
 /*//////////////////////////////////////
 終了
 /////////////////////////////////////*/
 .contactForm__button {
-  margin-top: my-rem(26);
-  text-align: center;
+	margin-top: my-rem(26);
+	text-align: center;
 
-  @include mq(md) {
-    margin-top: my-rem(39);
-  }
+	@include mq(md) {
+		margin-top: my-rem(39);
+	}
 }
 
 .contactForm__button input {
-  color: $white;
+	color: $white;
 }
 
-.contactForm__button .button:hover input[type="submit"] {
-  color: $green;
+.contactForm__button .button:hover input[type='submit'] {
+	color: $green;
 }
-
-
 
 /*//////////////////////////////////////
 ホバー時スライドして色が変化する
 /////////////////////////////////////*/
 .form__button {
-  position: relative;
-  display: inline-block;
-  z-index: 1;
+	position: relative;
+	display: inline-block;
+	z-index: 1;
 }
 
 .form__button span.button__arrow {
-  display: inline-block;
-  content: "";
-  width: my-rem(40);
-  height: my-rem(8);
-  transform: skew(45deg);
-  border-bottom: my-rem(1) solid $white !important;
-  border-right: my-rem(1) solid $white !important;
-  margin-left: my-rem(8);
-  margin-bottom: my-rem(3);
+	display: inline-block;
+	content: '';
+	width: my-rem(40);
+	height: my-rem(8);
+	transform: skew(45deg);
+	border-bottom: my-rem(1) solid $white !important;
+	border-right: my-rem(1) solid $white !important;
+	margin-left: my-rem(8);
+	margin-bottom: my-rem(3);
 }
 
-
 .form__button::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "";
-  transform: translate(my-rem(4), my-rem(4));
-  border: my-rem(1) solid $green;
-  z-index: -2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	transform: translate(my-rem(4), my-rem(4));
+	border: my-rem(1) solid $green;
+	z-index: -2;
 }
 
 .form__button::after {
-  background-color: $white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  transform: scale(0, 1);
-  transform-origin: left top;
-  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
-  z-index: -1;
+	background-color: $white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 100%;
+	transform: scale(0, 1);
+	transform-origin: left top;
+	transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+	z-index: -1;
 }
 
 .form__button:hover {
-  color: $green;
-  background-color: $white;
-  transform: scale(1, 1);
+	color: $green;
+	background-color: $white;
+	transform: scale(1, 1);
 }
 
 .form__button:hover::after {
-  transform-origin: left top;
-  transform: scale(1, 1);
+	transform-origin: left top;
+	transform: scale(1, 1);
 }

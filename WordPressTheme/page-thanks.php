@@ -13,7 +13,7 @@ Template Name: 送信完了
 
   <div class="sub-thanks under-thanks">
     <figure class="sub-thanks__decoration">
-      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子">
+      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.webp" alt="魚の群れの様子">
     </figure>
     <div class="sub-thanks__inner inner">
       <div class="sub-thanks__container">

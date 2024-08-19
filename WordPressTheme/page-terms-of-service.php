@@ -13,7 +13,7 @@ Template Name: 利用規約
 
   <div class="sub-termsOfService under-termsOfService">
     <figure class="sub-termsOfService__decoration">
-      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子">
+      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.webp" alt="魚の群れの様子">
     </figure>
     <div class="sub-termsOfService__inner inner">
       <div class="sub-termsOfService__container termsOfService">

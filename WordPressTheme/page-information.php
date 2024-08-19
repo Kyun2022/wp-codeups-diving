@@ -13,7 +13,7 @@ Template Name: ダイビング情報
   <!-- インフォメーション -->
   <div class="sub-information under-information">
     <figure class="sub-information__decoration"><img
-        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子">
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.webp" alt="魚の群れの様子">
     </figure>
     <div class="sub-information_inner inner">
       <ul class="sub-information__tab info-tab">
@@ -28,7 +28,7 @@ Template Name: ダイビング情報
         <div class="info-content__item js-infoContent-target is-active" data-target="license" id="tab_panel-1">
           <div class="info-content__wrapper">
             <figure class="info-content__image"><img
-                src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/tab_1.jpg" alt="緑色のくじらのデザイン">
+                src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/tab_1.webp" alt="緑色のくじらのデザイン">
             </figure>
             <div class="info-content__meta">
               <h3 class="info-content__title">ライセンス講習</h3>
@@ -41,7 +41,7 @@ Template Name: ダイビング情報
         <div class="info-content__item js-infoContent-target" data-target="fanDiving" id="tab_panel-2">
           <div class="info-content__wrapper">
             <figure class="info-content__image"><img
-                src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/tab_2.jpg" alt="緑色のくじらのデザイン">
+                src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/tab_2.webp" alt="緑色のくじらのデザイン">
             </figure>
             <div class="info-content__meta">
               <h3 class="info-content__title">ファンダイビング</h3>
@@ -54,7 +54,7 @@ Template Name: ダイビング情報
         <div class="info-content__item js-infoContent-target" data-target="diving" id="tab_panel-3">
           <div class=" info-content__wrapper">
             <figure class="info-content__image"><img
-                src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/tab_3.jpg" alt="緑色の小魚のデザイン">
+                src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/tab_3.webp" alt="緑色の小魚のデザイン">
             </figure>
             <div class="info-content__meta">
               <h3 class="info-content__title">体験ダイビング</h3>

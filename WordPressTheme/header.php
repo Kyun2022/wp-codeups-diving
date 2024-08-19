@@ -28,7 +28,7 @@
     <div class="header__inner">
       <h1 class="header__logo">
         <a href="<?php echo esc_url(home_url('/')); ?>">
-          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo_1.png" alt="CodeUpsの文字、会社のロゴ">
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo_1.webp" alt="CodeUpsの文字、会社のロゴ">
         </a>
       </h1>
       <nav class="header__nav header__nav--md-none">

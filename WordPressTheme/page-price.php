@@ -13,7 +13,7 @@ Template Name: 料金の一覧
 
   <div class="sub-price under-price">
     <figure class="sub-price__decoration">
-      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子">
+      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.webp" alt="魚の群れの様子">
     </figure>
     <div class="sub-price__inner inner">
       <div class="sub-price__container priceBox">
@@ -29,19 +29,19 @@ Template Name: 料金の一覧
               $license_subContent = esc_html($license_value['license_subContent']);
               $license_price = esc_html($license_value['license_price']);
             ?>
-            <?php if ($license_content && $license_subContent && $license_price) : ?>
-            <dl class="priceBox__wrapper">
-              <dt class="priceBox__content"><?php echo $license_content; ?><br
-                  class="priceBox__br"><?php echo $license_subContent; ?>
-              </dt>
-              <dd class="priceBox__price">
-                &#165;<?php
+              <?php if ($license_content && $license_subContent && $license_price) : ?>
+                <dl class="priceBox__wrapper">
+                  <dt class="priceBox__content"><?php echo $license_content; ?><br
+                      class="priceBox__br"><?php echo $license_subContent; ?>
+                  </dt>
+                  <dd class="priceBox__price">
+                    &#165;<?php
                           $license_prices = number_format($license_price);
                           echo $license_prices;
                           ?>
-              </dd>
-            </dl>
-            <?php endif; ?>
+                  </dd>
+                </dl>
+              <?php endif; ?>
             <?php } ?>
           </div>
         </div>
@@ -58,18 +58,18 @@ Template Name: 料金の一覧
               $experience_subContent = esc_html($experience_field['experience_subContent']);
               $experience_price = esc_html($experience_field['experience_price']);
             ?>
-            <?php if ($experience_content && $experience_subContent && $experience_price) : ?>
-            <dl class="priceBox__wrapper">
-              <dt class="priceBox__content"><?php echo $experience_content; ?><br
-                  class="priceBox__br"><?php echo $experience_subContent; ?></dt>
-              <dd class="priceBox__price">
-                &#165;<?php
+              <?php if ($experience_content && $experience_subContent && $experience_price) : ?>
+                <dl class="priceBox__wrapper">
+                  <dt class="priceBox__content"><?php echo $experience_content; ?><br
+                      class="priceBox__br"><?php echo $experience_subContent; ?></dt>
+                  <dd class="priceBox__price">
+                    &#165;<?php
                           $experience_prices = number_format($experience_price);
                           echo $experience_prices;
                           ?>
-              </dd>
-            </dl>
-            <?php endif; ?>
+                  </dd>
+                </dl>
+              <?php endif; ?>
             <?php } ?>
           </div>
         </div>
@@ -86,18 +86,18 @@ Template Name: 料金の一覧
               $fan_subContent = esc_html($fan_field['fan_subContent']);
               $fan_price = esc_html($fan_field['fan_price']);
             ?>
-            <?php if ($fan_content && $fan_subContent && $fan_price) : ?>
-            <dl class="priceBox__wrapper">
-              <dt class="priceBox__content"><?php echo $fan_content; ?><br
-                  class="priceBox__br"><?php echo $fan_subContent; ?></dt>
-              <dd class="priceBox__price">
-                &#165;<?php
+              <?php if ($fan_content && $fan_subContent && $fan_price) : ?>
+                <dl class="priceBox__wrapper">
+                  <dt class="priceBox__content"><?php echo $fan_content; ?><br
+                      class="priceBox__br"><?php echo $fan_subContent; ?></dt>
+                  <dd class="priceBox__price">
+                    &#165;<?php
                           $fan_prices = number_format($fan_price);
                           echo $fan_prices;
                           ?>
-              </dd>
-            </dl>
-            <?php endif; ?>
+                  </dd>
+                </dl>
+              <?php endif; ?>
             <?php } ?>
           </div>
         </div>
@@ -114,18 +114,18 @@ Template Name: 料金の一覧
               $special_subContent = esc_html($special_field['special_subContent']);
               $special_price = esc_html($special_field['special_price']);
             ?>
-            <?php if ($special_content && $special_subContent && $special_price) : ?>
-            <dl class="priceBox__wrapper">
-              <dt class="priceBox__content"><?php echo $special_content; ?><br
-                  class="priceBox__br"><?php echo $special_subContent; ?></dt>
-              <dd class="priceBox__price">
-                &#165;<?php
+              <?php if ($special_content && $special_subContent && $special_price) : ?>
+                <dl class="priceBox__wrapper">
+                  <dt class="priceBox__content"><?php echo $special_content; ?><br
+                      class="priceBox__br"><?php echo $special_subContent; ?></dt>
+                  <dd class="priceBox__price">
+                    &#165;<?php
                           $special_prices = number_format($special_price);
                           echo $special_prices;
                           ?>
-              </dd>
-            </dl>
-            <?php endif; ?>
+                  </dd>
+                </dl>
+              <?php endif; ?>
             <?php } ?>
           </div>
         </div>

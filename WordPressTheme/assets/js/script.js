@@ -36,7 +36,6 @@ jQuery(function ($) {
         $("#pageTop").addClass("DownMove"); // DownMoveというクラス名を追加して非表示
       }
     }
-
     var wH = window.innerHeight; //画面の高さを取得
     var footerPos = $("#footer").offset().top; //footerの位置を取得
     if (scroll + wH >= footerPos + 10) {

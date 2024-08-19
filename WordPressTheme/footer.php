@@ -1,47 +1,47 @@
   <!-- contact -->
   <?php if (!is_page(array('contact', 'thanks')) && !is_404()) : ?>
-  <section class="contact">
-    <figure class="contact__decoration">
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fishes-contact.png" alt="魚の群れの様子">
-    </figure>
-    <div class="contact__inner inner">
-      <div class="contact__container">
-        <div class="contact__info">
-          <div class="contact__logo-block">
-            <figure class="contact__logo">
-              <a href="<?php echo esc_url(home_url('/')); ?>">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo_2.png" alt="CodeUpsの文字、会社のロゴ">
-              </a>
-            </figure>
+    <section class="contact">
+      <figure class="contact__decoration">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fishes-contact.webp" alt="魚の群れの様子">
+      </figure>
+      <div class="contact__inner inner">
+        <div class="contact__container">
+          <div class="contact__info">
+            <div class="contact__logo-block">
+              <figure class="contact__logo">
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo_2.webp" alt="CodeUpsの文字、会社のロゴ">
+                </a>
+              </figure>
+            </div>
+            <div class="contact__wrapper">
+              <div class="contact__map"><iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.40701233783!2d127.6646619769652!3d26.21596157706934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56996d05d1023%3A0x3afb03e18b00573f!2z44OR44K344OV44Kj44OD44Kv44Ob44OG44Or5rKW57iE!5e0!3m2!1sja!2sjp!4v1688297197575!5m2!1sja!2sjp"
+                  style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+              <ul class="contact__items">
+                <li class="contact__item">沖縄県那覇市1-1</li>
+                <li class="contact__item">TEL:0120-000-0000</li>
+                <li class="contact__item">営業時間:8:30-19:00</li>
+                <li class="contact__item">定休日:毎週火曜日</li>
+              </ul>
+            </div>
           </div>
-          <div class="contact__wrapper">
-            <div class="contact__map"><iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.40701233783!2d127.6646619769652!3d26.21596157706934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56996d05d1023%3A0x3afb03e18b00573f!2z44OR44K344OV44Kj44OD44Kv44Ob44OG44Or5rKW57iE!5e0!3m2!1sja!2sjp!4v1688297197575!5m2!1sja!2sjp"
-                style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-            <ul class="contact__items">
-              <li class="contact__item">沖縄県那覇市1-1</li>
-              <li class="contact__item">TEL:0120-000-0000</li>
-              <li class="contact__item">営業時間:8:30-19:00</li>
-              <li class="contact__item">定休日:毎週火曜日</li>
-            </ul>
-          </div>
-        </div>
-        <div class="contact__action">
-          <div class="contact__title title title--center">
-            <p class="title__text title__text--big">contact</p>
-            <h2 class="title__sub-text title__sub-text--layout">お問い合わせ</h2>
-            <p class="title__emphasis">ご予約・お問い合わせはコチラ</p>
-            <div class="title__button">
-              <button class="button"
-                onclick="location.href='<?php echo esc_url(home_url('contact')); ?>'">Contact&nbsp;us<span
-                  class="button__arrow"></span></button>
+          <div class="contact__action">
+            <div class="contact__title title title--center">
+              <p class="title__text title__text--big">contact</p>
+              <h2 class="title__sub-text title__sub-text--layout">お問い合わせ</h2>
+              <p class="title__emphasis">ご予約・お問い合わせはコチラ</p>
+              <div class="title__button">
+                <button class="button"
+                  onclick="location.href='<?php echo esc_url(home_url('contact')); ?>'">Contact&nbsp;us<span
+                    class="button__arrow"></span></button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   <?php endif; ?>
   </main>
 
@@ -50,17 +50,17 @@
     <div class="footer__inner inner">
       <div class="footer__top-container">
         <h1 class="footer__logo"><a href="index.html"><img
-              src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo_1.png" alt="会社のロゴ"></a>
+              src="<?php echo get_theme_file_uri(); ?>/assets/images/common/logo_1.webp" alt="会社のロゴ"></a>
         </h1>
         <div class="footer__sns-block">
           <div class="footer__sns-facebook">
             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/FacebookLogo.png" alt="フェイスブック会社のロゴ">
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/FacebookLogo.webp" alt="フェイスブック会社のロゴ">
             </a>
           </div>
           <div class="footer__sns-instagram">
             <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/InstagramLogo.png" alt="インスタグラム会社のロゴ">
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/InstagramLogo.webp" alt="インスタグラム会社のロゴ">
             </a>
           </div>
         </div>
@@ -79,11 +79,11 @@
                   $term = get_term_by('slug', $slug, 'campaign_category');
                   if (!$term) continue;
                 ?>
-                <li class="footer-menu__item">
-                  <a href="<?php echo esc_url(get_term_link($term, 'campaign_category')); ?>">
-                    <?php echo esc_html($term->name); ?>
-                  </a>
-                </li>
+                  <li class="footer-menu__item">
+                    <a href="<?php echo esc_url(get_term_link($term, 'campaign_category')); ?>">
+                      <?php echo esc_html($term->name); ?>
+                    </a>
+                  </li>
                 <?php endforeach; ?>
               </ul>
             </div>

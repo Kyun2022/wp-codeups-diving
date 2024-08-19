@@ -21,36 +21,36 @@
             ?>
            <!-- 取得した記事情報の表示 -->
            <?php if ($blog_query->have_posts()) : ?>
-           <div class="aside__popular-items">
-             <!-- ↓ ループ開始 ↓ -->
-             <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
-             <!-- ここに投稿がある場合の記述 -->
-             <article class="aside__popular-item card">
-               <a href="<?php the_permalink(); ?>">
-                 <figure class="card__image card__image--sub">
-                   <?php if (has_post_thumbnail()) : ?>
-                   <?php the_post_thumbnail('full'); ?>
-                   <?php else : ?>
-                   <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.jpg"
-                     alt=" noimage画像" />
-                   <?php endif; ?>
-                 </figure>
-                 <div class="card__body card__body--sub">
-                   <time datetime="<?php echo get_the_date('Y-m-d'); ?>"
-                     class="card__date"><?php echo get_the_date('Y/m/d'); ?></time>
-                   <h3 class="card__title">
-                     <!-- タイトル40文字制限 -->
-                     <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
-                   </h3>
-                 </div>
-               </a>
-             </article>
-             <?php endwhile;
+             <div class="aside__popular-items">
+               <!-- ↓ ループ開始 ↓ -->
+               <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
+                 <!-- ここに投稿がある場合の記述 -->
+                 <article class="aside__popular-item card">
+                   <a href="<?php the_permalink(); ?>">
+                     <figure class="card__image card__image--sub">
+                       <?php if (has_post_thumbnail()) : ?>
+                         <?php the_post_thumbnail('full'); ?>
+                       <?php else : ?>
+                         <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.webp"
+                           alt=" noimage画像" />
+                       <?php endif; ?>
+                     </figure>
+                     <div class="card__body card__body--sub">
+                       <time datetime="<?php echo get_the_date('Y-m-d'); ?>"
+                         class="card__date"><?php echo get_the_date('Y/m/d'); ?></time>
+                       <h3 class="card__title">
+                         <!-- タイトル40文字制限 -->
+                         <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+                       </h3>
+                     </div>
+                   </a>
+                 </article>
+               <?php endwhile;
                 wp_reset_postdata(); ?>
-           </div>
+             </div>
            <?php else : ?>
-           <!-- ここに投稿がない場合の記述 -->
-           <p>記事が投稿されていません</p>
+             <!-- ここに投稿がない場合の記述 -->
+             <p>記事が投稿されていません</p>
            <?php endif; ?>
          </div>
 
@@ -71,40 +71,40 @@
             ?>
            <!-- 取得した記事情報の表示 -->
            <?php if ($asideVoice_query->have_posts()) : ?>
-           <div class="aside__boxes boxes">
-             <!-- ↓ ループ開始 ↓ -->
-             <?php while ($asideVoice_query->have_posts()) : $asideVoice_query->the_post(); ?>
-             <!-- ここに投稿がある場合の記述 -->
-             <article class="boxes__item boxes__item--sub box">
-               <div class="box__container box__container--sub">
-                 <div class="box__header box__header--sub">
-                   <p class="box__gender">
-                     <?php the_field("voice-age"); ?>代&#040;<?php the_field("voice-gender") ?>&#041;</p>
-                   <h3 class="box__title box__title--sub">
-                     <!-- タイトル40文字制限 -->
-                     <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
-                   </h3>
-                 </div>
-                 <figure class="box__image box__image--sub js-slideColor">
-                   <?php if (has_post_thumbnail()) : ?>
-                   <?php the_post_thumbnail('full'); ?>
-                   <?php else : ?>
-                   <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.jpg"
-                     alt="noimage画像" />
-                   <?php endif; ?>
-                 </figure>
-               </div>
-               <div class="review__button">
-                 <button class="button"
-                   onclick="location.href='<?php echo esc_url(home_url('voice')); ?>'">View&nbsp;more<span
-                     class="button__arrow"></span></button>
-               </div>
-             </article>
-             <?php endwhile; ?>
-           </div>
+             <div class="aside__boxes boxes">
+               <!-- ↓ ループ開始 ↓ -->
+               <?php while ($asideVoice_query->have_posts()) : $asideVoice_query->the_post(); ?>
+                 <!-- ここに投稿がある場合の記述 -->
+                 <article class="boxes__item boxes__item--sub box">
+                   <div class="box__container box__container--sub">
+                     <div class="box__header box__header--sub">
+                       <p class="box__gender">
+                         <?php the_field("voice-age"); ?>代&#040;<?php the_field("voice-gender") ?>&#041;</p>
+                       <h3 class="box__title box__title--sub">
+                         <!-- タイトル40文字制限 -->
+                         <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+                       </h3>
+                     </div>
+                     <figure class="box__image box__image--sub js-slideColor">
+                       <?php if (has_post_thumbnail()) : ?>
+                         <?php the_post_thumbnail('full'); ?>
+                       <?php else : ?>
+                         <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.webp"
+                           alt="noimage画像" />
+                       <?php endif; ?>
+                     </figure>
+                   </div>
+                   <div class="review__button">
+                     <button class="button"
+                       onclick="location.href='<?php echo esc_url(home_url('voice')); ?>'">View&nbsp;more<span
+                         class="button__arrow"></span></button>
+                   </div>
+                 </article>
+               <?php endwhile; ?>
+             </div>
            <?php else : ?>
-           <!-- ここに投稿がない場合の記述 -->
-           <p>記事が投稿されていません</p>
+             <!-- ここに投稿がない場合の記述 -->
+             <p>記事が投稿されていません</p>
            <?php endif;
             wp_reset_postdata(); ?>
 
@@ -127,47 +127,47 @@
             ?>
            <!-- 取得した記事情報の表示 -->
            <?php if ($asideCampaign_query->have_posts()) : ?>
-           <div class="aside__container slider">
-             <!-- ↓ ループ開始 ↓ -->
-             <?php while ($asideCampaign_query->have_posts()) : $asideCampaign_query->the_post(); ?>
-             <!-- ここに投稿がある場合の記述 -->
-             <article class="slider__item slider__item--sub">
-               <figure class="slider__image slider__image--sub">
-                 <?php if (has_post_thumbnail()) : ?>
-                 <?php the_post_thumbnail('full'); ?>
-                 <?php else : ?>
-                 <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.jpg"
-                   alt=" noimage画像" />
-                 <?php endif; ?>
-               </figure>
-               <div class="slider__body slider__body--sub">
-                 <h3 class="slider__title slider__title--sub">
-                   <!-- タイトル40文字制限 -->
-                   <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
-                 </h3>
-                 <div class="slider__meta slider__meta--sub">
-                   <?php $price_groups = get_field('campaign_price_group'); ?>
-                   <h4 class="slider__sub-title">
-                     <?php echo esc_html($price_groups['campaign-money-text']); ?>
-                   </h4>
-                   <div class="slider__price-unit slider__price-unit--sub">
-                     <?php if ($price_groups['campaign-old-price']) : ?>
-                     <p class="slider__old-price slider__old-price--sub">
-                       &#165;<?php echo number_format($price_groups['campaign-old-price']); ?>
-                     </p>
+             <div class="aside__container slider">
+               <!-- ↓ ループ開始 ↓ -->
+               <?php while ($asideCampaign_query->have_posts()) : $asideCampaign_query->the_post(); ?>
+                 <!-- ここに投稿がある場合の記述 -->
+                 <article class="slider__item slider__item--sub">
+                   <figure class="slider__image slider__image--sub">
+                     <?php if (has_post_thumbnail()) : ?>
+                       <?php the_post_thumbnail('full'); ?>
+                     <?php else : ?>
+                       <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.webp"
+                         alt=" noimage画像" />
                      <?php endif; ?>
-                     <p class="slider__new-price slider__new-price--sub">
-                       &#165;<?php echo number_format($price_groups['campaign-new-price']); ?>
-                     </p>
+                   </figure>
+                   <div class="slider__body slider__body--sub">
+                     <h3 class="slider__title slider__title--sub">
+                       <!-- タイトル40文字制限 -->
+                       <?php echo wp_trim_words(get_the_title(), 40, '...'); ?>
+                     </h3>
+                     <div class="slider__meta slider__meta--sub">
+                       <?php $price_groups = get_field('campaign_price_group'); ?>
+                       <h4 class="slider__sub-title">
+                         <?php echo esc_html($price_groups['campaign-money-text']); ?>
+                       </h4>
+                       <div class="slider__price-unit slider__price-unit--sub">
+                         <?php if ($price_groups['campaign-old-price']) : ?>
+                           <p class="slider__old-price slider__old-price--sub">
+                             &#165;<?php echo number_format($price_groups['campaign-old-price']); ?>
+                           </p>
+                         <?php endif; ?>
+                         <p class="slider__new-price slider__new-price--sub">
+                           &#165;<?php echo number_format($price_groups['campaign-new-price']); ?>
+                         </p>
+                       </div>
+                     </div>
                    </div>
-                 </div>
-               </div>
-             </article>
-             <?php endwhile; ?>
-           </div>
+                 </article>
+               <?php endwhile; ?>
+             </div>
            <?php else : ?>
-           <!-- ここに投稿がない場合の記述 -->
-           <p>記事が投稿されていません</p>
+             <!-- ここに投稿がない場合の記述 -->
+             <p>記事が投稿されていません</p>
            <?php endif;
             wp_reset_postdata(); ?>
            <div class="aside-campaign__button">

@@ -1,92 +1,92 @@
-@use "global" as *;
+@use 'global' as *;
 
 .aside {
 }
 
 .aside__popular-box {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 .aside__popular-items {
-  margin-top: my-rem(22);
+	margin-top: my-rem(22);
 }
 
 .aside__title {
-  width: my-rem(294);
-  padding: my-rem(7.5);
-  position: relative;
+	width: my-rem(294);
+	padding: my-rem(7.5);
+	position: relative;
 }
 
 .aside__title::before {
-  position: absolute;
-  display: inline-block;
-  content: "";
-  top: 0;
-  left: 0;
-  width: my-rem(8);
-  height: my-rem(50);
-  background-color: $green;
+	position: absolute;
+	display: inline-block;
+	content: '';
+	top: 0;
+	left: 0;
+	width: my-rem(8);
+	height: my-rem(50);
+	background-color: $green;
 }
 
 .aside__title-text {
-  padding-left: my-rem(75);
-  color: $dark-green;
-  font-family: $jp-font-family1;
-  font-size: my-rem(24);
-  font-weight: $normal;
+	padding-left: my-rem(75);
+	color: $dark-green;
+	font-family: $jp-font-family1;
+	font-size: my-rem(24);
+	font-weight: $normal;
 }
 .aside__title-text::after {
-  content: "";
-  display: inline-block;
-  background-image: url(../images/common/whale-black--left.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: my-rem(50);
-  height: my-rem(50);
-  position: absolute;
-  top: 0;
-  left: my-rem(24);
+	content: '';
+	display: inline-block;
+	background-image: url(../images/common/whale-black--left.webp);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: my-rem(50);
+	height: my-rem(50);
+	position: absolute;
+	top: 0;
+	left: my-rem(24);
 }
 .aside__popular-item:not(:first-child) {
-  margin-top: my-rem(24);
+	margin-top: my-rem(24);
 }
 
-.aside__popular-item.card{
-  padding: my-rem(16);
+.aside__popular-item.card {
+	padding: my-rem(16);
 }
 .aside__popular-item a {
-  display: flex;
-  background-color: $white;
+	display: flex;
+	background-color: $white;
 }
 
 .aside__popular-item:hover {
-  opacity: 0.5;
-  transition: opacity 0.3s;
+	opacity: 0.5;
+	transition: opacity 0.3s;
 }
 .aside__review {
-  margin-top: my-rem(80);
-  @include mq(md) {
-    margin-top: my-rem(82);
-  }
+	margin-top: my-rem(80);
+	@include mq(md) {
+		margin-top: my-rem(82);
+	}
 }
 
 .aside__box {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .aside__campaign {
-  margin-top: my-rem(84);
+	margin-top: my-rem(84);
 }
 
 .aside__container {
-  margin-top: my-rem(24);
+	margin-top: my-rem(24);
 }
 
 .aside__archive {
-  margin-top: my-rem(86);
-  @include mq(md) {
-    margin-top: my-rem(84);
-  }
+	margin-top: my-rem(86);
+	@include mq(md) {
+		margin-top: my-rem(84);
+	}
 }

@@ -1,87 +1,87 @@
-@use "global" as *;
+@use 'global' as *;
 
 .info-tab__text {
-  width: my-rem(102);
-  padding: my-rem(10) my-rem(16);
-  color: $green;
-  background-color: $green2;
-  font-family: $jp-font-family1;
-  font-size: my-rem(14);
-  font-weight: $normal;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  text-align: center;
-  @include mq(md) {
-    text-align: initial;
-    width: my-rem(300);
-    padding: my-rem(13) my-rem(15);
-    font-size: min(calc((24 / 1440) * 100vw), my-rem(24));
-  }
+	width: my-rem(102);
+	padding: my-rem(10) my-rem(16);
+	color: $green;
+	background-color: $green2;
+	font-family: $jp-font-family1;
+	font-size: my-rem(14);
+	font-weight: $normal;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	text-align: center;
+	@include mq(md) {
+		text-align: initial;
+		width: my-rem(300);
+		padding: my-rem(13) my-rem(15);
+		font-size: min(calc((24 / 1440) * 100vw), my-rem(24));
+	}
 }
 
 .info-tab__text--md-show {
-  display: block;
-  @include mq(md) {
-    display: none;
-  }
+	display: block;
+	@include mq(md) {
+		display: none;
+	}
 }
 .info-tab__text.is-active {
-  color: $white;
-  background-color: $green;
-  box-shadow: my-rem(4) my-rem(4) my-rem(8) my-rem(0) rgba(0, 0, 0, 0.25);
+	color: $white;
+	background-color: $green;
+	box-shadow: my-rem(4) my-rem(4) my-rem(8) my-rem(0) rgba(0, 0, 0, 0.25);
 }
 
 .info-tab__text::before {
-  content: "";
-  display: inline-block;
-  width: my-rem(64);
-  height: my-rem(64);
-  margin-right: my-rem(9);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+	content: '';
+	display: inline-block;
+	width: my-rem(64);
+	height: my-rem(64);
+	margin-right: my-rem(9);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 .info-tab__text:nth-child(1)::before {
-  display: none;
-  @include mq(md) {
-    display: block;
-    background-image: url(../images/common/whale-green--right.png);
-  }
+	display: none;
+	@include mq(md) {
+		display: block;
+		background-image: url(../images/common/whale-green--right.webp);
+	}
 }
 .info-tab__text:nth-child(2)::before {
-  display: none;
-  @include mq(md) {
-    display: block;
-    background-image: url(../images/common/whale-green--left.png);
-  }
+	display: none;
+	@include mq(md) {
+		display: block;
+		background-image: url(../images/common/whale-green--left.webp);
+	}
 }
 .info-tab__text:nth-child(3)::before {
-  display: none;
-  @include mq(md) {
-    display: block;
-    background-image: url(../images/common/fish-green--left.png);
-  }
+	display: none;
+	@include mq(md) {
+		display: block;
+		background-image: url(../images/common/fish-green--left.webp);
+	}
 }
 .info-tab__text.is-active:nth-child(1)::before {
-  display: none;
-  @include mq(md) {
-    display: block;
-    background-image: url(../images/common/whale-white--right.png);
-  }
+	display: none;
+	@include mq(md) {
+		display: block;
+		background-image: url(../images/common/whale-white--right.webp);
+	}
 }
 .info-tab__text.is-active:nth-child(2)::before {
-  display: none;
-  @include mq(md) {
-    display: block;
-    background-image: url(../images/common/whale-white--left.png);
-  }
+	display: none;
+	@include mq(md) {
+		display: block;
+		background-image: url(../images/common/whale-white--left.webp);
+	}
 }
 .info-tab__text.is-active:nth-child(3)::before {
-  display: none;
-  @include mq(md) {
-    display: block;
-    background-image: url(../images/common/fish-white--left.png);
-  }
+	display: none;
+	@include mq(md) {
+		display: block;
+		background-image: url(../images/common/fish-white--left.webp);
+	}
 }

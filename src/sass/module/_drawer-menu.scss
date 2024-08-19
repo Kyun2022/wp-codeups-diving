@@ -1,108 +1,108 @@
-@use "global" as *;
+@use 'global' as *;
 
 .drawer-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $green;
-  z-index: 8888;
-  transition: transform 0.3s ease;
-  padding-top: my-rem(90);
-  padding-bottom: my-rem(104);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $green;
+	z-index: 8888;
+	transition: transform 0.3s ease;
+	padding-top: my-rem(90);
+	padding-bottom: my-rem(104);
 }
 
 .drawer-menu--all-close {
-  display: none;
+	display: none;
 }
 .drawer-menu.is-open {
-  display: block;
+	display: block;
 }
 
 .drawer-menu__inner {
-  max-width: my-rem(400);
-  display: flex;
-  justify-content: center;
-  margin-top: my-rem(50);
-  overflow-y: scroll;
-  height: 100vh;
+	max-width: my-rem(400);
+	display: flex;
+	justify-content: center;
+	margin-top: my-rem(50);
+	overflow-y: scroll;
+	height: 100vh;
 }
 
 .drawer-menu__container-left {
-  width: 100%;
-  max-width: 53%;
-  padding-left: my-rem(25);
-  @include mq(md) {
-    max-width: calc((190 / 338) * 100%);
-  }
+	width: 100%;
+	max-width: 53%;
+	padding-left: my-rem(25);
+	@include mq(md) {
+		max-width: calc((190 / 338) * 100%);
+	}
 }
 .drawer-menu__container-right {
-  width: 100%;
-  max-width: 47%;
-  margin-left: my-rem(2);
-  padding-left: my-rem(25);
-  @include mq(md) {
-    margin-left: my-rem(7);
-    max-width: calc((148 / 338) * 100%);
-  }
+	width: 100%;
+	max-width: 47%;
+	margin-left: my-rem(2);
+	padding-left: my-rem(25);
+	@include mq(md) {
+		margin-left: my-rem(7);
+		max-width: calc((148 / 338) * 100%);
+	}
 }
 
 .drawer-menu__list-name {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 .starfish-icon {
-  display: inline-block;
-  padding-right: my-rem(4);
-  width: my-rem(18);
-  height: my-rem(18);
+	display: inline-block;
+	padding-right: my-rem(4);
+	width: my-rem(18);
+	height: my-rem(18);
 }
 .ly-starfish-icon {
-  margin-top: my-rem(-18);
+	margin-top: my-rem(-18);
 }
 .drawer-menu__contents:not(:first-child) {
-  margin-top: my-rem(40);
+	margin-top: my-rem(40);
 }
 .drawer-menu__list-name {
-  font-size: my-rem(16);
-  font-family: $jp-font-family1;
-  font-weight: $bold;
-  line-height: calc(18 / 16);
-  color: $white;
-  position: relative;
+	font-size: my-rem(16);
+	font-family: $jp-font-family1;
+	font-weight: $bold;
+	line-height: calc(18 / 16);
+	color: $white;
+	position: relative;
 }
 .drawer-menu__list-name a {
-  display: block;
-  width: 100%;
+	display: block;
+	width: 100%;
 }
 .drawer-menu__list-name::before {
-  content: "";
-  display: inline-block;
-  width: my-rem(18);
-  height: my-rem(18);
-  background-image: url(/assets/images/common/starfish.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  left: my-rem(-24);
+	content: '';
+	display: inline-block;
+	width: my-rem(18);
+	height: my-rem(18);
+	background-image: url(/assets/images/common/starfish.webp);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	left: my-rem(-24);
 }
 .drawer-menu__items {
-  margin-top: my-rem(24);
+	margin-top: my-rem(24);
 }
 
 .drawer-menu__item {
-  margin-top: my-rem(24);
-  font-size: my-rem(16);
-  font-family: $jp-font-family1;
-  font-weight: $regular;
-  color: $white;
-  line-height: calc(18 / 16);
-  width: 100%;
+	margin-top: my-rem(24);
+	font-size: my-rem(16);
+	font-family: $jp-font-family1;
+	font-weight: $regular;
+	color: $white;
+	line-height: calc(18 / 16);
+	width: 100%;
 }
 .drawer-menu__item a {
-  display: block;
-  width: 100%;
+	display: block;
+	width: 100%;
 }

@@ -7,25 +7,25 @@
       <div class="swiper mv__slider js-mv-slider">
         <div class="swiper-wrapper mv__items">
           <?php for ($i = 1; $i <= 4; $i++) : ?>
-          <?php
+            <?php
             $mvPC = get_field('mvPC' . $i); // PCの画像配列
             $mvSP = get_field('mvSP' . $i); // SPの画像配列
             if ($mvPC || $mvSP) :
             ?>
-          <div class="swiper-slide mv__item">
-            <picture>
-              <!-- URLの場合 PC-->
-              <?php if ($mvPC && isset($mvPC['url'])) : ?>
-              <source srcset="<?php echo esc_url($mvPC['url']); ?>" media="(min-width: 768px)" alt="mvの画像" />
-              <?php endif; ?>
+              <div class="swiper-slide mv__item">
+                <picture>
+                  <!-- URLの場合 PC-->
+                  <?php if ($mvPC && isset($mvPC['url'])) : ?>
+                    <source srcset="<?php echo esc_url($mvPC['url']); ?>" media="(min-width: 768px)" alt="mvの画像" />
+                  <?php endif; ?>
 
-              <!-- URLの場合 SP-->
-              <?php if ($mvSP && isset($mvSP['url'])) : ?>
-              <img src="<?php echo esc_url($mvSP['url']); ?>" alt="mvの画像" />
-              <?php endif; ?>
-            </picture>
-          </div>
-          <?php endif; ?>
+                  <!-- URLの場合 SP-->
+                  <?php if ($mvSP && isset($mvSP['url'])) : ?>
+                    <img src="<?php echo esc_url($mvSP['url']); ?>" alt="mvの画像" />
+                  <?php endif; ?>
+                </picture>
+              </div>
+            <?php endif; ?>
           <?php endfor; ?>
         </div>
       </div>
@@ -58,20 +58,20 @@
           ?>
           <!-- 取得した記事情報の表示 -->
           <?php if ($campaign_query->have_posts()) : ?>
-          <!-- ↓ ループ開始 ↓ -->
-          <?php while ($campaign_query->have_posts()) : $campaign_query->the_post(); ?>
-          <!-- ここに投稿がある場合の記述 -->
-          <article class="swiper-slide slider__item">
-            <figure class="slider__image">
-              <?php if (has_post_thumbnail()) : ?>
-              <?php the_post_thumbnail('full'); ?>
-              <?php else : ?>
-              <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.jpg"
-                alt="noimage画像" />
-              <?php endif; ?>
-            </figure>
-            <div class="slider__body">
-              <?php
+            <!-- ↓ ループ開始 ↓ -->
+            <?php while ($campaign_query->have_posts()) : $campaign_query->the_post(); ?>
+              <!-- ここに投稿がある場合の記述 -->
+              <article class="swiper-slide slider__item">
+                <figure class="slider__image">
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('full'); ?>
+                  <?php else : ?>
+                    <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.webp"
+                      alt="noimage画像" />
+                  <?php endif; ?>
+                </figure>
+                <div class="slider__body">
+                  <?php
                   $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
                   if (!empty($taxonomy_terms)) {
                     $limit = 5;
@@ -86,35 +86,35 @@
                     }
                   }
                   ?>
-              <h3 class="slider__title">
-                <!-- タイトル20文字制限 -->
-                <?php echo wp_trim_words(get_the_title(), 20, '...'); ?>
-              </h3>
-              <div class="slider__meta">
-                <?php $price_groups = get_field('campaign_price_group'); ?>
-                <h4 class="slider__sub-title">
-                  <?php echo esc_html($price_groups['campaign-money-text']); ?>
-                </h4>
-                <div class="slider__price-unit">
-                  <?php if ($price_groups['campaign-old-price']) : ?>
-                  <p class="slider__old-price slider__old-price--layout">
-                    &#165;<?php echo number_format($price_groups['campaign-old-price']); ?>
-                  </p>
-                  <?php endif; ?>
-                  <p class="slider__new-price">
-                    &#165;<?php echo number_format($price_groups['campaign-new-price']); ?>
-                  </p>
+                  <h3 class="slider__title">
+                    <!-- タイトル20文字制限 -->
+                    <?php echo wp_trim_words(get_the_title(), 20, '...'); ?>
+                  </h3>
+                  <div class="slider__meta">
+                    <?php $price_groups = get_field('campaign_price_group'); ?>
+                    <h4 class="slider__sub-title">
+                      <?php echo esc_html($price_groups['campaign-money-text']); ?>
+                    </h4>
+                    <div class="slider__price-unit">
+                      <?php if ($price_groups['campaign-old-price']) : ?>
+                        <p class="slider__old-price slider__old-price--layout">
+                          &#165;<?php echo number_format($price_groups['campaign-old-price']); ?>
+                        </p>
+                      <?php endif; ?>
+                      <p class="slider__new-price">
+                        &#165;<?php echo number_format($price_groups['campaign-new-price']); ?>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </article>
-          <?php endwhile;
+              </article>
+            <?php endwhile;
             wp_reset_postdata();  ?>
         </div>
-        <?php else : ?>
+      <?php else : ?>
         <!-- ここに投稿がない場合の記述 -->
         <p>記事が投稿されていません</p>
-        <?php endif; ?>
+      <?php endif; ?>
       </div>
       <!-- 前後の矢印 -->
       <div class="slider__button">
@@ -138,11 +138,11 @@
       </div>
       <div class="aboutUs__images">
         <figure class="aboutUs__image-sky">
-          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about-pc_1.jpg"
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about-pc_1.webp"
             alt="青空の背景の中、屋根の上に紅色のシーダーがこちらを見ている様子">
         </figure>
         <figure class="aboutUs__image-sea">
-          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about-pc_2.jpg"
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about-pc_2.webp"
             alt="透き通った海の中を２匹の黄色い魚が泳いでいる様子">
         </figure>
       </div>
@@ -163,7 +163,7 @@
       </div>
     </div>
     <figure class="aboutUs__decoration aboutUs__decoration--md-none"><img
-        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/coral-reef.png" alt="珊瑚礁の画像"></figure>
+        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/coral-reef.webp" alt="珊瑚礁の画像"></figure>
   </section>
 
   <!-- information -->
@@ -175,7 +175,7 @@
       </div>
       <div class="information__container">
         <figure class="information__image js-slideColor">
-          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-pc.jpg" alt="海の中で黄色の魚が泳ぐ様子">
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-pc.webp" alt="海の中で黄色の魚が泳ぐ様子">
         </figure>
         <div class="information__body">
           <div class="information__header">
@@ -199,9 +199,9 @@
   <!-- blog -->
   <section class="blog top-blog">
     <div class="blog__bgImage blog__bgImage--md-none"><img
-        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-bg.jpg" alt="海の中イメージした様子"></div>
+        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-bg.webp" alt="海の中イメージした様子"></div>
     <figure class="blog__decoration blog__decoration--md-none"><img
-        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fishes-white.png" alt="魚の群れの様子"></figure>
+        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fishes-white.webp" alt="魚の群れの様子"></figure>
     <div class="blog__inner inner">
       <div class="blog__title title title--center">
         <p class="title__text title__text--white">blog</p>
@@ -219,44 +219,44 @@
         ?>
         <!-- 取得した記事情報の表示 -->
         <?php if ($blog_query->have_posts()) : ?>
-        <div class="blog__cards blog-cards">
-          <!-- ↓ ループ開始 ↓ -->
-          <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
-          <!-- ここに投稿がある場合の記述 -->
-          <article class="blog-cards__item card">
-            <a href="<?php the_permalink(); ?>">
-              <figure class="card__image card__image--hover">
-                <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('full', array()); ?>
-                <?php else : ?>
-                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.jpg"
-                  alt=" noimage画像" />
-                <?php endif; ?>
-              </figure>
-              <div class="card__body">
-                <div class="card__header">
-                  <time datetime="<?php echo get_the_date('Y-m-d'); ?>"
-                    class="card__date"><?php echo get_the_date('Y.m.d'); ?></time>
-                  <h3 class="card__title">
-                    <!-- タイトル40文字制限 -->
-                    <?php echo wp_trim_words(get_the_title(), 60, '...'); ?>
-                  </h3>
-                </div>
-                <div class="card__meta">
-                  <p class="card__text text">
-                    <!-- 本文40文字制限 -->
-                    <?php echo wp_trim_words(get_the_content(), 80, '...'); ?>
-                  </p>
-                </div>
-              </div>
-            </a>
-          </article>
-          <?php endwhile;
+          <div class="blog__cards blog-cards">
+            <!-- ↓ ループ開始 ↓ -->
+            <?php while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
+              <!-- ここに投稿がある場合の記述 -->
+              <article class="blog-cards__item card">
+                <a href="<?php the_permalink(); ?>">
+                  <figure class="card__image card__image--hover">
+                    <?php if (has_post_thumbnail()) : ?>
+                      <?php the_post_thumbnail('full', array()); ?>
+                    <?php else : ?>
+                      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.webp"
+                        alt=" noimage画像" />
+                    <?php endif; ?>
+                  </figure>
+                  <div class="card__body">
+                    <div class="card__header">
+                      <time datetime="<?php echo get_the_date('Y-m-d'); ?>"
+                        class="card__date"><?php echo get_the_date('Y.m.d'); ?></time>
+                      <h3 class="card__title">
+                        <!-- タイトル40文字制限 -->
+                        <?php echo wp_trim_words(get_the_title(), 60, '...'); ?>
+                      </h3>
+                    </div>
+                    <div class="card__meta">
+                      <p class="card__text text">
+                        <!-- 本文40文字制限 -->
+                        <?php echo wp_trim_words(get_the_content(), 80, '...'); ?>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            <?php endwhile;
             wp_reset_postdata(); ?>
-        </div>
+          </div>
         <?php else : ?>
-        <!-- ここに投稿がない場合の記述 -->
-        <p>記事が投稿されていません</p>
+          <!-- ここに投稿がない場合の記述 -->
+          <p>記事が投稿されていません</p>
         <?php endif; ?>
 
         <div class="blog__button">
@@ -270,7 +270,7 @@
   <!-- voice -->
   <section class="voice top-voice">
     <figure class="voice__top-decoration voice__top-decoration--md-none"><img
-        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
+        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fishes-right.webp" alt="魚の群れの様子"></figure>
     <div class="voice__inner inner">
       <div class="voice__title title title--center">
         <p class="title__text">voice</p>
@@ -291,17 +291,17 @@
           ?>
           <!-- 取得した記事情報の表示 -->
           <?php if ($voice_query->have_posts()) : ?>
-          <!-- ↓ ループ開始 ↓ -->
-          <?php while ($voice_query->have_posts()) : $voice_query->the_post(); ?>
-          <!-- ここに投稿がある場合の記述 -->
-          <article class="boxes__item box">
-            <div class="box__container">
-              <div class="box__header">
-                <div class="box__wrapper">
-                  <p class="box__gender">
-                    <?php the_field("voice-age"); ?>代&#040;<?php the_field("voice-gender") ?>&#041;
-                  </p>
-                  <?php
+            <!-- ↓ ループ開始 ↓ -->
+            <?php while ($voice_query->have_posts()) : $voice_query->the_post(); ?>
+              <!-- ここに投稿がある場合の記述 -->
+              <article class="boxes__item box">
+                <div class="box__container">
+                  <div class="box__header">
+                    <div class="box__wrapper">
+                      <p class="box__gender">
+                        <?php the_field("voice-age"); ?>代&#040;<?php the_field("voice-gender") ?>&#041;
+                      </p>
+                      <?php
                       $taxonomy_terms = get_the_terms($post->ID, 'voice_category');
                       if (!empty($taxonomy_terms)) {
                         $limit = 5;
@@ -316,32 +316,32 @@
                         }
                       }
                       ?>
+                    </div>
+                    <h3 class="box__title">
+                      <!-- タイトル40文字制限 -->
+                      <?php echo wp_trim_words(get_the_title(), 22, '...'); ?>
+                    </h3>
+                  </div>
+                  <figure class="box__image js-slideColor">
+                    <?php if (has_post_thumbnail()) : ?>
+                      <?php the_post_thumbnail('full'); ?>
+                    <?php else : ?>
+                      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.webp"
+                        alt="noimage画像" />
+                    <?php endif; ?>
+                  </figure>
                 </div>
-                <h3 class="box__title">
-                  <!-- タイトル40文字制限 -->
-                  <?php echo wp_trim_words(get_the_title(), 22, '...'); ?>
-                </h3>
-              </div>
-              <figure class="box__image js-slideColor">
-                <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('full'); ?>
-                <?php else : ?>
-                <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/noimage.jpg"
-                  alt="noimage画像" />
-                <?php endif; ?>
-              </figure>
-            </div>
-            <div class="box__meta">
-              <p class="box__text text"><?php echo (get_field("voice-text")); ?></p>
-            </div>
-          </article>
-          <?php endwhile;
+                <div class="box__meta">
+                  <p class="box__text text"><?php echo (get_field("voice-text")); ?></p>
+                </div>
+              </article>
+            <?php endwhile;
             wp_reset_postdata(); ?>
         </div>
-        <?php else : ?>
+      <?php else : ?>
         <!-- ここに投稿がない場合の記述 -->
         <p>記事が投稿されていません</p>
-        <?php endif; ?>
+      <?php endif; ?>
       </div>
 
       <div class="voice__button">
@@ -350,7 +350,7 @@
       </div>
     </div>
     <figure class="voice__bottom-decoration voice__bottom-decoration--md-none"><img
-        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/seahorse.png" alt="竜の落とし子のデザイン"></figure>
+        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/seahorse.webp" alt="竜の落とし子のデザイン"></figure>
   </section>
 
   <!-- price -->
@@ -362,9 +362,9 @@
       </div>
       <div class="price__container">
         <picture class="price__images js-slideColor">
-          <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-pc.jpg"
+          <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-pc.webp"
             media="(min-width:768px)">
-          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-sp.jpg" alt="橙色の大きな亀が泳いでいる様子">
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-sp.webp" alt="橙色の大きな亀が泳いでいる様子">
         </picture>
         <ul class="price__menu">
           <li class="price__items">
@@ -376,17 +376,17 @@
               $license_subContent = esc_html($license_value['license_subContent']);
               $license_price = esc_html($license_value['license_price']);
             ?>
-            <?php if ($license_content && $license_subContent && $license_price) : ?>
-            <dl class="price__item">
-              <dt class="price__label"><?php echo $license_content; ?><?php echo $license_subContent; ?></dt>
-              <dd class="price__text">
-                &#165;<?php
+              <?php if ($license_content && $license_subContent && $license_price) : ?>
+                <dl class="price__item">
+                  <dt class="price__label"><?php echo $license_content; ?><?php echo $license_subContent; ?></dt>
+                  <dd class="price__text">
+                    &#165;<?php
                           $license_prices = number_format($license_price);
                           echo $license_prices;
                           ?>
-              </dd>
-            </dl>
-            <?php endif; ?>
+                  </dd>
+                </dl>
+              <?php endif; ?>
             <?php } ?>
           </li>
           <li class="price__items">
@@ -398,17 +398,17 @@
               $experience_subContent = esc_html($experience_field['experience_subContent']);
               $experience_price = esc_html($experience_field['experience_price']);
             ?>
-            <?php if ($experience_content && $experience_subContent && $experience_price) : ?>
-            <dl class="price__item">
-              <dt class="price__label"><?php echo $experience_content; ?><?php echo $experience_subContent; ?></dt>
-              <dd class="price__text">
-                &#165;<?php
+              <?php if ($experience_content && $experience_subContent && $experience_price) : ?>
+                <dl class="price__item">
+                  <dt class="price__label"><?php echo $experience_content; ?><?php echo $experience_subContent; ?></dt>
+                  <dd class="price__text">
+                    &#165;<?php
                           $experience_prices = number_format($experience_price);
                           echo $experience_prices;
                           ?>
-              </dd>
-            </dl>
-            <?php endif; ?>
+                  </dd>
+                </dl>
+              <?php endif; ?>
             <?php } ?>
           </li>
           <li class="price__items">
@@ -420,17 +420,17 @@
               $fan_subContent = esc_html($fan_field['fan_subContent']);
               $fan_price = esc_html($fan_field['fan_price']);
             ?>
-            <?php if ($fan_content && $fan_subContent && $fan_price) : ?>
-            <dl class="price__item">
-              <dt class="price__label"><?php echo $fan_content; ?><?php echo $fan_subContent; ?></dt>
-              <dd class="price__text">
-                &#165;<?php
+              <?php if ($fan_content && $fan_subContent && $fan_price) : ?>
+                <dl class="price__item">
+                  <dt class="price__label"><?php echo $fan_content; ?><?php echo $fan_subContent; ?></dt>
+                  <dd class="price__text">
+                    &#165;<?php
                           $fan_prices = number_format($fan_price);
                           echo $fan_prices;
                           ?>
-              </dd>
-            </dl>
-            <?php endif; ?>
+                  </dd>
+                </dl>
+              <?php endif; ?>
             <?php } ?>
           </li>
           <li class="price__items">
@@ -442,17 +442,17 @@
               $special_subContent = esc_html($special_field['special_subContent']);
               $special_price = esc_html($special_field['special_price']);
             ?>
-            <?php if ($special_content && $special_subContent && $special_price) : ?>
-            <dl class="price__item">
-              <dt class="price__label"><?php echo $special_content; ?><?php echo $special_subContent; ?></dt>
-              <dd class="price__text">
-                &#165;<?php
+              <?php if ($special_content && $special_subContent && $special_price) : ?>
+                <dl class="price__item">
+                  <dt class="price__label"><?php echo $special_content; ?><?php echo $special_subContent; ?></dt>
+                  <dd class="price__text">
+                    &#165;<?php
                           $special_prices = number_format($special_price);
                           echo $special_prices;
                           ?>
-              </dd>
-            </dl>
-            <?php endif; ?>
+                  </dd>
+                </dl>
+              <?php endif; ?>
             <?php } ?>
           </li>
         </ul>
@@ -463,7 +463,7 @@
       </div>
     </div>
     <figure class="price__decoration price__decoration--md-none"><img
-        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fishes-left.png" alt="魚の群れの様子"></figure>
+        src="<?php echo get_theme_file_uri(); ?>/assets/images/common/fishes-left.webp" alt="魚の群れの様子"></figure>
   </section>
 
   <?php get_footer();  ?>

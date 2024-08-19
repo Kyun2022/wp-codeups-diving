@@ -14,15 +14,15 @@ Template Name: 私たちについて
   <!-- sub-aboutUs -->
   <section class="sub-aboutUs under-aboutUs">
     <figure class="sub-aboutUs__decoration"><img
-        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.png" alt="魚の群れの様子"></figure>
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-right.webp" alt="魚の群れの様子"></figure>
     <div class="sub-aboutUs__inner inner">
       <div class="sub-aboutUs__images">
         <figure class="sub-aboutUs__image-sky sub-aboutUs__image-sky--md-none">
-          <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/about-pc_1.jpg"
+          <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/about-pc_1.webp"
             alt="青空の背景の中、屋根の上に紅色のシーダーがこちらを見ている様子">
         </figure>
         <figure class="sub-aboutUs__image-sea">
-          <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/about-pc_2.jpg"
+          <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/about-pc_2.webp"
             alt="透き通った海の中を２匹の黄色い魚が泳いでいる様子">
         </figure>
       </div>
@@ -42,7 +42,7 @@ Template Name: 私たちについて
   <!-- ギャラリー -->
   <section class="gallery under-gallery">
     <figure class="gallery__decoration gallery__decoration--md-none">
-      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-left.png" alt="魚の群れの様子">
+      <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/images/common/fishes-left.webp" alt="魚の群れの様子">
     </figure>
     <div class="gallery__inner inner">
       <div class="gallery_title title title--center">
@@ -56,9 +56,9 @@ Template Name: 私たちについて
         foreach ($repeat_item as $index => $fields) {
           $image_url = wp_get_attachment_image_src($fields['gallery_item'], 'full');
         ?>
-        <figure class="gallery__image" data-micromodal-trigger="js-modal<?php echo $index + 1; ?>">
-          <img src="<?php echo $image_url[0]; ?>" alt="ギャラリーの画像">
-        </figure>
+          <figure class="gallery__image" data-micromodal-trigger="js-modal<?php echo $index + 1; ?>">
+            <img src="<?php echo $image_url[0]; ?>" alt="ギャラリーの画像">
+          </figure>
         <?php
         }
         ?>
@@ -69,13 +69,13 @@ Template Name: 私たちについて
         foreach ($repeat_item as $index => $fields) {
           $image_url = wp_get_attachment_image_src($fields['gallery_item'], 'full');
         ?>
-        <div class="modal modal--slide" id="js-modal<?php echo $index + 1; ?>" aria-hidden="true">
-          <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-            <div class="modal__image" role="dialog" aria-modal="true">
-              <img src="<?php echo $image_url[0]; ?>" alt="ギャラリーの画像" data-micromodal-close />
+          <div class="modal modal--slide" id="js-modal<?php echo $index + 1; ?>" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+              <div class="modal__image" role="dialog" aria-modal="true">
+                <img src="<?php echo $image_url[0]; ?>" alt="ギャラリーの画像" data-micromodal-close />
+              </div>
             </div>
           </div>
-        </div>
         <?php
         }
         ?>
