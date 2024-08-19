@@ -145,7 +145,7 @@ jQuery(function ($) {
     loop: true,
     allowTouchMove: false,
     effect: "fade",
-    speed: 3000,
+    speed: 2000,
     autoplay: {
       delay: 3000
     }
